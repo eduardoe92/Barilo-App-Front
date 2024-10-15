@@ -111,105 +111,74 @@ export default function SideNavBar() {
           open && " w-11/12 md:w-auto"
         } flex flex-col h-2/4 sm:flex-row sm:items-center md:h-auto`}
       >
-        {menuItems.map((item, index) => {
-          return (
-            <li
-              key={index}
-              className="relative flex items-center gap-2 p-2 my-2 duration-300 rounded-md cursor-pointer hover:bg-primary-purple group sm:pr-5 md:hover:bg-white md:pr-10"
+        {menuItems.map((item, index) => (
+          <li
+            key={index}
+            className="relative flex items-center gap-2 p-2 my-2 duration-300 rounded-md cursor-pointer hover:bg-primary-purple group sm:pr-5 md:hover:bg-white md:pr-10"
+          >
+            <a
+              href={item.href}
+              className={`${open && "gap-x-3"} flex items-center `}
             >
-              <a
-                href={item.href}
-                className={`${open && "gap-x-3"} flex items-center `}
-              >
-                <div className="flex items-center justify-center md:hidden">
-                  {item.icons}
-                </div>
-                <div className="hidden tracking-wide md:flex md:w-10/12">
-                  {t(item.label)}
-                </div>
-                <p
-                  className={`${
-                    !open && "w-0 translate-x-24"
-                  }  text-lg font-bold tracking-wider h-2/3 duration-500 overflow-hidden md:overflow-visible md:translate-x-0 md:hidden`}
-                >
-                  {t(item.label)}
-                </p>
-                <p
-                  className={`${
-                    open && "hidden"
-                  } absolute left-32 shadow-md rounded-md
-                  w-0 p-0 text-primary-pink bg-primary-purple duration-300 overflow-hidden
-                  md:hidden
-                `}
-                >
-                  {t(item.label)}
-                </p>
-              </a>
-            </li>
-          );
-        })}
-        <div className="flex items-center text-lg font-bold tracking-wider">
-          {currentLanguage === "es" ? (
-            <button
-              className={`${
-                open && "gap-x-2"
-              } flex items-center transition-transform duration-200 transform hover:scale-105`}
-              onClick={() => changeLanguage("en")}
-            >
-              <img
-                src={FlagUsa}
-                alt="English"
-                className="mt-3 ml-2 mr-2 rounded-full w-7 h-7 md:mt-0"
-              />
-              <p
-                className={`${
-                  !open && "w-0 translate-x-24 "
-                } mt-3 h-2/3 duration-500 overflow-hidden md:overflow-visible md:translate-x-0 md:hidden`}
-              >
-                Idioma
-              </p>
-              <p
-                className={`${
-                  open && "hidden"
-                } mt-3 absolute left-32 shadow-md rounded-md
-                  w-0 p-0 text-primary-pink bg-primary-purple duration-100 overflow-hidden
-                  group-hover:w-fit group-hover:p-2 group-hover:left-16 md:inline hidden
-                `}
-              >
-                Languaje
-              </p>
-            </button>
-          ) : (
-            <button
-              className={`${
-                open && "gap-x-2"
-              } flex items-center transition-transform duration-200 transform hover:scale-105`}
-              onClick={() => changeLanguage("es")}
-            >
-              <img
-                src={FlagSpain}
-                alt="Español"
-                className="mt-3 ml-2 mr-2 rounded-full w-7 h-7 md:mt-0"
-              />
+              <div className="flex items-center justify-center md:hidden ">
+                {item.icons}
+              </div>
+              <div className="hidden font-bold tracking-wide duration-300 hover:scale-105 md:flex md:w-10/12 md:text-lg lg:text-xl hover:text-primary-purple">
+                {t(item.label)}
+              </div>
               <p
                 className={`${
                   !open && "w-0 translate-x-24"
-                } mt-3 h-2/3 duration-500 overflow-hidden md:overflow-visible md:translate-x-0 md:hidden`}
+                } text-lg font-bold tracking-wider h-2/3 duration-300 overflow-hidden md:overflow-visible md:translate-x-0 md:hidden`}
               >
-                Languaje
+                {t(item.label)}
               </p>
               <p
                 className={`${
                   open && "hidden"
-                } mt-3 absolute left-32 shadow-md rounded-md
-                  w-0 p-0 text-primary-pink bg-primary-purple duration-100 overflow-hidden
-                  group-hover:w-fit group-hover:p-2 group-hover:left-16 md:inline hidden
+                } absolute left-32 shadow-md rounded-md
+                  w-0 p-0 text-primary-pink bg-primary-purple duration-300 overflow-hidden
+                  md:hidden
                 `}
               >
-                Idioma
+                {t(item.label)}
               </p>
-            </button>
-          )}
+            </a>
+          </li>
+        ))}
+
+        <div className="flex py-2 font-bold tracking-wider duration-300 rounded-md items-centertext-lg hover:bg-primary-purple md:hover:bg-white md:hover:scale-110">
+          <button
+            className={`${
+              open && "gap-x-2"
+            } flex items-center transition-transform transform`}
+            onClick={() =>
+              changeLanguage(currentLanguage === "es" ? "en" : "es")
+            }
+          >
+            <img
+              src={currentLanguage === "es" ? FlagUsa : FlagSpain}
+              alt={currentLanguage === "es" ? "Español" : "English"}
+              className="ml-2 mr-2 rounded-full w-7 h-7 md:mt-0"
+            />
+            <p
+              className={`${
+                !open && "w-0 translate-x-24"
+              }  h-2/3 duration-500 overflow-hidden md:overflow-visible md:translate-x-0 md:hidden `}
+            >
+              {t("navbar.language")}
+            </p>
+            <p
+              className={`${
+                open && "hidden"
+              } absolute left-32 shadow-md rounded-md
+                w-0 p-0 text-primary-pink bg-primary-purple duration-100 overflow-hidden
+                group-hover:w-fit group-hover:p-2 group-hover:left-16 md:inline hidden 
+              `}
+            >
+              {currentLanguage === "es" ? "Language" : "Idioma"}
+            </p>
+          </button>
         </div>
       </ul>
       {/* footer */}
