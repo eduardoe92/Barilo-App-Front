@@ -59,7 +59,7 @@ const HomeCardComponent: React.FC<HijoProps> = ({
           )}
         </button>
       )}
-      <p className="text-[#006BA8] font-['Lato'] font-bold text-sm px-4">
+      <p className="text-[#006BA8] font-secondaryLato'] font-bold text-sm px-4">
         {text}
       </p>
     </div>

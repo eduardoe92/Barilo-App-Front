@@ -35,13 +35,13 @@ const DonationForm = () => {
     }
 
   return (
-    <div  className="flex flex-col mt-5 bg-[--inactive-button-bg] p-8 rounded-2xl">
+    <div  className="flex flex-col mt-5 bg-inactive-button-bg p-8 rounded-2xl">
         <h1>Ayudanos a cumplir este sueño✈</h1>
         <div className="flex flex-col mt-1">
           <input type="number" min="1" value={amount} onChange={handleInputChange}/>
         </div>
         <div className="flex flex-col items-center">
-            <button onClick={handleBuy} className="bg-[--secondary-celeste] px-4 py-2 rounded-full mt-3">Donar!</button>
+            <button onClick={handleBuy} className="bg-secondary-celeste px-4 py-2 rounded-full mt-3">Donar!</button>
             {preferenceId && <Wallet initialization={{preferenceId, redirectMode: "modal"}} />}
         </div>
     </div>

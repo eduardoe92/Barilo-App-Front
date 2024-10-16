@@ -53,7 +53,7 @@ const Product = () => {
             <div className='flex flex-col'>
                 <p>Metodos de Pago:</p>
                 
-                <button onClick={handleBuy} className="bg-[--inactive-button-bg] text-black px-3 py-1 rounded-full mb-2">Mercadopago</button>
+                <button onClick={handleBuy} className="bg-inactive-button-bg text-black px-3 py-1 rounded-full mb-2">Mercadopago</button>
                 {preferenceId && <Wallet initialization={{ preferenceId, redirectMode: "modal" }}  />}
                 {/* <button
                 className="py-2 w-full bg-emerald-600 rounded-xl"
@@ -61,7 +61,7 @@ const Product = () => {
                 >
                 Comprar con Mercado Pago
                 </button> */}
-                <Link to="/crowdfundingForm"><button className="bg-[--inactive-button-bg] text-black px-3 py-1 rounded-full">Crowdfunding</button></Link>
+                <Link to="/crowdfundingForm"><button className="bg-inactive-button-bg text-black px-3 py-1 rounded-full">Crowdfunding</button></Link>
             </div>
         </article>
       );

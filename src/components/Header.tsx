@@ -21,8 +21,8 @@ const Header = () => {
             />
           </Link>
           <div className="leading-tight">
-            <p className="text-[--secondary-celeste]">{t("home.header")}</p>
-            <p className="text-[--primary-celeste] font-bold">
+            <p className="text-secondary-celeste">{t("home.header")}</p>
+            <p className="text-primary-celeste font-bold">
               {profile ? profile.name : t("loading")}
             </p>
           </div>
@@ -31,12 +31,12 @@ const Header = () => {
           <Link to="/profileSettings">
             <CiSettings
               size={35}
-              className="bg-[--inactive-button-bg] rounded-full p-1 text-[--primary-celeste]"
+              className="bg-inactive-button-bg rounded-full p-1 text-primary-celeste"
             />
           </Link>
           <FaRegBell
             size={32}
-            className="bg-[--inactive-button-bg] rounded-full p-1.5 text-[--primary-celeste]"
+            className="bg-inactive-button-bg rounded-full p-1.5 text-primary-celeste"
           />
         </div>
       </div>

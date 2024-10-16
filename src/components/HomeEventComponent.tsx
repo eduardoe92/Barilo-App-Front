@@ -20,65 +20,66 @@ const HomeEventComponent: React.FC<HijoProps> = ({
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/create-trip");
+    navigate("/trip-component");
   };
 
   return (
-    <div className="bg-[#0098EF] h-44 justify-between flex flex-col rounded-2xl">
-      <div className="p-5">
+    <div className="flex flex-col items-center justify-center bg-primary-blue rounded-2xl">
+      <div className="p-5 text-center">
         {admin ? (
-          <h1 className="font-['League_Spartan'] text-2xl text-[#E4E4E4] text-center font-bold">
+          <h1 className="text-2xl font-bold text-white font-primary">
             {title}
           </h1>
         ) : (
           <div>
             {member ? (
-              <h1 className="font-['League_Spartan'] text-2xl text-[#E4E4E4] font-bold">
+              <h1 className="text-2xl font-bold text-white font-primary">
                 {title}
               </h1>
             ) : (
-              <h1 className="font-['League_Spartan'] text-2xl text-[#E4E4E4] text-center font-bold">
+              <h1 className="text-2xl font-bold text-white font-primary">
                 {title}
               </h1>
             )}
           </div>
         )}
-        <p className="text-[#E4E4E4] font-bold">{text}</p>
-      </div>
-      <div className="flex items-center justify-center w-full">
-        {admin ? (
-          <Button
-            onClick={handleClick}
-            variant={"default"}
-            className={cn(
-              "w-[120px] justify-center font-normal mb-5 bg-[#006BA8] border-none rounded-2xl"
-            )}
-          >
-            <span className="text-[#FAFAFA]">{button}</span>
-          </Button>
-        ) : (
-          <div>
-            {member ? (
-              <Button
-                variant={"default"}
-                className={cn(
-                  "w-[120px] justify-center font-normal mb-5 bg-[#006BA8] border-none rounded-2xl"
-                )}
-              >
-                <span className="text-[#FAFAFA]">{button}</span>
-              </Button>
-            ) : (
-              <Button
-                variant={"default"}
-                className={cn(
-                  " justify-center font-normal mb-5 bg-[#006BA8] border-none rounded-2xl"
-                )}
-              >
-                <span className="text-[#FAFAFA]">{button}</span>
-              </Button>
-            )}
-          </div>
-        )}
+        <p className="font-bold text-white">{text}</p>
+
+        <div className="flex items-center justify-center w-full mt-auto">
+          {admin ? (
+            <Button
+              onClick={handleClick}
+              variant={"default"}
+              className={cn(
+                "w-[120px] justify-center font-normal mt-3 bg-secondary-celeste border-none rounded-2xl"
+              )}
+            >
+              <span className="text-white">{button}</span>
+            </Button>
+          ) : (
+            <div>
+              {member ? (
+                <Button
+                  variant={"default"}
+                  className={cn(
+                    "w-[120px] justify-center font-normal mt-3 bg-secondary-celeste border-none rounded-2xl"
+                  )}
+                >
+                  <span className="text-white">{button}</span>
+                </Button>
+              ) : (
+                <Button
+                  variant={"default"}
+                  className={cn(
+                    "w-[120px] justify-center font-normal mt-3 bg-secondary-celeste border-none rounded-2xl"
+                  )}
+                >
+                  <span className="text-white">{button}</span>
+                </Button>
+              )}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
