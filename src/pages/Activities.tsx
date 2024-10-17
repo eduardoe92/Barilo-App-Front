@@ -31,7 +31,7 @@ const Activities = () => {
   return (
     <div className="container px-5 py-12 mx-auto">
       <div className="flex justify-between w-full px-2 pb-3">
-        <h2 className="justify-center text-xl font-bold text-center text-[#006BA8]">
+        <h2 className="justify-center text-xl font-bold text-center text-secondary-celeste">
           Actividades
         </h2>
       </div>

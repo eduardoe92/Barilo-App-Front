@@ -53,7 +53,7 @@ const Home: React.FC<UserGroupStatusProps> = () => {
               {isInGroup ? (
                 <div>
                   <div className="flex justify-between w-full px-2 pb-3">
-                    <h2 className="text-xl text-[#006BA8] font-bold">
+                    <h2 className="text-xl text-secondary-celeste font-bold">
                       {t("home.cardTrip.title")}
                     </h2>
                     <a
@@ -84,7 +84,7 @@ const Home: React.FC<UserGroupStatusProps> = () => {
                     ></HomeCardComponent>
                   </div>
                   <div className="flex justify-between w-full px-2 pb-3 mt-4">
-                    <h2 className="text-xl text-[#006BA8] font-bold">
+                    <h2 className="text-xl text-secondary-celeste font-bold">
                       {t("home.cardTrip.titleNoGroup")}
                     </h2>
                     <a
@@ -118,7 +118,7 @@ const Home: React.FC<UserGroupStatusProps> = () => {
               ) : (
                 <div>
                   <div className="flex justify-between w-full px-2 pb-3">
-                    <h2 className="text-xl text-[#006BA8] font-bold">
+                    <h2 className="text-xl text-secondary-celeste font-bold">
                       {t("home.cardTrip.title")}
                     </h2>
                     <a
@@ -154,7 +154,7 @@ const Home: React.FC<UserGroupStatusProps> = () => {
           ) : (
             <div>
               <div className="flex justify-between w-full px-2 pb-3">
-                <h2 className="text-xl text-[#006BA8] font-bold">
+                <h2 className="text-xl text-secondary-celeste font-bold">
                   {t("home.cardTrip.title")}
                 </h2>
                 <a
