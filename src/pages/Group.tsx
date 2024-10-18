@@ -6,35 +6,45 @@ import GroupIconWhite from "@/assets/images/GroupIconWhite.svg";
 import GroupMember from "@/components/GroupMember";
 import InputGroup from "@/components/InputGroup";
 import GroupActivity from "@/components/GroupActivity";
-
-const dayNames = ["DOM", "LUN", "MAR", "MIE", "JUE", "VIE", "SAB"];
+import { useTranslation } from "react-i18next";
 
 function Group() {
   const [selectedDay, setSelectedDay] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState<string>("");
   const [activeTab, setActiveTab] = useState("grupo");
+  const { t } = useTranslation();
+
+  const dayNames = [
+    "group.dayNames.sun",
+    "group.dayNames.mon",
+    "group.dayNames.tue",
+    "group.dayNames.wed",
+    "group.dayNames.thu",
+    "group.dayNames.fri",
+    "group.dayNames.sat",
+  ];
 
   const members = [
-    { name: "Ana Gallinado", info: "Alumna 6to B" },
-    { name: "Juan Pérez", info: "Alumno 6to A" },
-    { name: "Lucía Fernández", info: "Alumna 6to B" },
+    { name: "group.members.user1_name", info: "group.members.user1_info" },
+    { name: "group.members.user2_name", info: "group.members.user2_info" },
+    { name: "group.members.user3_name", info: "group.members.user3_info" },
   ];
 
   const activities = [
     {
       date: "2024-10-10",
-      name: "Parrilla",
-      description: "Asado, traer lo que quieran beber",
+      name: "group.activities.name1",
+      description: "group.activities.description1",
     },
     {
       date: "2024-10-11",
-      name: "Reunión de equipo",
-      description: "Revisar el proyecto de clase",
+      name: "group.activities.name2",
+      description: "group.activities.description2",
     },
     {
       date: "2024-10-12",
-      name: "Día de deportes",
-      description: "Jugar fútbol en el parque",
+      name: "group.activities.name3",
+      description: "group.activities.description3",
     },
   ];
 
@@ -87,12 +97,12 @@ function Group() {
             }`}
             onClick={() => handleTabChange("grupo")}
           >
-            <img className="w-14" src={
-                activeTab === "excursiones"
-                  ? GroupIconBlue
-                  : GroupIconWhite
-              } alt="icono de grupo" />
-            <p className="font-semibold">Grupo</p>
+            <img
+              className="w-14"
+              src={activeTab === "excursiones" ? GroupIconBlue : GroupIconWhite}
+              alt="icono de grupo"
+            />
+            <p className="font-semibold">{t('group.group_p')}</p>
           </button>
           <button
             className={`flex flex-col rounded-full px-4 py-1 justify-center items-center ${
@@ -109,9 +119,9 @@ function Group() {
                   ? MountainIconWhite
                   : MountainIconBlue
               }
-              alt="icono de excursiones"
+              alt="icono de excursion"
             />
-            <p className="font-semibold">Excursiones</p>
+            <p className="font-semibold">{t('group.excursions_p')}</p>
           </button>
         </div>
         <div>
@@ -133,7 +143,7 @@ function Group() {
               onClick={() => handleDayClick(day.fullDate)}
             >
               <p className="text-2xl">{day.date}</p>
-              <p className="font-thin tracking-tighter">{dayNames[day.day]}</p>
+              <p className="font-thin tracking-tighter">{t(dayNames[day.day])}</p>
             </div>
           ))}
         </div>
@@ -146,16 +156,16 @@ function Group() {
               </p>
               <div className="p-3 pl-5 bg-secondary-purple rounded-3xl">
                 <p className="font-black text-primary-celeste">
-                  {selectedActivity.name}
+                {t(selectedActivity.name)}
                 </p>
                 <p className="font-thin text-secondary-celeste">
-                  {selectedActivity.description}
+                {t(selectedActivity.description)}
                 </p>
               </div>
             </div>
           ) : (
             <div className="p-4 mt-4 bg-white rounded-3xl">
-              <p>No hay actividades programadas para hoy</p>
+              <p>{t('group.no_activities_p')}</p>
             </div>
           )}
         </div>
@@ -170,25 +180,24 @@ function Group() {
                 alt="Logo de Barilo"
               />
               <p className="font-bold text-secondary-celeste">
-                Integrantes del grupo
+              {t('group.group_members_p')}
               </p>
             </div>
             {members.length === 0 ? (
               <div className="py-4 text-center">
                 <p className="font-bold text-primary-celeste">
-                  Aún no hay integrantes en el grupo.
+                {t('group.group_members_no_p')}
                 </p>
                 <p>
-                  Invita a gente a unirse al grupo para empezar la
-                  planificación.
+                {t('group.invite_user_p')}
                 </p>
               </div>
             ) : filteredMembers.length === 0 ? (
               <div className="py-4 text-center">
                 <p className="font-bold text-primary-celeste">
-                  No se encontraron miembros.
+                {t('group.no_members_p')}
                 </p>
-                <p>Intenta buscar por otro nombre.</p>
+                <p>{t('group.try_to_search')}</p>
               </div>
             ) : (
               <div className="flex flex-col gap-1">
@@ -211,17 +220,16 @@ function Group() {
                 alt="icono de excursiones"
               />
               <p className="font-bold text-secondary-celeste">
-                Exursiones a realizar
+              {t('group.excursions_to_take')}
               </p>
             </div>
             {activities.length === 0 ? (
               <div className="py-4 text-center">
                 <p className="font-bold text-primary-celeste">
-                  Aún no hay actividades para el grupo.
+                {t('group.no_activities_group')}
                 </p>
                 <p>
-                  Invita a gente a unirse al grupo para empezar la
-                  planificación.
+                {t('group.invite_user_p')}
                 </p>
               </div>
             ) : (

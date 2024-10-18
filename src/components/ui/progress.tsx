@@ -1,13 +1,15 @@
-import * as React from "react"
-import * as ProgressPrimitive from "@radix-ui/react-progress"
+import * as React from "react";
+import * as ProgressPrimitive from "@radix-ui/react-progress";
+import { useTranslation } from "react-i18next";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 import { RiTimeLine } from "react-icons/ri";
 
-interface ProgressProps extends React.ComponentPropsWithoutRef<typeof ProgressPrimitive.Root> {
-  value: number;  
-  goal: number; 
-  deadline: string;  
+interface ProgressProps
+  extends React.ComponentPropsWithoutRef<typeof ProgressPrimitive.Root> {
+  value: number;
+  goal: number;
+  deadline: string;
 }
 
 const Progress = React.forwardRef<
@@ -15,14 +17,22 @@ const Progress = React.forwardRef<
   ProgressProps
 >(({ className, value, goal, deadline, ...props }, ref) => {
   const percentage = (value / goal) * 100;
-  
-  return(
+  const { t } = useTranslation();
+
+  return (
     <div>
-      <p className="text-gray-500 text-sm mt-2">Se ha recaudado ${value} de ${goal}</p>
-      <div className="flex justify-between items-center">
-        <p className="text-blue-600 font-bold text-lg">{percentage}% del viaje</p>
+      <p className="mt-2 text-sm text-gray-500">
+        {t("progress.collected")}
+        {value} {t("progress.of")}
+        {goal}
+      </p>
+      <div className="flex items-center justify-between">
+        <p className="text-lg font-bold text-blue-600">
+          {percentage}
+          {t("progress.porcentage")}
+        </p>
         <div className="flex items-center">
-          <RiTimeLine className="text-gray-500" size={15}/>
+          <RiTimeLine className="text-gray-500" size={15} />
           <p className="text-sm ml-0.5 text-gray-500">{deadline}</p>
         </div>
       </div>
@@ -40,11 +50,9 @@ const Progress = React.forwardRef<
           style={{ transform: `translateX(-${100 - percentage}%)` }}
         />
       </ProgressPrimitive.Root>
-
     </div>
+  );
+});
+Progress.displayName = ProgressPrimitive.Root.displayName;
 
-  )
-})
-Progress.displayName = ProgressPrimitive.Root.displayName
-
-export { Progress }
+export { Progress };
