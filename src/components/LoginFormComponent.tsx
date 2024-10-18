@@ -57,7 +57,7 @@ export const LoginFormComponent: React.FC = () => {
       message: t('login_form_component.show_success_modal.message'),
       buttons: [
         {
-          label: t('login_form_component.show_success_modal.button_label'),
+          label: t('modals.login.error.message'),
           action: () => {
             setIsModalVisible(false);
             navigate("/home");
@@ -100,7 +100,7 @@ export const LoginFormComponent: React.FC = () => {
       return response.token;
     } catch (error) {
       console.error("Error durante el inicio de sesión:", error);
-      throw new Error(t('login_form_component.return.handleLogin.new_error'));
+      throw new Error(t('modals.login.error.message'));
     }
   };
 

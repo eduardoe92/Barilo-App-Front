@@ -166,7 +166,7 @@ export default function SideNavBar() {
                 !open && "w-0 translate-x-24"
               }  h-2/3 duration-500 overflow-hidden md:overflow-visible md:translate-x-0 md:hidden `}
             >
-              {t("navbar.language")}
+              {t("navbar.items.language")}
             </p>
             <p
               className={`${
