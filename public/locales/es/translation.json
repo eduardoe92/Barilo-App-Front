@@ -217,13 +217,13 @@
   "modals": {
     "register": {
       "success": {
-        "title": "¡Registro Exitoso!",
+        "title": "¡Registro Éxitoso!",
         "message": "Por favor iniciar sesión",
         "btn": "Login"
       },
       "error": {
         "title": "¡Vaya, algo ha salido mal!",
-        "message": "Por favor registresé nuevamente",
+        "message": "Por favor registrese nuevamente",
         "btn": "Login",
         "btn2": "Cerrar"
       }
@@ -412,10 +412,10 @@
       "icon_button1": "Google / Próximante",
       "icon_button2": "Apple / Próximante",
       "p": "¿Aún no tienes una cuenta?",
-      "a": "Registrate"
+      "a": "Regístrate"
     }
   },
-  "page_register": "Registrate para acceder a tu cuenta",
+  "page_register": "Regístrate para acceder a tu cuenta",
   "register_form_component": {
     "form_label_type_user": "Tipo de usuario",
     "form_label_coordinator": "Coordinador",
@@ -444,7 +444,7 @@
     "link": "Inicia sesión"
   },
   "forgot_password": {
-    "info": "Ingresa tu correo para que enviemos un enlace para recuperar tu contraseña",
+    "info": "Ingresa tu correo para recuperar tu contraseña",
     "f_p_component": {
       "h_p_reset": "No se pudo enviar el correo de restablecimiento.",
       "custom_input": {
