@@ -55,7 +55,7 @@
     "react-slick": "^0.30.2",
     "react-swipeable": "^7.0.1",
     "slick-carousel": "^1.8.1",
-    "swiper": "^11.1.4",
+    "swiper": "^11.1.14",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
     "template-vite-react": "file:",
