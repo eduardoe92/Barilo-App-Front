@@ -223,7 +223,7 @@
       },
       "error": {
         "title": "¡Vaya, algo ha salido mal!",
-        "message": "Por favor registrese nuevamente",
+        "message": "Por favor regístrese nuevamente",
         "btn": "Login",
         "btn2": "Cerrar"
       }
