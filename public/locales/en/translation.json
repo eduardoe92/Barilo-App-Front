@@ -444,7 +444,7 @@
     "link": "Log in"
   },
   "forgot_password": {
-    "info": "Enter your email so we can send a link to reset your password",
+    "info": "Enter your email to recover your password",
     "f_p_component": {
       "h_p_reset": "The reset email could not be sent.",
       "custom_input": {
