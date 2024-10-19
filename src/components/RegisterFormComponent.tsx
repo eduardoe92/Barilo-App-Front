@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
 import { registerUser } from "@/services/authService";
 import { registerSchema } from "../validation/registerSchema";
 import { z } from "zod";
@@ -22,7 +21,7 @@ import { useTranslation } from "react-i18next";
 
 type RegisterUserForm = z.infer<typeof registerSchema>;
 
-export const RegisterFormComponent: React.FC = () => {
+export const RegisterFormComponent: React.FC<{ changeStep: (step: number) => void }> = ({ changeStep }) => {
   const { t } = useTranslation();
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -144,7 +143,7 @@ export const RegisterFormComponent: React.FC = () => {
               </FormItem>
             )}
           />
-          <div className="space-y-6">
+          <div className="space-y-1">
             <CustomInput
               type="text"
               label={t('register_form_component.custom_input_name.label')}
@@ -186,16 +185,20 @@ export const RegisterFormComponent: React.FC = () => {
               {form.formState.errors.passwordConfirmation?.message}
             </FormMessage>
           </div>
-          <div className="mt-8 space-y-3">
+          <div className="mt-6 space-y-3">
             <CustomButton type="submit" disabled={isLoading}>
               {isLoading ? t('register_form_component.custom_button.text1') : t('register_form_component.custom_button.text2')}
             </CustomButton>
           </div>
           <p className="mt-4 text-sm font-normal leading-none text-center text-primary-celeste font-secondary">
           {t('register_form_component.p')}{" "}
-            <Link to="/login" className="antialiased font-bold">
-            {t('register_form_component.link')}{" "}
-            </Link>
+          <button 
+              type="button" 
+              onClick={() => changeStep(0)}
+              className="antialiased font-bold"
+            >
+              {t("forgot_password.f_p_component.link")}
+            </button>
           </p>
         </form>
       </Form>

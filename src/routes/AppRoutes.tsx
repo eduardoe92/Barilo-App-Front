@@ -4,16 +4,15 @@ import {
   Routes,
   useLocation,
 } from "react-router-dom";
-import PlanTrip from "@/pages/PlanTrip";
 import Landing from "@/pages/Landing";
-import Login from "@/pages/Login";
-import Register from "@/pages/Register";
+import AuthPage from "@/pages/AuthPage";
+import Home from "@/pages/Home";
+import PlanTrip from "@/pages/PlanTrip";
 import Error from "@/pages/Error";
 import Access from "@/pages/Access";
 import CreateTrip from "@/pages/CreateTrip";
 import PlanTripGroup from "@/pages/PlanTripGroup";
 import Group from "@/pages/Group";
-import Home from "@/pages/Home";
 import Crowdfunding, { CrowdfundingDonor } from "@/pages/Crowdfunding";
 import CrowdfundingForm from "@/pages/CrowdfundingForm";
 import MercadoPago from "@/pages/MercadoPago";
@@ -27,7 +26,6 @@ import PrivateRoute from "./PrivateRoute";
 import Profile from "@/components/profile/Profile";
 import EditProfile from "@/components/profile/EditProfile";
 import ProfileSettings from "@/components/profile/ProfileSettings";
-import ForgotPassword from "@/pages/ForgotPassword";
 import HelpCenter from "@/pages/helpCenter";
 import Language from "@/components/profile/Language";
 import { useAuth } from "@/context/AuthProvider";
@@ -64,9 +62,7 @@ function AppRoutes() {
       {shouldShowHeaderFooter() && <Header />}
       <Routes>
         <Route path="/" element={<Landing />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/auth" element={<AuthPage />} />
         <Route element={<PrivateRoute />}>
           <Route path="/home" element={<Home token={token} />} />
           <Route path="/trip-component" element={<TripComponent />} />
