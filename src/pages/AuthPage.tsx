@@ -9,8 +9,10 @@ import { ForgotPasswordComponent } from "@/components/ForgotPasswordComponent";
 
 export default function AuthPage() {
   const { t } = useTranslation();
-  const [activeStep, setActiveStep] = useState(0);
+  const query = new URLSearchParams(location.search);
+  const view = query.get("view") || "login";
 
+  const [activeStep, setActiveStep] = useState(view === "register" ? 1 : 0);
   const components = [
     {
       title: t("page_login"),
@@ -58,7 +60,7 @@ export default function AuthPage() {
         {components[activeStep].title}
       </h2>
       <div className="w-full max-w-[366px] px-4">
-      <Slider key={activeStep} {...settings} initialSlide={activeStep}>
+        <Slider key={activeStep} {...settings} initialSlide={activeStep}>
           {components.map((item, index) => (
             <div key={index} className="flex justify-center">
               <div className="w-full p-2">{item.component}</div>
