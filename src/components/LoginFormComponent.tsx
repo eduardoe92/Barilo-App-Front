@@ -28,7 +28,9 @@ interface ModalContent {
   }[];
 }
 
-export const LoginFormComponent: React.FC = () => {
+export const LoginFormComponent: React.FC<{
+  changeStep: (step: number) => void;
+}> = ({ changeStep }) => {
   const { t } = useTranslation();
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -53,11 +55,11 @@ export const LoginFormComponent: React.FC = () => {
 
   const showSuccessModal = () => {
     setModalContent({
-      title: t('login_form_component.show_success_modal.title'),
-      message: t('login_form_component.show_success_modal.message'),
+      title: t("login_form_component.show_success_modal.title"),
+      message: t("login_form_component.show_success_modal.message"),
       buttons: [
         {
-          label: t('modals.login.error.message'),
+          label: t("modals.login.error.message"),
           action: () => {
             setIsModalVisible(false);
             navigate("/home");
@@ -94,13 +96,16 @@ export const LoginFormComponent: React.FC = () => {
     setIsModalVisible(true);
   };
 
-  const handleLogin = async (email: string, password: string): Promise<string> => {
+  const handleLogin = async (
+    email: string,
+    password: string
+  ): Promise<string> => {
     try {
       const response = await loginUser({ mail: email, password });
       return response.token;
     } catch (error) {
       console.error("Error durante el inicio de sesión:", error);
-      throw new Error(t('modals.login.error.message'));
+      throw new Error(t("modals.login.error.message"));
     }
   };
 
@@ -123,63 +128,80 @@ export const LoginFormComponent: React.FC = () => {
   const handleGoogleLogin = () => {
     console.log(`Google login simulado`);
   };
-  
+
   const handleAppleLogin = () => {
     console.log(`Apple login simulado`);
-  };  
+  };
 
   return (
     <div>
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col max-w-md">
-          <div className="space-y-6">
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className="flex flex-col max-w-md"
+        >
+          <div className="space-y-1">
             <CustomInput
               type="email"
-              label={t('login_form_component.return.custom_input1.label')}
+              label={t("login_form_component.return.custom_input1.label")}
               name="mail"
-              placeholder={t('login_form_component.return.custom_input1.placeholder')}
+              placeholder={t(
+                "login_form_component.return.custom_input1.placeholder"
+              )}
               field={form.register("mail")}
             />
             <FormMessage>{form.formState.errors.mail?.message}</FormMessage>
             <CustomInput
-              label={t('login_form_component.return.custom_input2.label')}
+              label={t("login_form_component.return.custom_input2.label")}
               name="password"
               type="password"
-              placeholder={t('login_form_component.return.custom_input2.placeholder')}
+              placeholder={t(
+                "login_form_component.return.custom_input2.placeholder"
+              )}
               field={form.register("password")}
               showPasswordToggle
               showPassword={showPassword}
               setShowPassword={setShowPassword}
             />
           </div>
-          <a
-            href="/forgot-password"
+          <button
+            type="button"
+            onClick={() => changeStep(2)}
             className="mt-3 text-sm font-normal leading-none text-right text-primary-celeste font-secondary"
           >
-            {t('login_form_component.return.forget_password')}
-          </a>
+            {t("login_form_component.return.forget_password")}
+          </button>
           <FormMessage>{form.formState.errors.password?.message}</FormMessage>
-          <div className="space-y-3 mt-14">
+          <div className="mt-6 space-y-2">
             <CustomButton type="submit" disabled={isLoading}>
-              {isLoading ? t('login_form_component.return.custom_button.text1') : t('login_form_component.return.custom_button.text2')}
+              {isLoading
+                ? t("login_form_component.return.custom_button.text1")
+                : t("login_form_component.return.custom_button.text2")}
             </CustomButton>
             <Separator className="" />
             <IconButton
               className="bg-[#08121f]"
               icon={FaGoogle}
-              label={t('login_form_component.return.icon_button1')}
+              label={t("login_form_component.return.icon_button1")}
               onClick={handleGoogleLogin}
             />
             <IconButton
               icon={ImAppleinc}
-              label={t('login_form_component.return.icon_button2')}
+              label={t("login_form_component.return.icon_button2")}
               className="bg-[#2d3e50]"
               onClick={handleAppleLogin}
             />
           </div>
           <p className="mt-4 text-sm font-normal leading-none text-center text-primary-celeste font-secondary">
-          {t('login_form_component.return.p')}{" "}
-            <a href="/register" className="antialiased font-bold"> {t('login_form_component.return.a')}</a>
+            {t("login_form_component.return.p")}{" "}
+            <button
+              type="button"
+              onClick={() => changeStep(1)}
+              className="antialiased font-bold"
+            >
+              {" "}
+              {t("login_form_component.return.a")}
+            </button>
           </p>
         </form>
       </Form>
