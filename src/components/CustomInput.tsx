@@ -40,7 +40,7 @@ export const CustomInput: React.FC<CustomInputProps> = ({
 							type='button'
 							size='icon'
 							variant='link'
-							className='absolute inset-y-0 right-0 flex items-center pr-3 text-gray-300'
+							className='absolute inset-y-0 flex items-center pr-0 text-gray-300 right-1'
 							onClick={() => setShowPassword(!showPassword)}
 						>
 							{showPassword ? (
