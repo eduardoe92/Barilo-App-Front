@@ -80,7 +80,7 @@ export const LoginFormComponent: React.FC<{
           label: t("modals.login.error.btn"),
           action: () => {
             setIsModalVisible(false);
-            navigate("/register");
+            navigate("/auth?view=register");
           },
           isPrimary: true,
         },

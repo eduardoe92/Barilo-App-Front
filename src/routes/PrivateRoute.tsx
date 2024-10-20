@@ -5,7 +5,7 @@ const PrivateRoute: React.FC = () => {
   const { isAuthenticated } = useAuth();
 
   // Si el usuario está autenticado, renderiza el componente hijo (Outlet)
-  return isAuthenticated ? <Outlet /> : <Navigate to="/login" />;
+  return isAuthenticated ? <Outlet /> : <Navigate to="/auth" />;
 };
 
 export default PrivateRoute;
