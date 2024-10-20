@@ -5,30 +5,16 @@ import { z } from "zod";
 import { CustomInput } from "@/components/CustomInput";
 import { CustomButton } from "@/components/CustomButton";
 import { Form, FormMessage } from "@/components/ui/form";
-import { useNavigate } from "react-router-dom";
 import { forgotPasswordSchema } from "../validation/forgotPasswordSchema";
 import { useTranslation } from "react-i18next";
-import ModalComponent from "./ModalComponent";
 import { sendPasswordResetEmail } from "../services/authService";
+import { ModalContent } from "../types/Modal";
 
 type ForgotPasswordForm = z.infer<typeof forgotPasswordSchema>;
 
-interface ModalContent {
-  title: string;
-  message: string;
-  buttons: {
-    label: string;
-    action: () => void;
-    isPrimary: boolean;
-  }[];
-}
-
-export const ForgotPasswordComponent: React.FC<{ changeStep: (step: number) => void }> = ({ changeStep }) => {
+export const ForgotPasswordComponent: React.FC<{ changeStep: (step: number) => void, showModal: (content: ModalContent) => void }> = ({ changeStep, showModal }) => {
   const { t } = useTranslation();
   const [isLoading, setIsLoading] = useState(false);
-  const [isModalVisible, setIsModalVisible] = useState(false);
-  const [modalContent, setModalContent] = useState<ModalContent | null>(null);
-  const navigate = useNavigate();
 
   const form = useForm<ForgotPasswordForm>({
     resolver: zodResolver(forgotPasswordSchema),
@@ -38,38 +24,34 @@ export const ForgotPasswordComponent: React.FC<{ changeStep: (step: number) => v
   });
 
   const showSuccessModal = () => {
-    setModalContent({
+    showModal ({
       title: t("modals.passwordReset.success.title"),
       message: t("modals.passwordReset.success.message"),
       buttons: [
         {
           label: t("modals.passwordReset.success.btn"),
           action: () => {
-            setIsModalVisible(false);
-            navigate("/auth");
+            setTimeout(() => changeStep(0), 100);
           },
           isPrimary: true,
         },
       ],
     });
-    setIsModalVisible(true);
   };
 
   const showErrorModal = (errorMessage: string) => {
-    setModalContent({
+    showModal ({
       title: t("modals.passwordReset.error.title"),
       message: errorMessage,
       buttons: [
         {
           label: t("modals.passwordReset.error.btn"),
           action: () => {
-            setIsModalVisible(false);
           },
           isPrimary: false,
         },
       ],
     });
-    setIsModalVisible(true);
   };
 
   const handlePasswordReset = async (email: string) => {
@@ -108,14 +90,14 @@ export const ForgotPasswordComponent: React.FC<{ changeStep: (step: number) => v
             />
             <FormMessage>{form.formState.errors.mail?.message}</FormMessage>
           </div>
-          <div className="mt-6 space-y-3">
+          <div className="mt-4 space-y-3">
             <CustomButton type="submit" disabled={isLoading}>
               {isLoading
                 ? t("forgot_password.f_p_component.custom_button.text1")
                 : t("forgot_password.f_p_component.custom_button.text2")}
             </CustomButton>
           </div>
-          <p className="mt-4 text-sm font-normal leading-none text-center text-primary-celeste font-secondary">
+          <p className="mt-2 text-sm font-normal leading-none text-center text-primary-celeste font-secondary">
             {t("forgot_password.f_p_component.p")}{" "}
             <button 
               type="button" 
@@ -127,14 +109,6 @@ export const ForgotPasswordComponent: React.FC<{ changeStep: (step: number) => v
           </p>
         </form>
       </Form>
-      {isModalVisible && modalContent && (
-        <ModalComponent
-          title={modalContent.title}
-          message={modalContent.message}
-          buttons={modalContent.buttons}
-          onClose={() => setIsModalVisible(false)}
-        />
-      )}
     </div>
   );
 };

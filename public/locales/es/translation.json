@@ -223,7 +223,7 @@
       },
       "error": {
         "title": "¡Vaya, algo ha salido mal!",
-        "message": "Por favor registrese nuevamente",
+        "message": "Por favor regístrese nuevamente",
         "btn": "Login",
         "btn2": "Cerrar"
       }
@@ -452,7 +452,7 @@
         "placeholder": "Introduce tu correo electrónico"
       },
       "custom_button": {
-        "text1": "Enviando",
+        "text1": "Enviando...",
         "text2": "Enviar enlace"
       },
       "p": "¿Ya tienes una cuenta?",
