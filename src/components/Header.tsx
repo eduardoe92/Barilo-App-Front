@@ -4,10 +4,18 @@ import ProfilePicture from "@/assets/images/2810502.png";
 import { Link } from "react-router-dom";
 import { useUserProfile } from "@/hooks/useUserProfile";
 import { useTranslation } from "react-i18next";
+import { useState } from "react";
+import PaymentHistoryComponent from "./PaymentHistoryComponent";
 
 const Header = () => {
   const { t } = useTranslation();
   const { profile } = useUserProfile();
+  const [isNotificationOpen, setNotificationOpen] = useState(false);
+
+  const handleBellClick = () => {
+    setNotificationOpen(!isNotificationOpen);
+    console.log(isNotificationOpen)
+  };
 
   return (
     <div className="sticky top-0 left-0 z-10 w-full bg-white shadow-md">
@@ -22,7 +30,7 @@ const Header = () => {
           </Link>
           <div className="leading-tight">
             <p className="text-secondary-celeste">{t("home.header")}</p>
-            <p className="text-primary-celeste font-bold">
+            <p className="font-bold text-primary-celeste">
               {profile ? profile.name : t("loading")}
             </p>
           </div>
@@ -31,13 +39,17 @@ const Header = () => {
           <Link to="/profileSettings">
             <CiSettings
               size={35}
-              className="bg-inactive-button-bg rounded-full p-1 text-primary-celeste"
+              className="p-1 rounded-full bg-inactive-button-bg text-primary-celeste"
             />
           </Link>
           <FaRegBell
+            onClick={handleBellClick}
             size={32}
             className="bg-inactive-button-bg rounded-full p-1.5 text-primary-celeste"
           />
+          {isNotificationOpen && (
+            <PaymentHistoryComponent/>
+          )}
         </div>
       </div>
     </div>

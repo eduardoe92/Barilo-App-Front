@@ -8,6 +8,13 @@ interface PaymentResponse {
     userId: number;
 }
 
+interface PaymentHistoryResponse {
+    id: number;
+    amount: number;
+    paymentType: string;
+    date: Date;
+}
+
 type PaymentForm = {
     amount: number;
     paymentType: string;
@@ -39,3 +46,22 @@ export const postPaymentUser = async (
         return null;
     }
 };
+
+export const getPaymentHistoryUser = async (
+    token: string
+): Promise<PaymentHistoryResponse | null> => {
+    try {
+        const response = await axios.get(`${API_URL}/payments/history`,
+            {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            });
+            console.log(response.data)
+        return response.data;
+    } catch (error) {
+        console.error("Error al procesar el pago:", error);
+        return null;
+    }
+};
+
