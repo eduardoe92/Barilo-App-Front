@@ -49,7 +49,7 @@ export const RegisterFormComponent: React.FC<{ changeStep: (step: number) => voi
           label: t("modals.register.success.btn"),
           action: () => {
             setIsModalVisible(false);
-            navigate("/login");
+            navigate("/auth");
           },
           isPrimary: true,
         },
@@ -66,7 +66,7 @@ export const RegisterFormComponent: React.FC<{ changeStep: (step: number) => voi
         {
           label: t("modals.register.error.btn"),
           action: () => {
-            setIsModalVisible(false), navigate("/login");
+            setIsModalVisible(false), navigate("/auth?view=register");
           },
           isPrimary: true,
         },

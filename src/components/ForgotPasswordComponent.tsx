@@ -46,7 +46,7 @@ export const ForgotPasswordComponent: React.FC<{ changeStep: (step: number) => v
           label: t("modals.passwordReset.success.btn"),
           action: () => {
             setIsModalVisible(false);
-            navigate("/login");
+            navigate("/auth");
           },
           isPrimary: true,
         },
