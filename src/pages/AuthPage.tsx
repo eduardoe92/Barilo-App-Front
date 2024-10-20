@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
@@ -6,25 +6,39 @@ import logo from "@/assets/images/imago.svg";
 import { LoginFormComponent } from "@/components/LoginFormComponent";
 import { RegisterFormComponent } from "@/components/RegisterFormComponent";
 import { ForgotPasswordComponent } from "@/components/ForgotPasswordComponent";
+import ModalComponent from "@/components/ModalComponent";
 
 export default function AuthPage() {
   const { t } = useTranslation();
   const query = new URLSearchParams(location.search);
   const view = query.get("view") || "login";
 
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [modalContent, setModalContent] = useState(null);
+
+  const showModal = (content) => {
+    setModalContent(content);
+    setIsModalVisible(true);
+  };
+
+  const closeModal = () => {
+    setIsModalVisible(false);
+    setModalContent(null);
+  };
+
   const [activeStep, setActiveStep] = useState(view === "register" ? 1 : 0);
   const components = [
     {
       title: t("page_login"),
-      component: <LoginFormComponent changeStep={setActiveStep} />,
+      component: <LoginFormComponent changeStep={setActiveStep} showModal={showModal} />,
     },
     {
       title: t("page_register"),
-      component: <RegisterFormComponent changeStep={setActiveStep} />,
+      component: <RegisterFormComponent changeStep={setActiveStep} showModal={showModal} />,
     },
     {
       title: t("forgot_password.info"),
-      component: <ForgotPasswordComponent changeStep={setActiveStep} />,
+      component: <ForgotPasswordComponent changeStep={setActiveStep} showModal={showModal} />,
     },
   ];
 
@@ -46,7 +60,7 @@ export default function AuthPage() {
           className="w-[300px] h-auto cursor-pointer"
         />
       </Link>
-      <div className="flex justify-center mb-4">
+      <div className="flex justify-center py-2">
         {components.map((_, index) => (
           <div
             key={index}
@@ -68,6 +82,14 @@ export default function AuthPage() {
           ))}
         </Slider>
       </div>
+      {isModalVisible && (
+        <ModalComponent
+          title={modalContent.title}
+          message={modalContent.message}
+          buttons={modalContent.buttons}
+          onClose={closeModal}
+        />
+      )}
     </div>
   );
 }

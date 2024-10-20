@@ -452,7 +452,7 @@
         "placeholder": "Enter your email"
       },
       "custom_button": {
-        "text1": "Sending",
+        "text1": "Sending...",
         "text2": "Send link"
       },
       "p": "Already have an account?",

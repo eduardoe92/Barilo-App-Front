@@ -13,31 +13,17 @@ import { useNavigate } from "react-router-dom";
 import { loginSchema } from "../validation/loginSchema";
 import { useAuth } from "../context/AuthProvider";
 import { useTranslation } from "react-i18next";
-import ModalComponent from "./ModalComponent";
 import { loginUser } from "../services/authService";
+import { ModalContent } from "../types/Modal";
 
 type LoginUserForm = z.infer<typeof loginSchema>;
 
-interface ModalContent {
-  title: string;
-  message: string;
-  buttons: {
-    label: string;
-    action: () => void;
-    isPrimary: boolean;
-  }[];
-}
-
-export const LoginFormComponent: React.FC<{
-  changeStep: (step: number) => void;
-}> = ({ changeStep }) => {
+export const LoginFormComponent: React.FC<{ changeStep: (step: number) => void, showModal: (content: ModalContent) => void }> = ({ changeStep, showModal }) => {
   const { t } = useTranslation();
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const { login: authLogin, isAuthenticated } = useAuth();
-  const [isModalVisible, setIsModalVisible] = useState(false);
-  const [modalContent, setModalContent] = useState<ModalContent | null>(null);
 
   useEffect(() => {
     if (isAuthenticated) {
@@ -54,46 +40,41 @@ export const LoginFormComponent: React.FC<{
   });
 
   const showSuccessModal = () => {
-    setModalContent({
+    showModal({
       title: t("login_form_component.show_success_modal.title"),
       message: t("login_form_component.show_success_modal.message"),
       buttons: [
         {
           label: t("modals.login.error.message"),
           action: () => {
-            setIsModalVisible(false);
             navigate("/home");
           },
           isPrimary: true,
         },
       ],
     });
-    setIsModalVisible(true);
   };
 
   const showErrorModal = (errorMessage: string) => {
-    setModalContent({
+    showModal({
       title: t("modals.login.error.title"),
       message: errorMessage,
       buttons: [
         {
           label: t("modals.login.error.btn"),
           action: () => {
-            setIsModalVisible(false);
-            navigate("/auth?view=register");
+            setTimeout(() => changeStep(1), 100);
           },
           isPrimary: true,
         },
         {
           label: "Volver",
           action: () => {
-            setIsModalVisible(false);
           },
           isPrimary: false,
         },
       ],
     });
-    setIsModalVisible(true);
   };
 
   const handleLogin = async (
@@ -164,15 +145,15 @@ export const LoginFormComponent: React.FC<{
               setShowPassword={setShowPassword}
             />
           </div>
+          <FormMessage>{form.formState.errors.password?.message}</FormMessage>
           <button
             type="button"
             onClick={() => changeStep(2)}
-            className="mt-3 text-sm font-normal leading-none text-right text-primary-celeste font-secondary"
+            className="mt-2 text-sm font-normal leading-none text-right text-primary-celeste font-secondary"
           >
             {t("login_form_component.return.forget_password")}
           </button>
-          <FormMessage>{form.formState.errors.password?.message}</FormMessage>
-          <div className="mt-6 space-y-2">
+          <div className="mt-4 space-y-2">
             <CustomButton type="submit" disabled={isLoading}>
               {isLoading
                 ? t("login_form_component.return.custom_button.text1")
@@ -192,7 +173,7 @@ export const LoginFormComponent: React.FC<{
               onClick={handleAppleLogin}
             />
           </div>
-          <p className="mt-4 text-sm font-normal leading-none text-center text-primary-celeste font-secondary">
+          <p className="mt-2 text-sm font-normal leading-none text-center text-primary-celeste font-secondary">
             {t("login_form_component.return.p")}{" "}
             <button
               type="button"
@@ -205,14 +186,6 @@ export const LoginFormComponent: React.FC<{
           </p>
         </form>
       </Form>
-      {isModalVisible && modalContent && (
-        <ModalComponent
-          title={modalContent.title}
-          message={modalContent.message}
-          buttons={modalContent.buttons}
-          onClose={() => setIsModalVisible(false)}
-        />
-      )}
     </div>
   );
 };
