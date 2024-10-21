@@ -25,20 +25,20 @@ export default function LandingComponent() {
                 <h1 className="text-3xl font-bold tracking-tighter text-white sm:text-4xl md:text-5xl lg:text-6xl font-primary">
                   {t("landing.welcome.title")}
                 </h1>
-                <p className="mx-auto max-w-[900px] text-md md:text-2xl lg:text-base xl:text-xl font-secondary text-white">
+                <p className="mx-auto lg:max-w-[40em] text-md md:text-2xl lg:text-base xl:text-xl font-secondary text-white">
                   {t("landing.welcome.text1")}
                 </p>
-                <p className="mx-auto max-w-[900px] text-md md:text-2xl lg:text-base xl:text-xl font-secondary text-white">
+                <p className="mx-auto lg:max-w-[40em] text-md md:text-2xl lg:text-base xl:text-xl font-secondary text-white">
                   {t("landing.welcome.text2")}
                 </p>
                 <div className="flex flex-col items-center justify-center gap-y-3 md:flex-row md:space-x-4">
                   <Link to="/auth">
-                    <CustomButton className="w-full bg-white text-secondary-pink hover:bg-secondary-purple">
+                    <CustomButton className="flex flex-wrap w-[7em] bg-white text-secondary-pink hover:bg-secondary-purple">
                       {t("buttons.landing.login")}
                     </CustomButton>
                   </Link>
                   <Link to="/auth?view=register">
-                    <CustomButton className="text-white bg-transparent border border-white hover:bg-white hover:text-secondary-pink">
+                    <CustomButton className="flex flex-wrap w-[7em] text-white bg-transparent border border-white hover:bg-white hover:text-secondary-pink">
                       {t("buttons.landing.register")}
                     </CustomButton>
                   </Link>
