@@ -24,37 +24,37 @@ function PaymentMethod() {
   return (
     <div className="md:mx-28 lg:mx-44 2xl:mx-72">
         <div className="flex justify-center items-center my-8">
-            <button className="absolute left-6 pb-1 text-secondary-celeste text-2xl" onClick={() => navigate(-1)}><IoIosArrowBack /></button>
-            <h1 className="text-2xl text-secondary-celeste font-primary font-semibold">{t('views_payment.payment_method.title')}</h1>
+            <button className="absolute left-6 pb-1 text-[--secondary-celeste] text-2xl" onClick={() => navigate(-1)}><IoIosArrowBack /></button>
+            <h1 className="text-2xl text-[--secondary-celeste] font-['League_Spartan'] font-semibold">{t('views_payment.payment_method.title')}</h1>
         </div>
         <div>
-            <h2 className="mx-8 text-xl font-primary my-1">{t('views_payment.payment_method.caption_1')}</h2>
-            <div onClick={() => handlePaymentMethodClick('card')} className="flex items-center justify-between mx-8 bg-[#ECF1FF] rounded-2xl h-11 text-secondary-celeste mb-8">
+            <h2 className="mx-8 text-xl font-['League_Spartan'] my-1">{t('views_payment.payment_method.caption_1')}</h2>
+            <div onClick={() => handlePaymentMethodClick('card')} className="flex items-center justify-between mx-8 bg-[#ECF1FF] rounded-2xl h-11 text-[--secondary-celeste] mb-8">
                 <div className="flex pl-2 items-center">
                     <CiCreditCard1 className="text-2xl"/>
-                    <h2 className="text-xl text-center pl-2 font-primary">{t('views_payment.payment_method.option_1')}</h2>
+                    <h2 className="text-xl text-center pl-2 font-['League_Spartan']">{t('views_payment.payment_method.option_1')}</h2>
                 </div>
                 <FaRegCircle className="mr-2"/>
             </div>
-            <h2 className="mx-8 text-xl font-primary my-1">{t('views_payment.payment_method.caption_2')}</h2>
-            <div onClick={() => handlePaymentMethodClick('mercado-pago')} className="flex items-center justify-between mx-8 bg-[#ECF1FF] rounded-2xl h-11 text-secondary-celeste my-2">
+            <h2 className="mx-8 text-xl font-['League_Spartan'] my-1">{t('views_payment.payment_method.caption_2')}</h2>
+            <div onClick={() => handlePaymentMethodClick('mercado-pago')} className="flex items-center justify-between mx-8 bg-[#ECF1FF] rounded-2xl h-11 text-[--secondary-celeste] my-2">
                 <div className="flex pl-2 items-center">
                     <SiMercadopago  className="text-2xl"/>
-                    <h2 className="text-xl text-center pl-2 font-primary">{t('views_payment.payment_method.option_2')}</h2>
+                    <h2 className="text-xl text-center pl-2 font-['League_Spartan']">{t('views_payment.payment_method.option_2')}</h2>
                 </div>
                 <FaRegCircle className="mr-2"/>
             </div>
-            <div onClick={() => handlePaymentMethodClick('paypal')} className="flex items-center justify-between mx-8 bg-[#ECF1FF] rounded-2xl h-11 text-secondary-celeste my-2">
+            <div onClick={() => handlePaymentMethodClick('paypal')} className="flex items-center justify-between mx-8 bg-[#ECF1FF] rounded-2xl h-11 text-[--secondary-celeste] my-2">
                 <div className="flex pl-2 items-center">
                     <RiPaypalLine className="text-2xl"/>
-                    <h2 className="text-xl text-center pl-2 font-primary">{t('views_payment.payment_method.option_3')}</h2>
+                    <h2 className="text-xl text-center pl-2 font-['League_Spartan']">{t('views_payment.payment_method.option_3')}</h2>
                 </div>
                 <FaRegCircle className="mr-2"/>
             </div>
-            <div onClick={() => handlePaymentMethodClick('personal-pay')} className="flex items-center justify-between mx-8 bg-[#ECF1FF] rounded-2xl h-11 text-secondary-celeste my-2">
+            <div onClick={() => handlePaymentMethodClick('personal-pay')} className="flex items-center justify-between mx-8 bg-[#ECF1FF] rounded-2xl h-11 text-[--secondary-celeste] my-2">
                 <div className="flex pl-2 items-center">
                     <Bitcoin className="text-2xl"/>
-                    <h2 className="text-xl text-center pl-2 font-primary">{t('views_payment.payment_method.option_4')}</h2>
+                    <h2 className="text-xl text-center pl-2 font-['League_Spartan']">{t('views_payment.payment_method.option_4')}</h2>
                 </div>
                 <FaRegCircle className="mr-2"/>
             </div>

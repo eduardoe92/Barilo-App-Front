@@ -58,8 +58,8 @@ const PaymentMethodCard = () => {
     return (
         <div className="card md:mx-36 lg:mx-44 flex flex-col justify-center items-center">
             <div className="flex justify-center items-center my-8">
-                <button className="absolute left-6 pb-1 text-secondary-celeste text-2xl" onClick={() => navigate(-1)}><IoIosArrowBack /></button>
-                <h1 className="text-2xl text-secondary-celeste font-primary font-semibold">{t('views_payment.payment_method_card.title')}</h1>
+                <button className="absolute left-6 pb-1 text-[--secondary-celeste] text-2xl" onClick={() => navigate(-1)}><IoIosArrowBack /></button>
+                <h1 className="text-2xl text-[--secondary-celeste] font-['League_Spartan'] font-semibold">{t('views_payment.payment_method_card.title')}</h1>
             </div>
             <div className="card-body w-full justify-center flex flex-col">
 
@@ -78,7 +78,7 @@ const PaymentMethodCard = () => {
                             name="name"
                             id="name"
                             maxLength={30}
-                            className="form-control h-11 mt-2 mb-6 rounded-3xl bg-[#ECF1FF] pl-6 text-xl font-primary text-secondary-celeste"
+                            className="form-control h-11 mt-2 mb-6 rounded-3xl bg-[#ECF1FF] pl-6 text-xl font-['League_Spartan'] text-[--secondary-celeste]"
                             onChange={handleInputChange}
                             onFocus={handleFocusChange}
                         />
@@ -90,7 +90,7 @@ const PaymentMethodCard = () => {
                             name="number"
                             id="number"
                             maxLength={16}
-                            className="form-control h-11 mt-2 mb-6 rounded-3xl bg-[#ECF1FF] pl-6 text-xl font-primary text-secondary-celeste"
+                            className="form-control h-11 mt-2 mb-6 rounded-3xl bg-[#ECF1FF] pl-6 text-xl font-['League_Spartan'] text-[--secondary-celeste]"
                             onChange={handleInputChange}
                             onFocus={handleFocusChange}
                         />
@@ -103,7 +103,7 @@ const PaymentMethodCard = () => {
                                 name="expiry"
                                 id="expiry"
                                 maxLength={4}
-                                className="form-control w-36 h-11 mt-2 mb-6 rounded-3xl bg-[#ECF1FF] pl-6 text-xl font-primary text-secondary-celeste"
+                                className="form-control w-36 h-11 mt-2 mb-6 rounded-3xl bg-[#ECF1FF] pl-6 text-xl font-['League_Spartan'] text-[--secondary-celeste]"
                                 onChange={handleInputChange}
                                 onFocus={handleFocusChange}
                             />
@@ -115,7 +115,7 @@ const PaymentMethodCard = () => {
                                 name="cvc"
                                 id="cvc"
                                 maxLength={4}
-                                className="form-control w-28 h-11 mt-2 mb-6 rounded-3xl bg-[#ECF1FF] pl-6 text-xl font-primary text-secondary-celeste"
+                                className="form-control w-28 h-11 mt-2 mb-6 rounded-3xl bg-[#ECF1FF] pl-6 text-xl font-['League_Spartan'] text-[--secondary-celeste]"
                                 onChange={handleInputChange}
                                 onFocus={handleFocusChange}
                             />
@@ -123,7 +123,7 @@ const PaymentMethodCard = () => {
                     </div>
                     
                     <div className="flex justify-center py-10">
-                        <button onClick={() => handlePaymentMethodClick()} className="w-64 h-11 bg-secondary-celeste text-[--active-button-text] rounded-3xl">{t('views_payment.payment_method_card.save_card')}</button>
+                        <button onClick={() => handlePaymentMethodClick()} className="w-64 h-11 bg-[--secondary-celeste] text-[--active-button-text] rounded-3xl">{t('views_payment.payment_method_card.save_card')}</button>
                     </div>
                 </form>
             </div>
