@@ -1,26 +1,27 @@
 {
   "navbar": {
     "items": {
-      "characteristic": "Caracteristicas",
+      "characteristic": "Características",
       "personalized": "Personalizado",
-      "experience": "Experiencia",
-      "contact": "Contacto",
+      "experience": "Experiencias",
+      "contact": "Contáctanos",
       "language": "Idioma"
     }
   },
   "landing": {
     "welcome": {
-      "title": "¡Bienvenidos, tu aventura de egresados está por comenzar!",
-      "text1": "En Bariló, entendemos que tu viaje de egresados es mucho más que una simple escapada; es un momento significativo que marca el cierre de una etapa y el inicio de nuevas aventuras. Nuestra misión es hacer que esta experiencia única sea accesible, inclusiva y, sobre todo, inolvidable para todos.",
-      "text2": "Imagina explorar destinos impresionantes con tus amigos más cercanos, creando recuerdos que durarán toda la vida. En Bariló, nos comprometemos a ofrecerte una amplia gama de destinos variados que se adaptan a todos los gustos y presupuestos."
+      "title": "¡Bienvenido!",
+      "subtitle": "Tu aventura de egresados está por comenzar",
+      "text1": "En Bariló, sabemos que tu viaje de egresados es más que una escapada; es un momento clave que marca el fin de una etapa y el inicio de nuevas aventuras. Nuestra misión es hacer que esta experiencia sea accesible, inclusiva y, sobre todo, inolvidable para todos.",
+      "text2": "Imagina recorrer destinos increíbles con tus amigos más cercanos, creando recuerdos que durarán toda la vida. En Bariló, te ofrecemos una variedad de destinos que se ajustan a todos los gustos y presupuestos."
     },
     "characteristics": {
       "title": "Características",
-      "destination": "Destinos variados",
+      "destination": "Destinos Variados",
       "paragraphDestination": "Ofrecemos una amplia gama de destinos que se adaptan a todos los gustos y presupuestos.",
-      "plans": "Planes de pago flexibles",
+      "plans": "Plan de Pagos Flexibles",
       "paragraphPlans": "Opciones de pago adaptadas a diferentes situaciones económicas.",
-      "groups": "Grupos inclusivos",
+      "groups": "Grupos Inclusivos",
       "paragraphGroups": "Fomentamos la integración y la diversidad en nuestros grupos de viaje."
     },
     "customize": {
