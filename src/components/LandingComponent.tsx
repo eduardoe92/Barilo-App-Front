@@ -22,13 +22,15 @@ export default function LandingComponent() {
           <section className="w-full py-12 text-white md:py-24 lg:py-32 xl:py-36 bg-secondary-pink">
             <div className="container px-4 mx-auto md:px-6">
               <div className="flex flex-col items-center space-y-4 text-center">
-                <h1 className="text-3xl font-bold tracking-tighter text-white sm:text-4xl md:text-5xl lg:text-6xl font-primary">
+                <h1 className="text-4xl font-bold tracking-tighter text-white sm:text-4xl md:text-6xl lg:text-7xl font-primary">
                   {t("landing.welcome.title")}
+                  <br />
+                  {t("landing.welcome.subtitle")}
                 </h1>
-                <p className="mx-auto lg:max-w-[40em] text-md md:text-2xl lg:text-base xl:text-xl font-secondary text-white">
+                <p className="mx-auto max-w-[15em] md:max-w-[27em] lg:max-w-[43em] text-md md:text-2xl lg:text-base xl:text-xl font-secondary text-white">
                   {t("landing.welcome.text1")}
                 </p>
-                <p className="mx-auto lg:max-w-[40em] text-md md:text-2xl lg:text-base xl:text-xl font-secondary text-white">
+                <p className="mx-auto max-w-[15em] md:max-w-[27em] lg:max-w-[43em] text-md md:text-2xl lg:text-base xl:text-xl font-secondary text-white">
                   {t("landing.welcome.text2")}
                 </p>
                 <div className="flex flex-col items-center justify-center gap-y-3 md:flex-row md:space-x-4">
@@ -57,10 +59,10 @@ export default function LandingComponent() {
               <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
                 <div className="flex flex-col items-center text-center">
                   <FaRegPaperPlane className="mb-5 text-3xl text-primary-blue md:text-7xl" />
-                  <h3 className="mb-2 text-xl font-bold primary-celeste">
+                  <h3 className="mb-2 text-xl font-bold text-primary-celeste">
                     {t("landing.characteristics.destination")}
                   </h3>
-                  <p className="text-secondary-blue font-secondary">
+                  <p className="text-secondary-blue font-secondary lg:max-w-[18em] max-w-[16.9em]">
                     {t("landing.characteristics.paragraphDestination")}
                   </p>
                 </div>
@@ -69,7 +71,7 @@ export default function LandingComponent() {
                   <h3 className="mb-2 text-xl font-bold text-primary-celeste">
                     {t("landing.characteristics.plans")}
                   </h3>
-                  <p className="text-secondary-blue font-secondary">
+                  <p className="text-secondary-blue font-secondary lg:max-w-[18em] max-w-[16.9em]">
                     {t("landing.characteristics.paragraphPlans")}
                   </p>
                 </div>
@@ -78,7 +80,7 @@ export default function LandingComponent() {
                   <h3 className="mb-2 text-xl font-bold text-primary-celeste">
                     {t("landing.characteristics.groups")}
                   </h3>
-                  <p className="text-secondary-blue font-secondary">
+                  <p className="text-secondary-blue font-secondary lg:max-w-[18em] max-w-[16.9em]">
                     {t("landing.characteristics.paragraphGroups")}
                   </p>
                 </div>
@@ -101,7 +103,7 @@ export default function LandingComponent() {
                   <h3 className="mb-2 text-xl font-bold text-white">
                     {t("landing.customize.caption1")}
                   </h3>
-                  <p className="text-white font-secondary">
+                  <p className="text-white font-secondary lg:max-w-[30em]">
                     {t("landing.customize.paragraph1")}
                   </p>
                 </div>
@@ -112,7 +114,7 @@ export default function LandingComponent() {
                   <h3 className="mb-2 text-xl font-bold text-white">
                     {t("landing.customize.caption2")}
                   </h3>
-                  <p className="text-white font-secondary">
+                  <p className="text-white font-secondary lg:max-w-[30em]">
                     {t("landing.customize.paragraph2")}
                   </p>
                 </div>
@@ -123,7 +125,7 @@ export default function LandingComponent() {
                   <h3 className="mb-2 text-xl font-bold text-white">
                     {t("landing.customize.caption3")}
                   </h3>
-                  <p className="text-white font-secondary">
+                  <p className="text-white font-secondary lg:max-w-[30em]">
                     {t("landing.customize.paragraph3")}
                   </p>
                 </div>
@@ -134,7 +136,7 @@ export default function LandingComponent() {
                   <h3 className="mb-2 text-xl font-bold text-white">
                     {t("landing.customize.caption4")}
                   </h3>
-                  <p className="text-white font-secondary">
+                  <p className="text-white font-secondary lg:max-w-[30em]">
                     {t("landing.customize.paragraph4")}
                   </p>
                 </div>
@@ -145,7 +147,7 @@ export default function LandingComponent() {
                   <h3 className="mb-2 text-xl font-bold text-white">
                     {t("landing.customize.caption5")}
                   </h3>
-                  <p className="text-white font-secondary">
+                  <p className="text-white font-secondary lg:max-w-[30em]">
                     {t("landing.customize.paragraph5")}
                   </p>
                 </div>
@@ -156,7 +158,7 @@ export default function LandingComponent() {
                   <h3 className="mb-2 text-xl font-bold text-white">
                     {t("landing.customize.caption6")}
                   </h3>
-                  <p className="text-white font-secondary">
+                  <p className="text-white font-secondary lg:max-w-[30em]">
                     {t("landing.customize.paragraph6")}
                   </p>
                 </div>

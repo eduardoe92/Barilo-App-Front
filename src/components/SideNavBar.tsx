@@ -91,7 +91,7 @@ export default function SideNavBar() {
           to="/"
           className={`${
             !open && "hidden"
-          } h-16 w-4/5 md:flex md:items-center lg:pl-5`}
+          } h-14 w-full md:flex md:items-center lg:pl-5`}
         >
           <TextIconComponent />
         </Link>
@@ -114,24 +114,24 @@ export default function SideNavBar() {
         {menuItems.map((item, index) => (
           <li
             key={index}
-            className="relative flex items-center gap-2 p-2 my-2 duration-300 rounded-md cursor-pointer hover:bg-primary-purple group md:pr-1 md:hover:bg-white lg:pr-5"
+            className="relative flex items-center gap-2 p-2 my-2 duration-300 rounded-md cursor-pointer hover:bg-primary-purple grou md:hover:bg-white lg:pr-2"
           >
             <a
               href={item.href}
               className={`${open && "gap-x-3"} flex items-center `}
             >
-              <div className="flex items-center justify-center md:hidden ">
+              <div className="flex items-center justify-center md:hidden">
                 {item.icons}
               </div>
-              <div className="hidden font-bold tracking-wide duration-300 hover:scale-105 md:flex md:w-10/12 md:text-lg lg:text-xl hover:text-primary-purple">
+              <div className="hidden font-bold tracking-wide duration-300 hover:scale-105 md:flex md:min-w-[6rem] lg:min-w-[9rem] md:justify-center text-sm md:text-base lg:text-xl hover:text-primary-purple">
                 {t(item.label)}
               </div>
               <p
                 className={`${
                   !open && "w-0 translate-x-24"
-                } text-lg font-bold tracking-wider h-2/3 duration-300 overflow-hidden md:overflow-visible md:translate-x-0 md:hidden`}
+                } text-lg font-bold tracking-wider h-auto duration-300 overflow-hidden md:overflow-visible md:translate-x-0 md:hidden`}
               >
-                {t(item.label)}
+                {open ? t(item.label) : t(item.label).split(" ")[0]}
               </p>
               <p
                 className={`${
@@ -159,7 +159,7 @@ export default function SideNavBar() {
             <img
               src={currentLanguage === "es" ? FlagUsa : FlagSpain}
               alt={currentLanguage === "es" ? "Español" : "English"}
-              className="ml-2 mr-2 rounded-full w-7 h-7 md:mt-0"
+              className="mx-2 rounded-full w-7 h-7 md:w-8 md:h-8 md:mx-0"
             />
             <p
               className={`${
