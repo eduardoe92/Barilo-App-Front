@@ -27,10 +27,10 @@ export default function LandingComponent() {
                   <br />
                   {t("landing.welcome.subtitle")}
                 </h1>
-                <p className="mx-auto max-w-[15em] md:max-w-[27em] lg:max-w-[43em] text-md md:text-2xl lg:text-base xl:text-xl font-secondary text-white">
+                <p className="mx-auto max-w-[15em] md:max-w-[27em] lg:max-w-[43em] text-md md:text-2xl lg:text-base xl:text-xl font-secondary text-white line-clamp-8 md:line-clamp-5 lg:line-clamp-3">
                   {t("landing.welcome.text1")}
                 </p>
-                <p className="mx-auto max-w-[15em] md:max-w-[27em] lg:max-w-[43em] text-md md:text-2xl lg:text-base xl:text-xl font-secondary text-white">
+                <p className="mx-auto max-w-[15em] md:max-w-[27em] lg:max-w-[43em] text-md md:text-2xl lg:text-base xl:text-xl font-secondary text-white line-clamp-8 md:line-clamp-5 lg:line-clamp-3">
                   {t("landing.welcome.text2")}
                 </p>
                 <div className="flex flex-col items-center justify-center gap-y-3 md:flex-row md:space-x-4">
@@ -56,31 +56,31 @@ export default function LandingComponent() {
               <h2 className="mb-12 text-3xl font-bold tracking-tighter text-center sm:text-4xl md:text-5xl text-primary-celeste font-primary">
                 {t("landing.characteristics.title")}
               </h2>
-              <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+              <div className="grid grid-cols-1 gap-8 mx-auto md:grid-cols-2 lg:grid-cols-3">
                 <div className="flex flex-col items-center text-center">
-                  <FaRegPaperPlane className="mb-5 text-3xl text-primary-blue md:text-7xl" />
-                  <h3 className="mb-2 text-xl font-bold text-primary-celeste">
+                  <FaRegPaperPlane className="mb-2 text-3xl md:mb-5 text-primary-blue md:text-7xl" />
+                  <h3 className="mb-2 text-xl font-bold text-primary-celeste line-clamp-1">
                     {t("landing.characteristics.destination")}
                   </h3>
-                  <p className="text-secondary-blue font-secondary lg:max-w-[18em] max-w-[16.9em]">
+                  <p className="text-secondary-blue font-secondary lg:max-w-[18em] max-w-[16.9em] line-clamp-3">
                     {t("landing.characteristics.paragraphDestination")}
                   </p>
                 </div>
                 <div className="flex flex-col items-center text-center">
-                  <FaRegCreditCard className="mb-5 text-3xl text-primary-blue md:text-7xl" />
-                  <h3 className="mb-2 text-xl font-bold text-primary-celeste">
+                  <FaRegCreditCard className="mb-2 text-3xl md:mb-5 text-primary-blue md:text-7xl" />
+                  <h3 className="mb-2 text-xl font-bold text-primary-celeste line-clamp-1">
                     {t("landing.characteristics.plans")}
                   </h3>
-                  <p className="text-secondary-blue font-secondary lg:max-w-[18em] max-w-[16.9em]">
+                  <p className="text-secondary-blue font-secondary lg:max-w-[18em] max-w-[16.9em] line-clamp-2">
                     {t("landing.characteristics.paragraphPlans")}
                   </p>
                 </div>
-                <div className="flex flex-col items-center text-center">
-                  <RiGroupLine className="mb-5 text-3xl text-primary-blue md:text-7xl" />
-                  <h3 className="mb-2 text-xl font-bold text-primary-celeste">
+                <div className="flex flex-col items-center text-center md:col-span-2 lg:col-span-1">
+                  <RiGroupLine className="mb-2 text-3xl md:mb-5 text-primary-blue md:text-7xl" />
+                  <h3 className="mb-2 text-xl font-bold text-primary-celeste line-clamp-1">
                     {t("landing.characteristics.groups")}
                   </h3>
-                  <p className="text-secondary-blue font-secondary lg:max-w-[18em] max-w-[16.9em]">
+                  <p className="text-secondary-blue font-secondary lg:max-w-[18em] max-w-[16.9em] line-clamp-2">
                     {t("landing.characteristics.paragraphGroups")}
                   </p>
                 </div>
@@ -95,15 +95,15 @@ export default function LandingComponent() {
               <h2 className="mb-12 text-3xl font-bold tracking-tighter text-center text-white sm:text-4xl md:text-5xl font-primary">
                 {t("landing.customize.title")}
               </h2>
-              <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+              <div className="grid grid-cols-1 gap-8 mx-auto md:grid-cols-2 lg:grid-cols-3">
                 <div className="flex flex-col items-center text-center">
                   <div className="flex items-center justify-center w-12 h-12 mb-4 text-2xl font-bold bg-white rounded-full text-primary-purple">
                     1
                   </div>
-                  <h3 className="mb-2 text-xl font-bold text-white">
+                  <h3 className="mb-2 text-xl font-bold text-white line-clamp-1">
                     {t("landing.customize.caption1")}
                   </h3>
-                  <p className="text-white font-secondary lg:max-w-[30em]">
+                  <p className="text-white font-secondary lg:max-w-[30em] max-w-[14.7em] line-clamp-3">
                     {t("landing.customize.paragraph1")}
                   </p>
                 </div>
@@ -111,10 +111,10 @@ export default function LandingComponent() {
                   <div className="flex items-center justify-center w-12 h-12 mb-4 text-2xl font-bold bg-white rounded-full text-primary-purple">
                     2
                   </div>
-                  <h3 className="mb-2 text-xl font-bold text-white">
+                  <h3 className="mb-2 text-xl font-bold text-white line-clamp-1">
                     {t("landing.customize.caption2")}
                   </h3>
-                  <p className="text-white font-secondary lg:max-w-[30em]">
+                  <p className="text-white font-secondary lg:max-w-[30em] max-w-[14.7em] line-clamp-3">
                     {t("landing.customize.paragraph2")}
                   </p>
                 </div>
@@ -122,10 +122,10 @@ export default function LandingComponent() {
                   <div className="flex items-center justify-center w-12 h-12 mb-4 text-2xl font-bold bg-white rounded-full text-primary-purple">
                     3
                   </div>
-                  <h3 className="mb-2 text-xl font-bold text-white">
+                  <h3 className="mb-2 text-xl font-bold text-white line-clamp-1">
                     {t("landing.customize.caption3")}
                   </h3>
-                  <p className="text-white font-secondary lg:max-w-[30em]">
+                  <p className="text-white font-secondary lg:max-w-[30em] max-w-[14.7em] line-clamp-3">
                     {t("landing.customize.paragraph3")}
                   </p>
                 </div>
@@ -133,10 +133,10 @@ export default function LandingComponent() {
                   <div className="flex items-center justify-center w-12 h-12 mb-4 text-2xl font-bold bg-white rounded-full text-primary-purple">
                     4
                   </div>
-                  <h3 className="mb-2 text-xl font-bold text-white">
+                  <h3 className="mb-2 text-xl font-bold text-white line-clamp-1">
                     {t("landing.customize.caption4")}
                   </h3>
-                  <p className="text-white font-secondary lg:max-w-[30em]">
+                  <p className="text-white font-secondary lg:max-w-[30em] max-w-[14.7em] line-clamp-3">
                     {t("landing.customize.paragraph4")}
                   </p>
                 </div>
@@ -144,10 +144,10 @@ export default function LandingComponent() {
                   <div className="flex items-center justify-center w-12 h-12 mb-4 text-2xl font-bold bg-white rounded-full text-primary-purple">
                     5
                   </div>
-                  <h3 className="mb-2 text-xl font-bold text-white">
+                  <h3 className="mb-2 text-xl font-bold text-white line-clamp-1">
                     {t("landing.customize.caption5")}
                   </h3>
-                  <p className="text-white font-secondary lg:max-w-[30em]">
+                  <p className="text-white font-secondary lg:max-w-[30em] max-w-[14.7em] line-clamp-3">
                     {t("landing.customize.paragraph5")}
                   </p>
                 </div>
@@ -155,10 +155,10 @@ export default function LandingComponent() {
                   <div className="flex items-center justify-center w-12 h-12 mb-4 text-2xl font-bold bg-white rounded-full text-primary-purple">
                     6
                   </div>
-                  <h3 className="mb-2 text-xl font-bold text-white">
+                  <h3 className="mb-2 text-xl font-bold text-white line-clamp-1">
                     {t("landing.customize.caption6")}
                   </h3>
-                  <p className="text-white font-secondary lg:max-w-[30em]">
+                  <p className="text-white font-secondary lg:max-w-[30em] max-w-[14.7em] line-clamp-3">
                     {t("landing.customize.paragraph6")}
                   </p>
                 </div>
