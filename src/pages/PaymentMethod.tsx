@@ -22,7 +22,7 @@ function PaymentMethod() {
           });
       };
   return (
-    <div className="md:mx-28 lg:mx-44 2xl:mx-72">
+    <div className="md:mx-28 lg:mx-52 xl:mx-96">
         <div className="flex justify-center items-center my-8">
             <button className="absolute left-6 pb-1 text-[--secondary-celeste] text-2xl" onClick={() => navigate(-1)}><IoIosArrowBack /></button>
             <h1 className="text-2xl text-[--secondary-celeste] font-['League_Spartan'] font-semibold">{t('views_payment.payment_method.title')}</h1>

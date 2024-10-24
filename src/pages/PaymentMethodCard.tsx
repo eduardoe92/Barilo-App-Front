@@ -56,12 +56,12 @@ const PaymentMethodCard = () => {
 
 
     return (
-        <div className="card md:mx-36 lg:mx-44 flex flex-col justify-center items-center">
+        <div className="card md:mx-36 lg:mx-44 xl:mx-80 flex flex-col items-center h-screen">
             <div className="flex justify-center items-center my-8">
                 <button className="absolute left-6 pb-1 text-[--secondary-celeste] text-2xl" onClick={() => navigate(-1)}><IoIosArrowBack /></button>
                 <h1 className="text-2xl text-[--secondary-celeste] font-['League_Spartan'] font-semibold">{t('views_payment.payment_method_card.title')}</h1>
             </div>
-            <div className="card-body w-full justify-center flex flex-col">
+            <div className="card-body w-full justify-center flex flex-col m-auto">
 
                 <Cards
                     number={state.number}
