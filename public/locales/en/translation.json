@@ -135,7 +135,15 @@
     "landing": {
       "login": "Login",
       "register": "Register"
-    }
+    },
+    "loginButtonMail1": "Login",
+    "loginButtonMail2": "Logging in...",
+    "loginButtonGoogle": "Google / Coming soon",
+    "loginButtonApple": "Apple / Coming soon",
+    "registerButton1": "Register",
+    "registerButton2": "Registering...",
+    "passwordButton1": "Send link",
+    "passwordButton2": "Sending..."
   },
   "home": {
     "header": "Hello, welcome back",
@@ -232,9 +240,17 @@
     "login": {
       "error": {
         "title": "¡Oops, something has gone wrong!",
-        "message": "The entered user does not exist or the password is incorrect",
-        "btn": "Register",
-        "btn2": "Cerrar"
+        "message": "The entered user does not exist or the password is incorrect"
+      }
+    },
+    "password": {
+      "success": {
+        "title": "¡Sent successfully!",
+        "message": "Enter your email to continue"
+      },
+      "error": {
+        "title": "¡Oops, something has gone wrong!",
+        "message": "The email entered does not exist."
       }
     },
     "error": {
@@ -387,11 +403,7 @@
   "login_form_component": {
     "show_success_modal": {
       "title": "Congratulations",
-      "message": "You have successfully logged in",
-      "button_label": "Accept"
-    },
-    "showErrorModal": {
-      "label": "Return"
+      "message": "You have successfully logged in"
     },
     "handleLogin": {
       "new_error": "Error during login"
@@ -406,12 +418,6 @@
         "placeholder": "Enter your password"
       },
       "forget_password": "Forgot your password?",
-      "custom_button": {
-        "text1": "Logging in",
-        "text2": "Login"
-      },
-      "icon_button1": "Google / Coming soon",
-      "icon_button2": "Apple / Coming soon",
       "p": "Don't have an account yet?",
       "a": "Sign up"
     }
@@ -437,10 +443,6 @@
       "label": "Password",
       "placeholder": "Confirm your password"
     },
-    "custom_button": {
-      "text1": "Registering...",
-      "text2": "Register"
-    },
     "p": "Already have an account?",
     "link": "Log in"
   },
@@ -451,10 +453,6 @@
       "custom_input": {
         "label": "Email",
         "placeholder": "Enter your email"
-      },
-      "custom_button": {
-        "text1": "Sending...",
-        "text2": "Send link"
       },
       "p": "Already have an account?",
       "link": "Log in"

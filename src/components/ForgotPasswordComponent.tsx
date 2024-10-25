@@ -12,7 +12,10 @@ import { ModalContent } from "../types/Modal";
 
 type ForgotPasswordForm = z.infer<typeof forgotPasswordSchema>;
 
-export const ForgotPasswordComponent: React.FC<{ changeStep: (step: number) => void, showModal: (content: ModalContent) => void }> = ({ changeStep, showModal }) => {
+export const ForgotPasswordComponent: React.FC<{
+  changeStep: (step: number) => void;
+  showModal: (content: ModalContent) => void;
+}> = ({ changeStep, showModal }) => {
   const { t } = useTranslation();
   const [isLoading, setIsLoading] = useState(false);
 
@@ -24,30 +27,29 @@ export const ForgotPasswordComponent: React.FC<{ changeStep: (step: number) => v
   });
 
   const showSuccessModal = () => {
-    showModal ({
-      title: t("modals.passwordReset.success.title"),
-      message: t("modals.passwordReset.success.message"),
+    showModal({
+      title: t("modals.password.success.title"),
+      message: t("modals.password.success.message"),
       buttons: [
         {
-          label: t("modals.passwordReset.success.btn"),
+          label: t("buttons.backButton"),
           action: () => {
             setTimeout(() => changeStep(0), 100);
           },
-          isPrimary: true,
+          isPrimary: false,
         },
       ],
     });
   };
 
   const showErrorModal = (errorMessage: string) => {
-    showModal ({
-      title: t("modals.passwordReset.error.title"),
+    showModal({
+      title: t("modals.password.error.title"),
       message: errorMessage,
       buttons: [
         {
-          label: t("modals.passwordReset.error.btn"),
-          action: () => {
-          },
+          label: t("buttons.backButton"),
+          action: () => {},
           isPrimary: false,
         },
       ],
@@ -60,7 +62,7 @@ export const ForgotPasswordComponent: React.FC<{ changeStep: (step: number) => v
       showSuccessModal();
     } catch (error) {
       console.error("Error al enviar el correo de restablecimiento:", error);
-      showErrorModal(t("forgot_password.h_p_reset"));
+      showErrorModal(t("modals.password.error.message"));
     } finally {
       setIsLoading(false);
     }
@@ -93,14 +95,14 @@ export const ForgotPasswordComponent: React.FC<{ changeStep: (step: number) => v
           <div className="mt-4 space-y-3">
             <CustomButton type="submit" disabled={isLoading}>
               {isLoading
-                ? t("forgot_password.f_p_component.custom_button.text1")
-                : t("forgot_password.f_p_component.custom_button.text2")}
+                ? t("buttons.passwordButton2")
+                : t("buttons.passwordButton1")}
             </CustomButton>
           </div>
           <p className="mt-2 text-sm font-normal leading-none text-center text-primary-celeste font-secondary">
             {t("forgot_password.f_p_component.p")}{" "}
-            <button 
-              type="button" 
+            <button
+              type="button"
               onClick={() => changeStep(0)}
               className="antialiased font-bold"
             >

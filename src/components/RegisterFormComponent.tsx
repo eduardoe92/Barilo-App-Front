@@ -20,7 +20,10 @@ import { useTranslation } from "react-i18next";
 
 type RegisterUserForm = z.infer<typeof registerSchema>;
 
-export const RegisterFormComponent: React.FC<{ changeStep: (step: number) => void, showModal: (content: ModalContent) => void }> = ({ changeStep, showModal }) => {
+export const RegisterFormComponent: React.FC<{
+  changeStep: (step: number) => void;
+  showModal: (content: ModalContent) => void;
+}> = ({ changeStep, showModal }) => {
   const { t } = useTranslation();
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -58,16 +61,8 @@ export const RegisterFormComponent: React.FC<{ changeStep: (step: number) => voi
       message: t("modals.register.error.message"),
       buttons: [
         {
-          label: t("modals.register.error.btn"),
-          action: () => {
-            setTimeout(() => changeStep(0), 100);
-          },
-          isPrimary: true,
-        },
-        {
-          label: t("modals.register.error.btn2"),
-          action: () => {
-          },
+          label: t("buttons.backButton"),
+          action: () => {},
           isPrimary: false,
         },
       ],
@@ -104,7 +99,7 @@ export const RegisterFormComponent: React.FC<{ changeStep: (step: number) => voi
             render={({ field }) => (
               <FormItem className="mb-1">
                 <FormLabel className="text-lg font-bold font-primary text-primary-celeste">
-                {t('register_form_component.form_label_type_user')}
+                  {t("register_form_component.form_label_type_user")}
                 </FormLabel>
                 <FormControl>
                   <RadioGroup
@@ -115,18 +110,24 @@ export const RegisterFormComponent: React.FC<{ changeStep: (step: number) => voi
                   >
                     <FormItem className="flex items-center space-x-3 space-y-0">
                       <FormControl>
-                        <RadioGroupItem value="COORDINADOR" className="text-primary-blue border-primary-celeste"/>
+                        <RadioGroupItem
+                          value="COORDINADOR"
+                          className="text-primary-blue border-primary-celeste"
+                        />
                       </FormControl>
                       <FormLabel className="text-base text-primary-celeste">
-                      {t('register_form_component.form_label_coordinator')}
+                        {t("register_form_component.form_label_coordinator")}
                       </FormLabel>
                     </FormItem>
                     <FormItem className="flex items-center space-x-3 space-y-0">
                       <FormControl>
-                        <RadioGroupItem value="ESTUDIANTE" className="text-primary-blue border-primary-celeste"/>
+                        <RadioGroupItem
+                          value="ESTUDIANTE"
+                          className="text-primary-blue border-primary-celeste"
+                        />
                       </FormControl>
                       <FormLabel className="text-base text-primary-celeste ">
-                      {t('register_form_component.form_label_student')}
+                        {t("register_form_component.form_label_student")}
                       </FormLabel>
                     </FormItem>
                   </RadioGroup>
@@ -138,25 +139,31 @@ export const RegisterFormComponent: React.FC<{ changeStep: (step: number) => voi
           <div className="space-y-1">
             <CustomInput
               type="text"
-              label={t('register_form_component.custom_input_name.label')}
+              label={t("register_form_component.custom_input_name.label")}
               name="name"
-              placeholder={t('register_form_component.custom_input_name.placeholder')}
+              placeholder={t(
+                "register_form_component.custom_input_name.placeholder"
+              )}
               field={form.register("name")}
             />
             <FormMessage>{form.formState.errors.name?.message}</FormMessage>
             <CustomInput
               type="email"
-              label={t('register_form_component.custom_input_email.label')}
+              label={t("register_form_component.custom_input_email.label")}
               name="mail"
-              placeholder={t('register_form_component.custom_input_email.placeholder')}
+              placeholder={t(
+                "register_form_component.custom_input_email.placeholder"
+              )}
               field={form.register("mail")}
             />
             <FormMessage>{form.formState.errors.mail?.message}</FormMessage>
             <CustomInput
-              label={t('register_form_component.custom_input_password.label')}
+              label={t("register_form_component.custom_input_password.label")}
               name="password"
               type="password"
-              placeholder={t('register_form_component.custom_input_password.placeholder')}
+              placeholder={t(
+                "register_form_component.custom_input_password.placeholder"
+              )}
               field={form.register("password")}
               showPasswordToggle
               showPassword={showPassword}
@@ -164,10 +171,14 @@ export const RegisterFormComponent: React.FC<{ changeStep: (step: number) => voi
             />
             <FormMessage>{form.formState.errors.password?.message}</FormMessage>
             <CustomInput
-              label={t('register_form_component.custom_input_passwordConfirmation.label')}
+              label={t(
+                "register_form_component.custom_input_passwordConfirmation.label"
+              )}
               name="passwordConfirmation"
               type="password"
-              placeholder={t('register_form_component.custom_input_passwordConfirmation.placeholder')}
+              placeholder={t(
+                "register_form_component.custom_input_passwordConfirmation.placeholder"
+              )}
               field={form.register("passwordConfirmation")}
               showPasswordToggle
               showPassword={showPassword}
@@ -179,13 +190,15 @@ export const RegisterFormComponent: React.FC<{ changeStep: (step: number) => voi
           </div>
           <div className="mt-4 space-y-2">
             <CustomButton type="submit" disabled={isLoading}>
-              {isLoading ? t('register_form_component.custom_button.text1') : t('register_form_component.custom_button.text2')}
+              {isLoading
+                ? t("buttons.registerButton2")
+                : t("buttons.registerButton1")}
             </CustomButton>
           </div>
           <p className="mt-2 text-sm font-normal leading-none text-center text-primary-celeste font-secondary">
-          {t('register_form_component.p')}{" "}
-          <button 
-              type="button" 
+            {t("register_form_component.p")}{" "}
+            <button
+              type="button"
               onClick={() => changeStep(0)}
               className="antialiased font-bold"
             >

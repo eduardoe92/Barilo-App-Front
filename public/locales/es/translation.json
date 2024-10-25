@@ -135,7 +135,15 @@
     "landing": {
       "login": "Iniciar sesión",
       "register": "Regístrate"
-    }
+    },
+    "loginButtonMail1": "Inicia sesión",
+    "loginButtonMail2": "Iniciando sesión...",
+    "loginButtonGoogle": "Google / Proximamente",
+    "loginButtonApple": "Apple / Proximamente",
+    "registerButton1": "Registrarse",
+    "registerButton2": "Registrando...",
+    "passwordButton1": "Enviar enlace",
+    "passwordButton2": "Enviando..."
   },
   "home": {
     "header": "Hola, bienvenido de nuevo",
@@ -232,9 +240,17 @@
     "login": {
       "error": {
         "title": "¡Vaya, algo ha salido mal!",
-        "message": "El usuario ingresado no existe o la contraseña es incorrecta",
-        "btn": "Registrar",
-        "btn2": "Cerrar"
+        "message": "El usuario ingresado no existe o la contraseña es incorrecta"
+      }
+    },
+    "password": {
+      "success": {
+        "title": "¡Enviado correctamente!",
+        "message": "Ingresa a tu correo electronico para continuar"
+      },
+      "error": {
+        "title": "¡Vaya, algo ha salido mal!",
+        "message": "El correo ingresado no existe."
       }
     },
     "error": {
@@ -387,11 +403,7 @@
   "login_form_component": {
     "show_success_modal": {
       "title": "Felicidades",
-      "message": "Te has logueado con éxito",
-      "button_label": "Aceptar"
-    },
-    "showErrorModal": {
-      "label": "volver"
+      "message": "Te has logueado con éxito"
     },
     "handleLogin": {
       "new_error": "Error durante el inicio de sesión"
@@ -406,12 +418,6 @@
         "placeholder": "Introduce tu contraseña"
       },
       "forget_password": "¿Has olvidado tu contraseña?",
-      "custom_button": {
-        "text1": "Iniciando sesión",
-        "text2": "Iniciar sesión"
-      },
-      "icon_button1": "Google / Próximante",
-      "icon_button2": "Apple / Próximante",
       "p": "¿Aún no tienes una cuenta?",
       "a": "Regístrate"
     }
@@ -437,10 +443,6 @@
       "label": "Contraseña",
       "placeholder": "Repite tu contraseña"
     },
-    "custom_button": {
-      "text1": "Registrando...",
-      "text2": "Registrarse"
-    },
     "p": "¿Ya tienes una cuenta?",
     "link": "Inicia sesión"
   },
@@ -451,10 +453,6 @@
       "custom_input": {
         "label": "Correo electrónico",
         "placeholder": "Introduce tu correo electrónico"
-      },
-      "custom_button": {
-        "text1": "Enviando...",
-        "text2": "Enviar enlace"
       },
       "p": "¿Ya tienes una cuenta?",
       "link": "Inicia sesión"
