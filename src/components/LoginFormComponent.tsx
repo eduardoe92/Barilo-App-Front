@@ -18,7 +18,10 @@ import { ModalContent } from "../types/Modal";
 
 type LoginUserForm = z.infer<typeof loginSchema>;
 
-export const LoginFormComponent: React.FC<{ changeStep: (step: number) => void, showModal: (content: ModalContent) => void }> = ({ changeStep, showModal }) => {
+export const LoginFormComponent: React.FC<{
+  changeStep: (step: number) => void;
+  showModal: (content: ModalContent) => void;
+}> = ({ changeStep, showModal }) => {
   const { t } = useTranslation();
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -69,8 +72,7 @@ export const LoginFormComponent: React.FC<{ changeStep: (step: number) => void, 
         },
         {
           label: "Volver",
-          action: () => {
-          },
+          action: () => {},
           isPrimary: false,
         },
       ],
@@ -156,19 +158,19 @@ export const LoginFormComponent: React.FC<{ changeStep: (step: number) => void, 
           <div className="mt-4 space-y-2">
             <CustomButton type="submit" disabled={isLoading}>
               {isLoading
-                ? t("login_form_component.return.custom_button.text1")
-                : t("login_form_component.return.custom_button.text2")}
+                ? t("buttons.loginButtonMail2")
+                : t("buttons.loginButtonMail1")}
             </CustomButton>
             <Separator className="" />
             <IconButton
               className="bg-[#08121f]"
               icon={FaGoogle}
-              label={t("login_form_component.return.icon_button1")}
+              label={t("buttons.loginButtonGoogle")}
               onClick={handleGoogleLogin}
             />
             <IconButton
               icon={ImAppleinc}
-              label={t("login_form_component.return.icon_button2")}
+              label={t("buttons.loginButtonApple")}
               className="bg-[#2d3e50]"
               onClick={handleAppleLogin}
             />
