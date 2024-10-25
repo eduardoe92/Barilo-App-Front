@@ -255,11 +255,11 @@
     },
     "error": {
       "title": "¡Vaya, algo ha salido mal!",
-      "message": "El código ingresado es incorrecto, por favor ingrésalo nuevamente."
+      "message": "El código ingresado es incorrecto, por favor ingrésalo nuevamente"
     },
     "confirm": {
       "title": "¡Felicidades!",
-      "message": "Te has unido al grupo de viaje, ahora a disfrutar de tus vacaciones."
+      "message": "Te has unido al grupo de viaje, ahora a disfrutar de tus vacaciones"
     },
     "logout": {
       "title": "Cerrar Sesión",
