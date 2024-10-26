@@ -143,7 +143,11 @@
     "registerButton1": "Registrarse",
     "registerButton2": "Registrando...",
     "passwordButton1": "Enviar enlace",
-    "passwordButton2": "Enviando..."
+    "passwordButton2": "Enviando...",
+    "createTrip": {
+      "groupButton": "Crear grupo",
+      "joinButton": "Unirte a un grupo"
+    }
   },
   "home": {
     "header": "Hola, bienvenido de nuevo",
@@ -183,31 +187,15 @@
       "fri": "VIE",
       "sat": "SAB"
     },
-    "members": {
-      "user1_name": "Ana Gallinado",
-      "user1_info": "Alumna 6to B",
-      "user2_name": "Juan Pérez",
-      "user2_info": "Alumno 6to A",
-      "user3_name": "Lucía Fernández",
-      "user3_info": "Alumna 6to B"
-    },
-    "activities": {
-      "name1": "Parrilla",
-      "description1": "Asado, traer lo que quieran para beber",
-      "name2": "Reunión de equipo",
-      "description2": "Revisar el proyecto de clase",
-      "name3": "Día de deportes",
-      "description3": "Jugar fútbol en el parque"
-    },
     "group_p": "Grupo",
     "excursions_p": "Excursiones",
-    "no_activities_p": "No hay actividades programadas para hoy",
+    "no_activities_p": "No hay actividades programadas para el día seleccionado",
     "group_members_p": "Integrantes del grupo",
     "group_members_no_p": "Aún no hay integrantes en el grupo.",
     "invite_user_p": "Invita a gente a unirse al grupo para empezar la planificación.",
     "no_members_p": "No se encontraron miembros.",
     "try_to_search": "Intenta buscar por otro nombre.",
-    "excursions_to_take": "Exursiones a realizar",
+    "excursions_to_take": "Excursiones a realizar",
     "no_activities_group": "Aún no hay actividades para el grupo."
   },
   "error": {
@@ -505,6 +493,15 @@
       "title": "Idioma",
       "español_spanish": "Español / Spanish",
       "inglés_english": "Inglés / English"
+    }
+  },
+  "createTrip": {
+    "title": "¡Elige tu Camino!",
+    "text1": "Estás a un paso de vivir una experiencia inolvidable. Tienes dos opciones: puedes crear tu propio grupo de viaje y liderar la aventura, o unirte a un grupo existente para compartir momentos increíbles con otros exploradores.",
+    "text2": "Si decides crear un grupo, tendrás la oportunidad de invitar a tus amigos y organizar cada detalle. Si ya tienes un código de invitación, ingrésalo para unirte a un grupo y comenzar a planificar juntos.",
+    "text3": "¡Toma la decisión que mejor se adapte a ti y prepárate para explorar nuevas posibilidades!",
+    "create": {
+      "process": "Crea tu viaje!!"
     }
   }
 }
