@@ -40,7 +40,7 @@ const HomeCardComponent: React.FC<HijoProps> = ({
 
   return (
     <div className="relative w-full my-4 lg:w-1/3 md:w-1/2 md:p-4 lg:p-1">
-      <Link to={link} className="flex flex-wrap w-full px-4 pb-2">
+      <Link to={link} className="relative flex flex-wrap w-full px-4 pb-2">
         <img
           className="object-cover w-full h-72 rounded-3xl"
           src={imageSrc}
@@ -49,7 +49,7 @@ const HomeCardComponent: React.FC<HijoProps> = ({
       </Link>
       {showHeart && (
         <button
-          className="absolute flex items-center justify-center w-10 h-10 transition-transform duration-200 bg-white border-2 rounded-full shadow-sm bottom-10 right-8 border-primary-blue shadow-primary-blue hover:scale-110"
+          className="absolute flex items-center justify-center w-10 h-10 transition-transform duration-200 bg-white border-2 rounded-full shadow-sm bottom-12 right-6 border-primary-blue shadow-primary-blue hover:scale-110 lg:bottom-14 lg:right-7 md:bottom-[4.2em] md:right-10"
           onClick={handleHeartClick}
         >
           {isLiked ? (
@@ -59,7 +59,7 @@ const HomeCardComponent: React.FC<HijoProps> = ({
           )}
         </button>
       )}
-      <p className="text-secondary-celeste font-secondaryLato'] font-bold text-sm px-4">
+      <p className="px-4 mt-2 text-base font-bold md:text-lg lg:text-xl text-secondary-celeste font-secondaryLato line-clamp-1">
         {text}
       </p>
     </div>
