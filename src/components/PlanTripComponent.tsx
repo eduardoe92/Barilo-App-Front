@@ -9,6 +9,7 @@ import { StepOneFormData } from "../types/step/StepOneFormData";
 import { StepTwoFormData } from "../types/step/StepTwoFormData";
 import { StepThreeFormData } from "../types/step/StepThreeFormData";
 import { StepFourFormData } from "../types/step/StepFourFormData";
+import { t } from "i18next";
 
 const PlanTripComponent: React.FC = () => {
   const [currentStep, setCurrentStep] = useState(1);
@@ -54,7 +55,7 @@ const PlanTripComponent: React.FC = () => {
       <div className="container flex flex-col items-center mx-auto">
         <div className="w-full">
           <h1 className="mx-5 mb-2 text-3xl font-bold text-secondary-blue md:text-4xl lg:text-5xl">
-            Crea tu viaje!!
+            {t("createTrip.create.process")}
           </h1>
 
           <ProgressBar

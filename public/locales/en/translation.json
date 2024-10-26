@@ -143,7 +143,11 @@
     "registerButton1": "Register",
     "registerButton2": "Registering...",
     "passwordButton1": "Send link",
-    "passwordButton2": "Sending..."
+    "passwordButton2": "Sending...",
+    "createTrip": {
+      "groupButton": "Create group",
+      "joinButton": "Join a group"
+    }
   },
   "home": {
     "header": "Hello, welcome back",
@@ -183,25 +187,9 @@
       "fri": "FRI",
       "sat": "SAT"
     },
-    "members": {
-      "user1_name": "Ana Gallinado",
-      "user1_info": "6th B Grade Student",
-      "user2_name": "Juan Pérez",
-      "user2_info": "6th A Grade Student",
-      "user3_name": "Lucía Fernández",
-      "user3_info": "6th B Grade Student"
-    },
-    "activities": {
-      "name1": "Barbecue",
-      "description1": "Grill, bring your own drinks",
-      "name2": "Team Meeting",
-      "description2": "Review the class project",
-      "name3": "Sports Day",
-      "description3": "Play soccer in the park"
-    },
     "group_p": "Group",
     "excursions_p": "Excursions",
-    "no_activities_p": "No activities scheduled for today",
+    "no_activities_p": "There are no activities scheduled for the selected day.",
     "group_members_p": "Group Members",
     "group_members_no_p": "There are no members in the group yet.",
     "invite_user_p": "Invite people to join the group to start planning.",
@@ -505,6 +493,15 @@
       "title": "Language",
       "español_spanish": "Spanish / Español ",
       "inglés_english": "English / Inglés"
+    }
+  },
+  "createTrip": {
+    "title": "Choose Your Path!",
+    "text1": "You are one step away from living an unforgettable experience. You have two options: you can create your own travel group and lead the adventure, or join an existing group to share incredible moments with other explorers.",
+    "text2": "If you decide to create a group, you will have the opportunity to invite your friends and organize every detail. If you already have an invite code, enter it to join a group and start planning together.",
+    "text3": "Make the choice that best suits you and get ready to explore new possibilities!",
+    "create":{
+    "process": "Create your trip!!"
     }
   }
 }
