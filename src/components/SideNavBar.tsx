@@ -147,7 +147,7 @@ export default function SideNavBar() {
           </li>
         ))}
 
-        <div className="flex py-2 font-bold tracking-wider duration-300 rounded-md items-centertext-lg hover:bg-primary-purple md:hover:bg-white md:hover:scale-110">
+        <div className="flex py-2 font-bold tracking-wider duration-300 rounded-md items-center text-lg hover:bg-primary-purple md:hover:bg-white md:hover:scale-110">
           <button
             className={`${
               open && "gap-x-2"
@@ -164,7 +164,7 @@ export default function SideNavBar() {
             <p
               className={`${
                 !open && "w-0 translate-x-24"
-              }  text-lg font-bold tracking-wider duration-300 overflow-hidden md:overflow-visible md:translate-x-0 md:hidden `}
+              }  text-lg font-bold tracking-wider h-2/3 duration-300 overflow-hidden md:overflow-visible md:translate-x-0 md:hidden`}
             >
               {t("navbar.items.language")}
             </p>

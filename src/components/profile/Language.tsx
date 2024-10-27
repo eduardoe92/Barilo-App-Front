@@ -1,9 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { FaFontAwesomeFlag } from "react-icons/fa";
 import { FaFlagUsa } from "react-icons/fa";
-import { SlArrowLeft } from "react-icons/sl";
-import IconComponent from "../IconComponent";
-
 
 const Language = () => {
   const { i18n, t } = useTranslation();
@@ -14,39 +11,30 @@ const Language = () => {
 
   return (
     <>
-      <div className="flex flex-col items-stretch justify-between w-screen h-screen">
-        <div className="flex flex-col w-screen gap-5 mt-5">
-          <div className="flex flex-row items-center justify-start w-screen py-2 my-5 text-2xl text-customBlue">
-            <a className="flex items-center justify-center w-1/3" href="./profileSettings">
-              <SlArrowLeft />
-            </a>
-            <h3 className="flex items-center justify-center w-1/3 h-1/3">{t('profile_user.language.title')}</h3>
-          </div>
-          <div className="flex flex-col items-center gap-y-5">
-            <div className="flex flex-row items-center justify-between w-3/4 text-customBlue">
+      <section className="pl-14">
+        <div className="w-full px-4 pt-10">
+          <header className="flex h-40 flex-col items-center justify-center bg-primary-blue rounded-2xl">
+            <h3 className="text-2xl text-center font-bold text-white font-primary">{t('profile_user.language.title')}</h3>
+          </header>
+          <div className="w-full flex flex-col items-center justify-center pt-26 text-customBlue">
               <button
-                className="flex flex-row items-center justify-start w-screen transition-transform duration-200 transform gap-x-10"
+                className="relative w-60 flex flex-row items-center justify-start p-4 group  gap-x-6"
                 onClick={() => changeLanguage("en")}
               >
-                <FaFlagUsa className="text-xl" />
+                <FaFlagUsa className="text-xl flex items-center justify-start" />
                 <h2 className="flex text-xl font-semibold cursor-pointer ">{t('profile_user.language.inglés_english')}</h2>
               </button>
-            </div>
-            <div className="flex flex-row items-center justify-between w-3/4 text-customBlue">
               <button
-                className="flex flex-row items-center justify-start w-screen transition-transform duration-200 transform gap-x-10"
+                className="relative w-60 flex flex-row items-center justify-start p-4 group  gap-x-6"
                 onClick={() => changeLanguage("es")}
               >
-                <FaFontAwesomeFlag className="text-xl" />
+                <FaFontAwesomeFlag className="text-xl flex items-center justify-start" />
                 <h2 className="flex text-xl font-semibold cursor-pointer ">{t('profile_user.language.español_spanish')}</h2>
               </button>
-            </div>
+            
           </div>
         </div>
-        <div className="flex items-center justify-center pb-5 ">
-          <IconComponent />
-        </div>
-      </div>
+      </section>
     </>
   );
 };

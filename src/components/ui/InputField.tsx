@@ -19,6 +19,7 @@ interface InputFieldProps {
   options?: string[];
 }
 
+
 const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
   (
     { label, name, required = false, type = "text", placeholder, options = [] },
@@ -49,15 +50,15 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
     };
 
     return (
-      <FormItem>
+      <FormItem className="w-full flex flex-col items-start justify-center md:flex-row md:items-center">
         <FormLabel
           htmlFor={formItemId}
-          className="text-lg font-bold font-primary text-primary-celeste"
+          className="text-lg font-bold font-primary text-customBlue md:w-4/12 md:pl-5 lg:w-2/12"
         >
           {label}
         </FormLabel>
         <FormControl>
-          <div className="relative">
+          <div className="relative w-full md:w-5/12 md:flex md:items-center md:justify-start lg:w-3/12">
             <Input
               id={formItemId}
               name={name}
@@ -66,7 +67,7 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
               required={required}
               value={inputValue || ""}
               onChange={handleInputChange}
-              className={cn("w-full", error && "")}
+              className={cn("w-full  md:flex md:items-center md:justify-start", error && "")}
               onFocus={() => {
                 if (filteredOptions.length > 0) {
                   setShowDropdown(true);

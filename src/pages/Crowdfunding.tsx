@@ -5,7 +5,7 @@ function Crowdfunding() {
     <>
       <CrowdComponent
         profile="organizer"
-        image={"src/assets/images/amico.svg"}
+        image={"/src/assets/images/amico.svg"}
       />
     </>
   );

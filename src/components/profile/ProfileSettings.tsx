@@ -7,29 +7,28 @@ import {
   IoChevronForwardSharp,
 } from "react-icons/io5";
 import { MdLanguage } from "react-icons/md";
-import IconComponent from "../IconComponent";
-import { SlArrowLeft } from "react-icons/sl";
 import { useTranslation } from "react-i18next";
+import { Link, Outlet } from "react-router-dom";
 
 const link = [
   {
     name: "profile_user.settings.link.name_notification_settings",
-    href: "#",
+    to: "#",
     icon: <IoNotificationsOutline />,
   },
   {
     name: "profile_user.settings.link.name_password_management",
-    href: "#",
+    to: "#",
     icon: <IoKeyOutline />,
   },
   {
     name: "profile_user.settings.link.name_delete_account",
-    href: "#",
+    to: "#",
     icon: <IoPersonOutline />,
   },
   {
     name: "profile_user.settings.link.name_language",
-    href: "/language",
+    to: "/language",
     icon: <MdLanguage />,
   },
 ];
@@ -39,48 +38,41 @@ export default function ProfileSettings() {
 
   return (
     <>
-      <div className="flex flex-col items-stretch justify-between w-screen h-screen">
-        <div className="flex flex-col w-screen gap-2 mt-5">
-          <div className="flex flex-row items-center justify-start w-screen py-2 my-5 text-2xl text-customBlue">
-            <a
-              className="flex items-center justify-center w-1/3"
-              href="./profile"
-            >
-              <SlArrowLeft />
-            </a>
-            <h3 className="flex items-center justify-center w-1/3 h-1/3">
+      <section className="pl-14">
+        <div className="w-full px-4 pt-10">
+          <header className="flex h-40 flex-col items-center justify-center bg-primary-blue rounded-2xl">
+            <h3 className="text-2xl text-center font-bold text-white font-primary">
               {t("profile_user.settings.title_h3")}
             </h3>
-          </div>
-          <div className="p-4">
-            {link.map((item) => (
-              <div
-                key={item.name}
-                className="relative flex items-center p-4 text-sm leading-6 rounded-lg group gap-x-6 hover:bg-gray-50"
-              >
-                <div className="flex items-start justify-start text-3xl text-customBlue">
-                  {item.icon}
-                </div>
-                <div className="flex flex-row items-center justify-between w-4/5 text-customBlue">
-                  <a
-                    href={item.href}
-                    className="flex text-xl font-semibold cursor-pointer"
-                  >
-                    {t(item.name)}
-                    <span className="absolute inset-0" />
-                  </a>
-                  <div className="flex text-xl">
-                    <IoChevronForwardSharp className="flex text-2x1" />
-                  </div>
+            <span className="text-2xl text-center font-bold text-white font-primary">Personaliza tus preferencias</span>
+          </header>
+        </div>
+        <div className="w-full px-4 pt-6 pb-24 flex flex-col md:items-center justify-center">
+          {link.map((item) => (
+            <div
+              key={item.name}
+              className="relative flex flex-row items-center justify-start p-4 group  gap-x-4  md:w-5/12"
+            >
+              <div className="flex text-3xl text-customBlue">
+                {item.icon}
+              </div>
+              <div className="w-full flex flex-row items-center justify-between text-customBlue">
+                <Link
+                  to={item.to}
+                  className="flex text-xl font-semibold cursor-pointer"
+                >
+                  {t(item.name)}
+                  <span className="absolute inset-0" />
+                </Link>
+                <div className="flex items-center justify-end text-xl">
+                  <IoChevronForwardSharp className="flex text-2x1" />
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
-        <div className="flex items-center justify-center pb-5 ">
-          <IconComponent />
-        </div>
-      </div>
+        <Outlet />
+      </section>
     </>
   );
 }

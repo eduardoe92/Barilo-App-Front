@@ -3,6 +3,7 @@ import HomeEventComponent from "@/components/HomeEventComponent";
 import { useTranslation } from "react-i18next";
 import { useUserRole } from "../hooks/useUserRole";
 import { useUserGroup } from "@/hooks/useUserIsMember";
+import { Outlet } from "react-router-dom";
 
 interface UserGroupStatusProps {
   token: string;
@@ -15,7 +16,7 @@ const Home: React.FC<UserGroupStatusProps> = () => {
 
   return (
     <>
-      <section>
+      <section className="pl-14">
         {userRole === "ESTUDIANTE" ? (
           <div className="w-full px-4 pt-10">
             {isInGroup ? (
@@ -188,6 +189,7 @@ const Home: React.FC<UserGroupStatusProps> = () => {
           )}
         </div>
       </section>
+      <Outlet />
     </>
   );
 };
