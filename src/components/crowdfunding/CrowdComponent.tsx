@@ -64,13 +64,12 @@ const CrowdComponent: React.FC<CrowdfundingData> = (data) => {
       <div className="flex justify-center my-20 w-full h-60 max-w-sm">
         {data.image && (
           <img
-            className="w-full h-auto rounded-lg"
+            className="w-full h-60 rounded-lg"
             src={data.image}
             alt={t("crowd.imageAlt")}
           />
         )}
       </div>
-
       <div className="flex flex-col justify-center space-x-4 gap-4 md:flex-row">
         <Link to="/">
           <ButtonBlue text={t("buttons.homeButton")} isActive={false} />
