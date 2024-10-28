@@ -7,7 +7,7 @@ const TripComponent: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="pl-14 flex flex-col items-center justify-center mt-12 mb-6 overflow-hidden text-justify text-secondary-celeste font-primary">
+    <section className="flex flex-col items-center justify-center mt-12 mb-6 overflow-hidden text-justify text-secondary-celeste font-primary">
       <div className="container flex flex-col items-center px-5 pb-12 mx-auto">
         <div className="w-full">
           <h1 className="mb-2 text-3xl font-bold text-secondary-blue md:text-4xl lg:text-5xl">

@@ -16,7 +16,7 @@ const Home: React.FC<UserGroupStatusProps> = () => {
 
   return (
     <>
-      <section className="pl-14">
+      <section className="">
         {userRole === "ESTUDIANTE" ? (
           <div className="w-full px-4 pt-10">
             {isInGroup ? (

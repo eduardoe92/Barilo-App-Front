@@ -38,13 +38,15 @@ export default function ProfileSettings() {
 
   return (
     <>
-      <section className="pl-14">
+      <section className="">
         <div className="w-full px-4 pt-10">
           <header className="flex h-40 flex-col items-center justify-center bg-primary-blue rounded-2xl">
             <h3 className="text-2xl text-center font-bold text-white font-primary">
               {t("profile_user.settings.title_h3")}
             </h3>
-            <span className="text-2xl text-center font-bold text-white font-primary">Personaliza tus preferencias</span>
+            <span className="text-2xl text-center font-bold text-white font-primary">
+            {t("profile_user.settings.title_span")}
+            </span>
           </header>
         </div>
         <div className="w-full px-4 pt-6 pb-24 flex flex-col md:items-center justify-center">

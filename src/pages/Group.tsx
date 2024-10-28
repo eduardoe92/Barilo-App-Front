@@ -98,7 +98,7 @@ function Group() {
   };
 
   return (
-    <div className="ml-14 flex flex-col min-h-screen pb-16">
+    <div className="flex flex-col min-h-screen pb-16">
       <div className="flex items-center gap-2 p-3 px-7">
         <div className="flex">
           <button

@@ -19,6 +19,9 @@
   --active-button-text: #ffffff;
   --inactive-button-text: #006ba8;
   --active-button-hover-bg: #005b8a;
+  /*variable SiderProfile*/
+    --header-height: 96px;
+    --footer-height: 62.61px;
 
   /* Tipografías */
   --font-primary: "League Spartan", sans-serif;
