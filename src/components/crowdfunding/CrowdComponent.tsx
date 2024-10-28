@@ -14,7 +14,7 @@ const profileTexts = {
 const CrowdComponent: React.FC<CrowdfundingData> = (data) => {
   const { t } = useTranslation();
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen px-5 py-10 font-primary text-secondary-celeste">
+    <main className="ml-14 flex flex-col items-center justify-center min-h-screen px-5 py-10 font-primary text-secondary-celeste md:ml-0">
       <div className="w-full max-w-md">
         {i18next.exists(`crowd.${data.profile}.title`) ? (
           <h1 className="mb-2 text-4xl font-bold text-primary-pink md:text-5xl lg:text-6xl">
@@ -61,17 +61,16 @@ const CrowdComponent: React.FC<CrowdfundingData> = (data) => {
         )}
       </div>
 
-      <div className="flex justify-center my-20 w-full max-w-sm">
+      <div className="flex justify-center my-20 w-full h-60 max-w-sm">
         {data.image && (
           <img
-            className="w-full h-auto rounded-lg"
+            className="w-full h-60 rounded-lg"
             src={data.image}
             alt={t("crowd.imageAlt")}
           />
         )}
       </div>
-
-      <div className="flex justify-center space-x-4">
+      <div className="flex flex-col justify-center space-x-4 gap-4 md:flex-row">
         <Link to="/">
           <ButtonBlue text={t("buttons.homeButton")} isActive={false} />
         </Link>
