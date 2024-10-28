@@ -41,7 +41,7 @@ const EditProfile = () => {
   };
 
   return (
-    <section className="pl-14">
+    <section className="">
       <div className="w-full px-4 pt-10">
         <header className="flex h-40 flex-col items-center justify-center bg-primary-blue rounded-2xl">
           <div className="w-full flex items-center justify-end">
@@ -65,10 +65,10 @@ const EditProfile = () => {
           </div>
         </header>
         </div>
-        <div className="w-full px-4 pt-6 pb-24 mx-auto lg:w-10/12">
+        <div className="w-full px-4 pt-6 mx-auto md:w-8/12">
           <FormProvider {...methods}>
             <form
-              className="flex flex-col items-center justify-center w-full text-2xl h-5/6"
+              className="flex flex-col items-center justify-center w-full text-2xl"
               onSubmit={handleSubmit(onSubmit)}
             >
               <div className="w-full flex flex-col gap-4 mb-2 md:mb-6">
