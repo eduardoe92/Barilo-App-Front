@@ -1,11 +1,11 @@
-import { CiSettings } from "react-icons/ci";
-import { FaRegBell } from "react-icons/fa";
+import { FaRegBell, FaRegHeart } from "react-icons/fa";
 import ProfilePicture from "@/assets/images/2810502.png";
 import { Link } from "react-router-dom";
 import { useUserProfile } from "@/hooks/useUserProfile";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import PaymentHistoryComponent from "./PaymentHistoryComponent";
+import { MdOutlineSettings } from "react-icons/md";
 
 const Header = () => {
   const { t } = useTranslation();
@@ -14,7 +14,7 @@ const Header = () => {
 
   const handleBellClick = () => {
     setNotificationOpen(!isNotificationOpen);
-    console.log(isNotificationOpen)
+    console.log(isNotificationOpen);
   };
 
   return (
@@ -35,21 +35,23 @@ const Header = () => {
             </p>
           </div>
         </div>
-        <div className="flex items-center gap-1">
+        <div className="flex items-center gap-3">
+          <FaRegHeart
+            size={35}
+            className="bg-inactive-button-bg rounded-full p-1.5 text-primary-celeste transition hover:scale-110 cursor-pointer hover:text-lg"
+          />
           <Link to="/profileSettings">
-            <CiSettings
+            <MdOutlineSettings
               size={35}
-              className="p-1 rounded-full bg-inactive-button-bg text-primary-celeste"
+              className="bg-inactive-button-bg rounded-full p-1.5 text-primary-celeste transition hover:scale-110 cursor-pointer hover:text-lg"
             />
           </Link>
           <FaRegBell
             onClick={handleBellClick}
             size={32}
-            className="bg-inactive-button-bg rounded-full p-1.5 text-primary-celeste"
+            className="bg-inactive-button-bg rounded-full p-1.5 text-primary-celeste transition hover:scale-110 cursor-pointer hover:text-lg"
           />
-          {isNotificationOpen && (
-            <PaymentHistoryComponent/>
-          )}
+          {isNotificationOpen && <PaymentHistoryComponent />}
         </div>
       </div>
     </div>
@@ -57,5 +59,3 @@ const Header = () => {
 };
 
 export default Header;
-
-
