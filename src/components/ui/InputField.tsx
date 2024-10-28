@@ -19,7 +19,6 @@ interface InputFieldProps {
   options?: string[];
 }
 
-
 const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
   (
     { label, name, required = false, type = "text", placeholder, options = [] },
@@ -28,11 +27,9 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
     const { setValue, watch } = useFormContext();
     const formField = useFormField();
     const { error, formItemId } = formField || {};
-
     const inputValue = watch(name);
     const [filteredOptions, setFilteredOptions] = React.useState<string[]>([]);
     const [showDropdown, setShowDropdown] = React.useState(false);
-
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
       const value = event.target.value;
       setValue(name, value);
@@ -43,22 +40,20 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
       );
       setShowDropdown(true);
     };
-
     const handleSelectOption = (option: string) => {
       setValue(name, option);
       setShowDropdown(false);
     };
-
     return (
-      <FormItem className="w-full flex flex-col items-start justify-center md:flex-row md:items-center">
+      <FormItem>
         <FormLabel
           htmlFor={formItemId}
-          className="text-lg font-bold font-primary text-customBlue md:w-4/12 md:pl-5 lg:w-2/12"
+          className="text-lg font-bold font-primary text-primary-celeste"
         >
           {label}
         </FormLabel>
         <FormControl>
-          <div className="relative w-full md:w-5/12 md:flex md:items-center md:justify-start lg:w-3/12">
+          <div className="relative">
             <Input
               id={formItemId}
               name={name}
@@ -67,7 +62,7 @@ const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
               required={required}
               value={inputValue || ""}
               onChange={handleInputChange}
-              className={cn("w-full  md:flex md:items-center md:justify-start", error && "")}
+              className={cn("w-full", error && "")}
               onFocus={() => {
                 if (filteredOptions.length > 0) {
                   setShowDropdown(true);
