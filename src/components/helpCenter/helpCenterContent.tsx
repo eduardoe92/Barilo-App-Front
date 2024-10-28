@@ -13,7 +13,7 @@ const HelpCenterContent: React.FC = () => {
 
   return (
 
-<section className="pl-14">
+<section className="">
 <div className="w-full px-4 pt-10">
       <div className="font-bold text-black"></div>
       <header className="flex max-h-40 w-full pt-4 flex-col items-center justify-center bg-primary-blue rounded-2xl">

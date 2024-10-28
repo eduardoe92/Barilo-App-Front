@@ -14,7 +14,7 @@ const profileTexts = {
 const CrowdComponent: React.FC<CrowdfundingData> = (data) => {
   const { t } = useTranslation();
   return (
-    <main className="ml-14 flex flex-col items-center justify-center min-h-screen px-5 py-10 font-primary text-secondary-celeste md:ml-0">
+    <main className="flex flex-col items-center justify-center min-h-screen px-5 py-10 font-primary text-secondary-celeste md:ml-0">
       <div className="w-full max-w-md">
         {i18next.exists(`crowd.${data.profile}.title`) ? (
           <h1 className="mb-2 text-4xl font-bold text-primary-pink md:text-5xl lg:text-6xl">

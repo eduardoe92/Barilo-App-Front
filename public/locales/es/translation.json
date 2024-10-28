@@ -482,6 +482,7 @@
     },
     "settings": {
       "title_h3": "Ajustes",
+      "title_span": "Personaliza tus preferencias",
       "link": {
         "name_notification_settings": "Configuración de Notificaciones",
         "name_password_management": "Administración de Contraseñas",

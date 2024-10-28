@@ -55,21 +55,22 @@ const SideProfile = () => {
   };
 
   const links = [
-    { name: "profile_user.component_profile.link.name_profile", to: "/editProfile", icon: <IoPersonOutline /> },
-    { name: "profile_user.component_profile.link.name_favorites", to: "#", icon: <IoHeartOutline /> },
-    { name: "profile_user.component_profile.link.name_crowfounding", to: "/crowdfunding", icon: <IoWalletOutline /> },
-    { name: "profile_user.component_profile.link.name_privacy_policies", to: "#", icon: <IoLockClosedOutline /> },
-    { name: "profile_user.component_profile.link.name_settings", to: "/profileSettings", icon: <IoSettingsOutline /> },
-    { name: "profile_user.component_profile.link.name_help", to: "/help-center", icon: <IoHelp /> },
+    { name: "profile_user.component_profile.link.name_profile", to: "/editProfile", icon: <IoPersonOutline size={25}/> },
+    { name: "profile_user.component_profile.link.name_favorites", to: "#", icon: <IoHeartOutline size={25}/> },
+    { name: "profile_user.component_profile.link.name_crowfounding", to: "/crowdfunding", icon: <IoWalletOutline size={25}/> },
+    { name: "profile_user.component_profile.link.name_privacy_policies", to: "#", icon: <IoLockClosedOutline size={25}/> },
+    { name: "profile_user.component_profile.link.name_settings", to: "/profileSettings", icon: <IoSettingsOutline size={25}/> },
+    { name: "profile_user.component_profile.link.name_help", to: "/help-center", icon: <IoHelp size={25}/> },
   ];
 
   return (
     <nav
       ref={sideNavRef}
-      className={`fixed top-0 py-24 left-0 shadow-md transition-all h-screen bg-white z-10 flex flex-col justify-between duration-100
-      ${open ? "w-80 pl-3 pt-24" : "w-14 flex items-center"}`}
+      className={`absolute top-[var(--header-height)] bottom-[var(--footer-height)] flex flex-col justify-between left-0 z-10 bg-white shadow-md transition-all duration-300
+      ${open ? 'w-80 pl-2.5' : 'w-14'}`}
+      style={{ overflow: 'hidden' }}
     >
-      <div className="w-8 h-8">
+      <div className={` ${!open && "flex items-center justify-center"} ${open && "justify-start"}`}>
         <MdMenuOpen
           size={34}
           className={`flex text-customBlue duration-300 cursor-pointer ${!open && "rotate-180"}`}
@@ -83,7 +84,7 @@ const SideProfile = () => {
             className="relative flex items-center my-3 duration-300 text-customBlue rounded-md cursor-pointer group"
           >
             <Link to={item.to} className={`flex items-center ${open ? "gap-x-5" : "justify-center"}`}>
-              <div className="flex items-center justify-center text-xl text-customBlue">
+              <div className="flex items-center justify-center text-primary-celeste bg-inactive-button-bg rounded-full p-1.5  transition hover:scale-110 cursor-pointer hover:text-lg">
                 {item.icon}
               </div>
               {open && (
@@ -92,9 +93,9 @@ const SideProfile = () => {
             </Link>
           </li>
         ))}
-        <div className={`flex items-center mt-3 pl-1 text-customBlue ${open ? "gap-x-4" : "justify-center"}`}>
-          <div className="flex items-center justify-center text-xl text-customBlue">
-            <IoLogOutOutline />
+        <div className={`flex items-center mt-3 text-customBlue ${open ? "gap-x-4" : "justify-center"}`}>
+          <div className="flex items-center justify-center text-primary-celeste bg-inactive-button-bg rounded-full p-1.5  transition hover:scale-110 cursor-pointer hover:text-lg">
+            <IoLogOutOutline size={25} />
           </div>
           <button
             className={`flex text-2x1 font-bold cursor-pointer transition-all duration-300 ${!open && "hidden"}`}
@@ -104,7 +105,7 @@ const SideProfile = () => {
           </button>
         </div>
       </ul>
-      <div className="flex items-center justify-center mt-5">
+      <div className="flex items-center justify-center ">
         <IconComponent />
       </div>
     </nav>
