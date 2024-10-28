@@ -1,4 +1,4 @@
-import { ChevronLeft, Search } from "lucide-react";
+import { Search } from "lucide-react";
 import HelpCenterContact from "./HelpCenterContact";
 import HelpCenterQuestions from "./HelpCenterQuestions";
 import ButtonBlue from "../ui/buttonBlue";
@@ -6,32 +6,28 @@ import ButtonBlue from "../ui/buttonBlue";
 import { useTranslation } from "react-i18next";
 import { useHelpCenter } from "@/hooks/useHelpCenter";
 import { HelpCenterView } from "@/types/HelpCenter";
-import { useNavigate } from "react-router-dom";
 
 const HelpCenterContent: React.FC = () => {
   const { t } = useTranslation();
   const { activeView, setActiveViewHelper } = useHelpCenter();
-  const navigate = useNavigate();
-  
-  return (
-    <div className="min-h-screen">
-      <div className="font-bold text-black"></div>
-      <header className="bg-customBlue text-white p-4">
-        <div>
-          <button onClick={() => navigate("/profile")} className="ml-2">
-            <ChevronLeft size={24} />
-          </button>
 
-          <h1 className="text-2xl font-bold text-center w-full">
+  return (
+
+<section className="pl-14">
+<div className="w-full px-4 pt-10">
+      <div className="font-bold text-black"></div>
+      <header className="flex max-h-40 w-full pt-4 flex-col items-center justify-center bg-primary-blue rounded-2xl">
+        <div className="w-full">
+          <h1 className="text-2xl text-center font-bold text-white font-primary">
             {t("help.title")}
           </h1>
         </div>
 
-        <div className="p-6 flex flex-col items-center w-full">
+        <div className="p-2 flex flex-col items-center w-full">
           <h2 className="text-base mb-4 text-white/65 font-semibold">
             {t("help.subtitle")}
           </h2>
-          <div className="bg-white rounded-full flex items-center p-2 mb-4 w-[340px]">
+          <div className="bg-white rounded-full flex items-center p-2 mb-4">
             <Search className="text-customBlue/60 mx-2" size={20} />
             <input
               type="search"
@@ -66,6 +62,8 @@ const HelpCenterContent: React.FC = () => {
         <HelpCenterContact />
       )}
     </div>
+</section>
+
   );
 };
 

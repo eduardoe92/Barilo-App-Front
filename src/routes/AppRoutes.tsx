@@ -23,7 +23,6 @@ import PaymentMethodCard from "@/pages/PaymentMethodCard";
 import Destinations from "@/pages/Destinations";
 import AppFooter from "@/components/AppFooter";
 import PrivateRoute from "./PrivateRoute";
-import Profile from "@/components/profile/Profile";
 import EditProfile from "@/components/profile/EditProfile";
 import ProfileSettings from "@/components/profile/ProfileSettings";
 import HelpCenter from "@/pages/helpCenter";
@@ -33,6 +32,7 @@ import Activities from "@/pages/Activities";
 import Restaurants from "@/pages/Restaurants";
 import ActivityDetailPage from "@/pages/ActivitiesDetailPage";
 import TripComponent from "@/components/TripComponent";
+import SideProfile from "@/components/profile/SideProfile";
 
 function AppRoutes() {
   const location = useLocation();
@@ -40,9 +40,14 @@ function AppRoutes() {
 
   const showHeaderFooterRoutes = [
     /^\/home$/,
+    /^\/editProfile$/,
+    /^\/profileSettings$/,
+    /^\/help-center$/,
+    /^\/language$/,
     /^\/group$/,
     /^\/access-group$/,
     /^\/crowdfunding$/,
+    /^\/crowdfundingForm$/,
     /^\/mercadopago$/,
     /^\/payment$/,
     /^\/create-trip$/,
@@ -60,19 +65,23 @@ function AppRoutes() {
   return (
     <>
       {shouldShowHeaderFooter() && <Header />}
+      {shouldShowHeaderFooter() && <SideProfile />}
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/auth" element={<AuthPage />} />
         <Route element={<PrivateRoute />}>
           <Route path="/home" element={<Home token={token} />} />
+          <Route path="/crowdfunding" element={<Crowdfunding />} />
+          <Route path="/editProfile" element={<EditProfile />} />
+          <Route path="/profileSettings" element={<ProfileSettings />} />
+          <Route path="/help-center" element={<HelpCenter />} />
+          <Route path="/language" element={<Language />} />
           <Route path="/trip-component" element={<TripComponent />} />
           <Route path="/create-trip" element={<CreateTrip />} />
           <Route path="/plan-trip/group" element={<PlanTripGroup />} />
           <Route path="/plan-trip" element={<PlanTrip />} />
           <Route path="/group" element={<Group />} />
           <Route path="/access-group" element={<Access />} />
-          <Route path="/crowdfunding" element={<Crowdfunding />} />
-          <Route path="/crowdfunding-donor" element={<CrowdfundingDonor />} />
           <Route path="/payment" element={<Payment />} />
           <Route path="/payment-method" element={<PaymentMethod />} />
           <Route path="/payment-method/card" element={<PaymentMethodCard />} />
@@ -82,11 +91,7 @@ function AppRoutes() {
           <Route path="/activities" element={<Activities />} />
           <Route path="/activity/:id" element={<ActivityDetailPage />} />
           <Route path="/restaurants" element={<Restaurants />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/editProfile" element={<EditProfile />} />
-          <Route path="/profileSettings" element={<ProfileSettings />} />
-          <Route path="/help-center" element={<HelpCenter />} />
-          <Route path="/language" element={<Language />} />
+          <Route path="/crowdfunding-donor" element={<CrowdfundingDonor />} />
         </Route>
         <Route path="*" element={<Error />} />
       </Routes>
