@@ -1,11 +1,13 @@
 import CrowdComponent from "@/components/crowdfunding/CrowdComponent";
+import amico from "@/assets/images/amico.svg"
+import coins from "@/assets/images/coins.svg"
 
 function Crowdfunding() {
   return (
     <>
       <CrowdComponent
         profile="organizer"
-        image={"/src/assets/images/amico.svg"}
+        image={amico}
       />
     </>
   );
@@ -17,7 +19,7 @@ export const CrowdfundingDonor = () => {
       <CrowdComponent profile="donor" image="src\assets\images\pana.svg" />
       <CrowdComponent
         profile="approvedDonation"
-        image="src\assets\images\coins.svg"
+        image={coins}
       />
     </>
   );

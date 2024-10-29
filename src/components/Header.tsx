@@ -1,11 +1,10 @@
-import { FaRegBell, FaRegHeart } from "react-icons/fa";
+import { FaRegBell } from "react-icons/fa";
 import ProfilePicture from "@/assets/images/2810502.png";
 import { Link } from "react-router-dom";
 import { useUserProfile } from "@/hooks/useUserProfile";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
 import PaymentHistoryComponent from "./PaymentHistoryComponent";
-import { MdOutlineSettings } from "react-icons/md";
 
 const Header = () => {
   const { t } = useTranslation();
@@ -18,7 +17,7 @@ const Header = () => {
   };
 
   return (
-    <div className="sticky top-0 left-0 h-24 w-full bg-white shadow-md">
+    <div className="sticky top-0 left-0 z-20 w-full h-24 bg-white shadow-md">
       <div className="flex justify-between px-8 pt-4 pb-3">
         <div className="flex items-center gap-1">
           <Link to="/home">
@@ -36,16 +35,6 @@ const Header = () => {
           </div>
         </div>
         <div className="flex items-center gap-3">
-          <FaRegHeart
-            size={35}
-            className="bg-inactive-button-bg rounded-full p-1.5 text-primary-celeste transition hover:scale-110 cursor-pointer hover:text-lg"
-          />
-          <Link to="/profileSettings">
-            <MdOutlineSettings
-              size={35}
-              className="bg-inactive-button-bg rounded-full p-1.5 text-primary-celeste transition hover:scale-110 cursor-pointer hover:text-lg"
-            />
-          </Link>
           <FaRegBell
             onClick={handleBellClick}
             size={32}
