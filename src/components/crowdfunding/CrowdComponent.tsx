@@ -14,7 +14,7 @@ const profileTexts = {
 const CrowdComponent: React.FC<CrowdfundingData> = (data) => {
   const { t } = useTranslation();
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen px-5 py-10 font-primary text-secondary-celeste md:ml-0">
+    <main className="flex flex-col items-center justify-center mt-5 font-primary text-secondary-celeste ml-14">
       <div className="w-full max-w-md">
         {i18next.exists(`crowd.${data.profile}.title`) ? (
           <h1 className="mb-2 text-4xl font-bold text-primary-pink md:text-5xl lg:text-6xl">
@@ -29,14 +29,14 @@ const CrowdComponent: React.FC<CrowdfundingData> = (data) => {
         )}
 
         {i18next.exists(`crowd.${data.profile}.subtitle`) ? (
-          <h2 className="text-4xl text-center tracking-tight  lg:text-5xl ">
+          <h2 className="text-4xl tracking-tight text-center lg:text-5xl ">
             <ReactMarkdown
               children={t(`crowd.${data.profile}.subtitle`)}
             ></ReactMarkdown>
           </h2>
         ) : (
           data.subtitle && (
-            <h2 className="text-3xl text-center tracking-tight md:text-4xl lg:text-5xl ">
+            <h2 className="text-3xl tracking-tight text-center md:text-4xl lg:text-5xl ">
               <ReactMarkdown children={data.subtitle}></ReactMarkdown>
             </h2>
           )
@@ -61,19 +61,16 @@ const CrowdComponent: React.FC<CrowdfundingData> = (data) => {
         )}
       </div>
 
-      <div className="flex justify-center my-20 w-full h-60 max-w-sm">
+      <div className="flex justify-center w-full max-w-sm my-20 h-60">
         {data.image && (
           <img
-            className="w-full h-60 rounded-lg"
+            className="w-full rounded-lg h-60"
             src={data.image}
             alt={t("crowd.imageAlt")}
           />
         )}
       </div>
-      <div className="flex flex-col justify-center space-x-4 gap-4 md:flex-row">
-        <Link to="/">
-          <ButtonBlue text={t("buttons.homeButton")} isActive={false} />
-        </Link>
+      <div className="flex flex-col justify-center gap-4 space-x-4 md:flex-row">
         <Link to="/crowdfundingForm">
           <ButtonBlue
             text={t(

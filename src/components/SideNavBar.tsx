@@ -147,7 +147,7 @@ export default function SideNavBar() {
           </li>
         ))}
 
-        <div className="flex py-2 font-bold tracking-wider duration-300 rounded-md items-center text-lg hover:bg-primary-purple md:hover:bg-white md:hover:scale-110">
+        <div className="flex items-center py-2 text-lg font-bold tracking-wider duration-300 rounded-md hover:bg-primary-purple md:hover:bg-white md:hover:scale-110">
           <button
             className={`${
               open && "gap-x-2"
@@ -183,7 +183,7 @@ export default function SideNavBar() {
       </ul>
       {/* footer */}
       <div className={`${open && "hidden"} md:hidden`}>
-        <SocialNetworks className={"flex flex-col gap-4 mb-4"} />
+        <SocialNetworks className={"flex flex-col gap-4 my-7"} />
       </div>
       <div className={`${!open && "hidden"} md:hidden md:h-0`}>
         <Footer />
