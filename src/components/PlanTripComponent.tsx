@@ -54,7 +54,7 @@ const PlanTripComponent: React.FC = () => {
     <section className="flex flex-col items-center justify-center mb-6 overflow-hidden text-justify text-secondary-celeste font-primary">
       <div className="container flex flex-col items-center mx-auto">
         <div className="w-full">
-          <h1 className="mx-5 mb-2 text-3xl font-bold text-secondary-blue md:text-4xl lg:text-5xl">
+          <h1 className="pb-2 text-3xl font-bold text-center text-secondary-blue md:text-4xl lg:text-5xl">
             {t("createTrip.create.process")}
           </h1>
 

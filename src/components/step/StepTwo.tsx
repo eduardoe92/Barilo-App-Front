@@ -123,12 +123,12 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext }) => {
 
   return (
     <FormProvider {...methods}>
-      <div className="mx-auto mb-5 text-sm text-justify font-primary font-regular text-secondary-celeste md:text-base lg:text-lg w-80 md:w-96 lg:w-full">
+      <div className="pb-5 mx-auto text-sm text-justify font-regular text-secondary-celeste md:text-base lg:text-lg md:w-[30em] w-72 lg:w-[35em]">
         {t("stepTwo.return_information_message")}
       </div>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="mx-auto space-y-5 w-80 mb-36"
+        className="mx-auto space-y-5 w-72 md:w-96 mb-36"
       >
         <InputField
           label={t("stepTwo.origin")}
@@ -201,7 +201,7 @@ const StepTwo: React.FC<StepTwoProps> = ({ onNext }) => {
               <ButtonBlue
                 text={t("buttons.nextButton")}
                 onClick={handleNext}
-                isActive={canProceed}
+                isActive={selectedOutbound !== null || selectedReturn !== null}
               />
             )}
           </>

@@ -116,11 +116,11 @@ const StepFour: React.FC<StepFourProps> = ({ onNext, destinationId }) => {
 
   return (
     <div className="font-primary">
-      <div className="mx-auto mb-5 text-sm text-justify font-regular text-secondary-celeste md:text-base lg:text-lg w-80 md:w-96 lg:w-full">
+      <div className="pb-5 mx-auto text-sm text-justify font-regular text-secondary-celeste md:text-base lg:text-lg md:w-[30em] w-72 lg:w-[35em]">
         {t("stepFour.return_information_message")}
       </div>
       {loading ? (
-        <div className="pr-2 overflow-hidden text-lg font-bold text-center loader-text whitespace-nowrap text-primary-blue">
+        <div className="px-1 overflow-hidden text-lg font-bold text-center loader-text whitespace-nowrap text-primary-blue">
           {t("stepFour.loading_act_res")}
         </div>
       ) : error ? (
@@ -130,70 +130,79 @@ const StepFour: React.FC<StepFourProps> = ({ onNext, destinationId }) => {
           <h3 className="text-xl font-bold text-center text-primary-blue">
             {t("stepFour.title_activity")}
           </h3>
-          {activitiesData.map((activity) => (
-            <div
-              key={activity.id}
-              className={`transition-all duration-300 border border-transparent rounded-lg shadow-lg cursor-pointer hover:shadow-2xl hover:scale-105 mb-6 mx-8 ${
-                selectedActivities.some((item) => item.id === activity.id)
-                  ? "bg-blue-500"
-                  : "bg-background-light"
-              }`}
-              onClick={() => handleActivitySelect(activity)}
-            >
-              <div className="flex flex-col h-full p-4 text-white rounded-lg bg-primary-blue bg-opacity-60">
-                <img
-                  src={activity.image}
-                  alt={activity.name}
-                  className="object-cover w-full h-48 mb-4 rounded-md"
-                />
-                <h3 className="flex items-center text-xl font-bold text-primary-celeste">
-                  <FaHiking className="mr-2 text-white align-middle" />
-                  {activity.name}
-                </h3>
-                <h4 className="flex items-center text-lg text-white">
-                  <AiOutlineDollar className="mr-2 align-middle" />
-                  {activity.price}
-                </h4>
-                <p className="mt-2 text-base text-gray-300">
-                  {activity.description}
-                </p>
-              </div>
+          <div className="flex flex-col items-center">
+            <div className="grid w-full grid-cols-1 gap-4 mb-6 md:grid-cols-2 lg:grid-cols-3 md:w-[45em] lg:w-[70em] px-4">
+              {activitiesData.map((activity) => (
+                <div
+                  key={activity.id}
+                  className={`transition-all duration-300 border border-transparent rounded-lg shadow-lg cursor-pointer hover:shadow-2xl hover:scale-105 mb-2 mx-auto ${
+                    selectedActivities.some((item) => item.id === activity.id)
+                      ? "bg-blue-500"
+                      : "bg-background-light"
+                  }`}
+                  onClick={() => handleActivitySelect(activity)}
+                >
+                  <div className="flex flex-col h-full p-4 text-white rounded-lg bg-primary-blue bg-opacity-60">
+                    <img
+                      src={activity.image}
+                      alt={activity.name}
+                      className="object-cover w-full h-48 mb-4 rounded-md"
+                    />
+                    <h3 className="flex items-center text-xl font-bold text-primary-celeste">
+                      <FaHiking className="mr-2 text-white align-middle" />
+                      {activity.name}
+                    </h3>
+                    <h4 className="flex items-center text-lg text-white">
+                      <AiOutlineDollar className="mr-2 align-middle" />
+                      {activity.price}
+                    </h4>
+                    <p className="mt-2 text-base text-white">
+                      {activity.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
           <h3 className="text-xl font-bold text-center text-primary-blue">
             {t("stepFour.title_restaurant")}
           </h3>
-          {restaurantsData.map((restaurant) => (
-            <div
-              key={restaurant.id}
-              className={`transition-all duration-300 border border-transparent rounded-lg shadow-lg cursor-pointer hover:shadow-2xl hover:scale-105 mb-6 mx-8 ${
-                selectedRestaurants.some((item) => item.id === restaurant.id)
-                  ? "bg-blue-500"
-                  : "bg-background-light"
-              }`}
-              onClick={() => handleRestaurantSelect(restaurant)}
-            >
-              <div className="flex flex-col h-full p-4 text-white rounded-lg bg-primary-blue bg-opacity-60">
-                <img
-                  src={restaurant.image}
-                  alt={restaurant.name}
-                  className="object-cover w-full h-48 mb-4 rounded-md"
-                />
-                <h3 className="flex items-center text-xl font-bold text-primary-celeste">
-                  <FaUtensils className="mr-2 text-white align-middle" />
-                  {restaurant.name}
-                </h3>
-                <h4 className="flex items-center text-lg text-white">
-                  <AiOutlineDollar className="mr-2 align-middle" />
-                  {restaurant.price}
-                </h4>
-                <p className="mt-2 text-base text-gray-300">
-                  {restaurant.description}
-                </p>
-              </div>
+          <div className="flex flex-col items-center">
+          <div className="grid w-full grid-cols-1 gap-4 mb-6 md:grid-cols-2 lg:grid-cols-3 md:w-[45em] lg:w-[70em] px-4">
+              {restaurantsData.map((restaurant) => (
+                <div
+                  key={restaurant.id}
+                  className={`transition-all duration-300 border border-transparent rounded-lg shadow-lg cursor-pointer hover:shadow-2xl hover:scale-105 mb-6${
+                    selectedRestaurants.some(
+                      (item) => item.id === restaurant.id
+                    )
+                      ? "bg-blue-500"
+                      : "bg-background-light"
+                  }`}
+                  onClick={() => handleRestaurantSelect(restaurant)}
+                >
+                  <div className="flex flex-col h-full p-4 text-white rounded-lg bg-primary-blue bg-opacity-60">
+                    <img
+                      src={restaurant.image}
+                      alt={restaurant.name}
+                      className="object-cover w-full h-48 mb-4 rounded-md"
+                    />
+                    <h3 className="flex items-center text-xl font-bold text-primary-celeste">
+                      <FaUtensils className="mr-2 text-white align-middle" />
+                      {restaurant.name}
+                    </h3>
+                    <h4 className="flex items-center text-lg text-white">
+                      <AiOutlineDollar className="mr-2 align-middle" />
+                      {restaurant.price}
+                    </h4>
+                    <p className="mt-2 text-base text-white">
+                      {restaurant.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
-          <div className="mx-5">
+          <div className="flex justify-center space-x-4 w-[18em] pt-2">
             <ButtonBlue
               text={t("buttons.nextButton")}
               onClick={handleNext}
@@ -201,15 +210,13 @@ const StepFour: React.FC<StepFourProps> = ({ onNext, destinationId }) => {
                 selectedActivities.length > 0 || selectedRestaurants.length > 0
               }
             />
-          </div>
-          <div className="mx-5">
             <ButtonBlue
               text={t("buttons.cancelButton")}
               onClick={handleCancel}
               isActive={false}
             />
           </div>
-        </div>
+        </div></div>
       )}
     </div>
   );

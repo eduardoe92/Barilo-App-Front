@@ -25,32 +25,34 @@ const ProgressBar: React.FC<ProgressBarProps> = ({
   };
 
   return (
-    <div className="relative mx-auto mb-8 cursor-pointer w-96 md:w-full">
-      <div
-        className="w-full h-16 rounded-full bg-primary-blue md:h-20 lg:h-24"
-        onClick={handleClick}
-      >
+    <>
+      <div className="relative mx-auto mb-8 cursor-pointer w-[19em] md:w-[30em] lg:w-[40em]">
         <div
-          className="h-16 transition-all rounded-full bg-primary-celeste md:h-20 lg:h-24"
-          style={{ width: `${(currentStep / totalSteps) * 100}%` }}
-        />
-        <div className="absolute inset-0 flex items-center justify-between">
-          {steps.map((step, index) => (
-            <div
-              key={index}
-              className={`text-sm font-semibold font-primary md:text-lg ${
-                index + 1 <= currentStep
-                  ? "text-white"
-                  : "text-secondary-celeste"
-              }`}
-              style={{ width: `${100 / totalSteps}%`, textAlign: "center" }}
-            >
-              {step}
-            </div>
-          ))}
+          className="w-full h-12 rounded-full bg-primary-blue md:h-16 lg:h-20"
+          onClick={handleClick}
+        >
+          <div
+            className="h-12 transition-all rounded-full bg-primary-celeste md:h-16 lg:h-20"
+            style={{ width: `${(currentStep / totalSteps) * 100}%` }}
+          />
+          <div className="absolute inset-0 flex items-center justify-between">
+            {steps.map((step, index) => (
+              <div
+                key={index}
+                className={`text-xs font-semibold font-primary md:text-base ${
+                  index + 1 <= currentStep
+                    ? "text-white"
+                    : "text-secondary-celeste"
+                }`}
+                style={{ width: `${100 / totalSteps}%`, textAlign: "center" }}
+              >
+                {step}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
