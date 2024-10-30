@@ -4,7 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { CustomInput } from "@/components/CustomInput";
 import { CustomButton } from "@/components/CustomButton";
-import { IconButton } from "@/components/IconButton";
+import { IconButton } from "@/components/group/IconButton";
 import { Separator } from "@/components/ui/separator";
 import { FaGoogle } from "react-icons/fa";
 import { ImAppleinc } from "react-icons/im";
