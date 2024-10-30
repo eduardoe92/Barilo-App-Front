@@ -51,7 +51,7 @@
     "copyright": "All rights reserved."
   },
   "progressBar": {
-    "steps": ["Group", "Tickets", "Hotels", "Activities", "Confirm"]
+    "steps": ["Group", "Tickets", "Hotel", "Activity", "Confirm"]
   },
   "stepOne": {
     "description": "Choose the group name, and later you can share an invitation link with the people you want to add.",

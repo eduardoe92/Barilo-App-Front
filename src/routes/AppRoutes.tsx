@@ -64,8 +64,15 @@ function AppRoutes() {
 
   return (
     <>
+      <div className="flex flex-col min-h-screen">
       {shouldShowHeaderFooter() && <Header />}
-      {shouldShowHeaderFooter() && <SideProfile />}
+      <div className="flex flex-grow">
+        {shouldShowHeaderFooter() && (
+          <div className="flex-shrink-0 w-14">
+            <SideProfile />
+          </div>
+        )}
+        <main className="flex-grow">
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/auth" element={<AuthPage />} />
@@ -94,8 +101,11 @@ function AppRoutes() {
           <Route path="/crowdfunding-donor" element={<CrowdfundingDonor />} />
         </Route>
         <Route path="*" element={<Error />} />
-      </Routes>
+        </Routes>
+        </main>
+      </div>
       {shouldShowHeaderFooter() && <AppFooter />}
+    </div>
     </>
   );
 }
