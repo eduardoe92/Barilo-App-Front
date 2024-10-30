@@ -72,7 +72,7 @@ const StepThree: React.FC<StepThreeProps> = ({ onNext, destinationId }) => {
 
   return (
     <>
-      <div className="mx-auto mb-5 text-sm text-justify font-primary font-regular text-secondary-celeste md:text-base lg:text-lg w-80 md:w-96 lg:w-full">
+      <div className="pb-5 mx-auto text-sm text-justify font-regular text-secondary-celeste md:text-base lg:text-lg md:w-[30em] w-72 lg:w-[35em]">
         {t("stepThree.return_information_message")}
       </div>
       {loading ? (
@@ -86,41 +86,41 @@ const StepThree: React.FC<StepThreeProps> = ({ onNext, destinationId }) => {
           {error}
         </div>
       ) : (
-        <div className="grid grid-cols-1 gap-4 mb-36">
-          {hotels.map((hotel) => (
-            <div
-              key={hotel.id}
-              className={`transition-all duration-300 border border-transparent rounded-lg shadow-lg cursor-pointer hover:shadow-2xl hover:scale-105 bg-background-light mb-6 mx-8 ${
-                selectedHotel?.id === hotel.id ? "border-blue-500" : ""
-              }`}
-              onClick={() => setSelectedHotel(hotel)}
-            >
-              <div className="flex flex-col h-full p-4 text-white rounded-lg bg-primary-blue bg-opacity-60">
-                <img
-                  src={hotel.image.url}
-                  alt={hotel.name}
-                  className="object-cover w-full h-48 mb-4 rounded-md"
-                />
-                <h3 className="text-lg font-bold text-primary-celeste">
-                  {hotel.name}
-                </h3>
-                <p className="flex items-center text-lg font-semibold">
-                  <AiOutlineDollar className="mr-2" />
-                  {hotel.price} {t("stepThree.hotel_price")}
-                </p>
+        <div className="flex flex-col items-center mb-36">
+          <div className="grid w-full grid-cols-1 gap-4 mb-6 md:grid-cols-2 lg:grid-cols-3 md:w-[45em] lg:w-[70em] px-4">
+            {hotels.map((hotel) => (
+              <div
+                key={hotel.id}
+                className={`transition-all duration-300 border border-transparent rounded-lg shadow-lg cursor-pointer hover:shadow-2xl hover:scale-105 mb-2 mx-auto ${
+                  selectedHotel?.id === hotel.id ? "border-blue-500" : ""
+                }`}
+                onClick={() => setSelectedHotel(hotel)}
+              >
+                <div className="flex flex-col h-full p-4 text-white rounded-lg bg-primary-blue bg-opacity-60">
+                  <img
+                    src={hotel.image.url}
+                    alt={hotel.name}
+                    className="object-cover mb-4 rounded-md h-46 w-[20em]"
+                  />
+                  <h3 className="text-lg font-bold text-primary-celeste">
+                    {hotel.name}
+                  </h3>
+                  <p className="flex items-center text-lg font-semibold">
+                    <AiOutlineDollar className="mr-2" />
+                    {hotel.price} {t("stepThree.hotel_price")}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
-          {selectedHotel && (
-            <div className="mx-5">
+            ))}
+          </div>
+          <div className="flex justify-center space-x-4 w-[18em]">
+            {selectedHotel && (
               <ButtonBlue
                 text={t("buttons.nextButton")}
                 onClick={handleNext}
                 disabled={!selectedHotel}
               />
-            </div>
-          )}
-          <div className="mx-5">
+            )}
             <ButtonBlue
               text={t("buttons.cancelButton")}
               onClick={handleCancel}

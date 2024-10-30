@@ -53,12 +53,12 @@ const StepOne: React.FC<StepOneProps> = ({ onNext, stepOneData }) => {
 
   return (
     <FormProvider {...methods}>
-      <div className="mx-auto mb-5 text-sm text-justify font-regular text-secondary-celeste md:text-base lg:text-lg w-80 md:w-96 lg:w-full">
+      <div className="pb-5 mx-auto text-sm text-justify font-regular text-secondary-celeste md:text-base lg:text-lg md:w-[30em] w-72 lg:w-[35em]">
       {t('stepOne.return_information_message')}
       </div>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="mx-auto space-y-5 w-80 md:w-96"
+        className="mx-auto space-y-5 w-72 md:w-96"
       >
         <InputField
           label={t("stepOne.groupName")}

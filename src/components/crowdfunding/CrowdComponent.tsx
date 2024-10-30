@@ -14,7 +14,7 @@ const profileTexts = {
 const CrowdComponent: React.FC<CrowdfundingData> = (data) => {
   const { t } = useTranslation();
   return (
-    <main className="flex flex-col items-center justify-center mt-5 font-primary text-secondary-celeste ml-14">
+    <main className="flex flex-col items-center justify-center pt-4 font-primary text-secondary-celeste">
       <div className="w-full max-w-md">
         {i18next.exists(`crowd.${data.profile}.title`) ? (
           <h1 className="mb-2 text-4xl font-bold text-primary-pink md:text-5xl lg:text-6xl">
@@ -44,7 +44,7 @@ const CrowdComponent: React.FC<CrowdfundingData> = (data) => {
 
         {i18next.exists(`crowd.${data.profile}.text`) ? (
           <div className="px-10 mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-            <p className="text-2xl md:text-2xl lg:text-3xl leading-1">
+            <p className="text-2xl text-center md:text-2xl lg:text-3xl leading-1">
               <ReactMarkdown
                 children={t(`crowd.${data.profile}.text`)}
               ></ReactMarkdown>
