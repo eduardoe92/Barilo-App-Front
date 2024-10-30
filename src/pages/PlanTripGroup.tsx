@@ -1,5 +1,5 @@
-import GroupMember from "@/components/GroupMember"
-import { IconButton } from "@/components/IconButton"
+import GroupMember from "@/components/group/GroupMember"
+import { IconButton } from "@/components/group/IconButton"
 import { RiAddFill } from "react-icons/ri"
 
 function PlanTripGroup() {

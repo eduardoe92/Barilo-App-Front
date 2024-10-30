@@ -3,9 +3,9 @@ import MountainIconWhite from "@/assets/images/MountainIconWhite.svg";
 import MountainIconBlue from "@/assets/images/MountainIconBlue.svg";
 import GroupIconBlue from "@/assets/images/GroupIconBlue.svg";
 import GroupIconWhite from "@/assets/images/GroupIconWhite.svg";
-import GroupMember from "@/components/GroupMember";
+import GroupMember from "@/components/group/GroupMember";
 import InputGroup from "@/components/InputGroup";
-import GroupActivity from "@/components/GroupActivity";
+import GroupActivity from "@/components/group/GroupActivity";
 import { useTranslation } from "react-i18next";
 
 function Group() {
@@ -18,7 +18,7 @@ function Group() {
   useEffect(() => {
     const updateVisibleDays = () => {
       if (window.innerWidth >= 1024) {
-        setVisibleDays(15);
+        setVisibleDays(16);
       } else if (window.innerWidth >= 768) {
         setVisibleDays(10);
       } else {
@@ -68,7 +68,7 @@ function Group() {
 
   const today = new Date();
 
-  const nextDays = Array.from({ length: 15 }, (_, i) => {
+  const nextDays = Array.from({ length: 16 }, (_, i) => {
     const date = new Date(today);
     date.setDate(today.getDate() + i);
     return {
@@ -99,48 +99,52 @@ function Group() {
 
   return (
     <div className="flex flex-col min-h-screen pb-16">
-      <div className="flex items-center gap-2 p-3 px-7">
-        <div className="flex">
-          <button
-            className={`flex flex-col rounded-full px-4 py-1 justify-center items-center w-[7em] lg:w-[8em] text-xs md:text-base ${
-              activeTab === "grupo"
-                ? "bg-primary-blue text-white"
-                : "text-secondary-celeste"
-            }`}
-            onClick={() => handleTabChange("grupo")}
-          >
-            <img
-              className="w-14"
-              src={activeTab === "excursiones" ? GroupIconBlue : GroupIconWhite}
-              alt="icono de grupo"
-            />
-            <p className="font-semibold">{t("group.group_p")}</p>
-          </button>
-          <button
-            className={`flex flex-col rounded-full px-4 py-1 justify-center items-center w-[7em] lg:w-[8em] text-xs md:text-base ${
-              activeTab === "excursiones"
-                ? "bg-primary-blue text-white"
-                : "text-secondary-celeste"
-            }`}
-            onClick={() => handleTabChange("excursiones")}
-          >
-            <img
-              className="w-6"
-              src={
+      <div className="flex items-center gap-2 p-3 px-3">
+        <div className="flex flex-col items-center w-full md:flex-row md:justify-between gap-y-4">
+          <div className="flex justify-around w-full lg:justify-start lg:w-auto gap-x-4">
+            <button
+              className={`flex flex-col items-center w-[20em] max-w-[8em] rounded-full px-3 py-1 justify-center text-base md:text-lg lg:text-xl ${
+                activeTab === "grupo"
+                  ? "bg-primary-blue text-white"
+                  : "text-secondary-celeste"
+              }`}
+              onClick={() => handleTabChange("grupo")}
+            >
+              <img
+                className="w-14"
+                src={
+                  activeTab === "excursiones" ? GroupIconBlue : GroupIconWhite
+                }
+                alt="icono de grupo"
+              />
+              <p className="font-semibold">{t("group.group_p")}</p>
+            </button>
+            <button
+              className={`flex flex-col items-center w-[20em] max-w-[8em] rounded-full px-3 py-1 justify-center text-base md:text-lg lg:text-xl ${
                 activeTab === "excursiones"
-                  ? MountainIconWhite
-                  : MountainIconBlue
-              }
-              alt="icono de excursion"
-            />
-            <p className="font-semibold">{t("group.excursions_p")}</p>
-          </button>
-        </div>
-        <div className="flex items-end justify-end w-full h-full">
-          <InputGroup onSearch={handleSearch} />
+                  ? "bg-primary-blue text-white"
+                  : "text-secondary-celeste"
+              }`}
+              onClick={() => handleTabChange("excursiones")}
+            >
+              <img
+                className="w-6"
+                src={
+                  activeTab === "excursiones"
+                    ? MountainIconWhite
+                    : MountainIconBlue
+                }
+                alt="icono de excursion"
+              />
+              <p className="font-semibold">{t("group.excursions_p")}</p>
+            </button>
+          </div>
+          <div className="flex justify-end w-full lg:w-[40em]">
+            <InputGroup onSearch={handleSearch} />
+          </div>
         </div>
       </div>
-      <div className="py-5 bg-inactive-button-bg px-7">
+      <div className="p-3 bg-inactive-button-bg">
         <div className="flex justify-center gap-2 mb-2">
           {nextDays.slice(0, visibleDays).map((day, index) => (
             <div
@@ -168,8 +172,8 @@ function Group() {
             activities
               .filter((activity) => activity.date === selectedDay)
               .map((activity, index) => (
-                <div key={index} className="p-4 mt-4 bg-white rounded-3xl">
-                  <div className="p-3 pl-5 bg-secondary-purple rounded-2xl">
+                <div key={index} className="p-2 mt-3 bg-white rounded-2xl">
+                  <div className="p-4 bg-secondary-purple rounded-xl">
                     <p className="font-black text-primary-celeste">
                       {t(activity.name)}
                     </p>
@@ -180,90 +184,92 @@ function Group() {
                 </div>
               ))
           ) : (
-            <div className="p-4 mt-4 bg-white rounded-2xl">
+            <div className="p-3 mt-3 bg-white rounded-2xl">
               <p>{t("group.no_activities_p")}</p>
             </div>
           )}
         </div>
       </div>
-      <div className="flex-grow px-7">
-        {activeTab === "grupo" ? (
-          <div>
-            <div className="flex items-center gap-1 mt-5 mb-2">
-              <img
-                src={GroupIconBlue}
-                className="w-12 py-1"
-                alt="Logo de Barilo"
-              />
-              <p className="font-bold text-secondary-celeste">
-                {t("group.group_members_p")}
-              </p>
+      <div className="flex flex-col items-center px-3">
+        <div className="grid w-full grid-cols-1 gap-4 mb-6 md:grid-cols-2 lg:grid-cols-3 md:w-[45em] lg:w-[70em]">
+          {activeTab === "grupo" ? (
+            <div>
+              <div className="flex items-center gap-1 py-2">
+                <img
+                  src={GroupIconBlue}
+                  className="w-12 py-1"
+                  alt="Logo de Barilo"
+                />
+                <p className="font-bold text-secondary-celeste">
+                  {t("group.group_members_p")}
+                </p>
+              </div>
+              {members.length === 0 ? (
+                <div className="py-4 text-center">
+                  <p className="font-bold text-primary-celeste">
+                    {t("group.group_members_no_p")}
+                  </p>
+                  <p>{t("group.invite_user_p")}</p>
+                </div>
+              ) : filteredMembers.length === 0 ? (
+                <div className="py-4 text-center">
+                  <p className="font-bold text-primary-celeste">
+                    {t("group.no_members_p")}
+                  </p>
+                  <p>{t("group.try_to_search")}</p>
+                </div>
+              ) : (
+                <div className="flex flex-col gap-1">
+                  {filteredMembers.map((member, index) => (
+                    <GroupMember
+                      key={index}
+                      name={member.name}
+                      info={member.info}
+                    />
+                  ))}
+                </div>
+              )}
             </div>
-            {members.length === 0 ? (
-              <div className="py-4 text-center">
-                <p className="font-bold text-primary-celeste">
-                  {t("group.group_members_no_p")}
+          ) : (
+            <div>
+              <div className="flex items-center gap-1 py-2 ml-1">
+                <img
+                  className="text-primary-pink w-7"
+                  src={MountainIconBlue}
+                  alt="Logo de Barilo"
+                />
+                <p className="font-bold text-secondary-celeste">
+                  {t("group.excursions_p")}
                 </p>
-                <p>{t("group.invite_user_p")}</p>
               </div>
-            ) : filteredMembers.length === 0 ? (
-              <div className="py-4 text-center">
-                <p className="font-bold text-primary-celeste">
-                  {t("group.no_members_p")}
-                </p>
-                <p>{t("group.try_to_search")}</p>
-              </div>
-            ) : (
-              <div className="flex flex-col gap-1">
-                {filteredMembers.map((member, index) => (
-                  <GroupMember
-                    key={index}
-                    name={member.name}
-                    info={member.info}
-                  />
-                ))}
-              </div>
-            )}
-          </div>
-        ) : (
-          <div>
-            <div className="flex items-center gap-1 mt-5 mb-2 ml-1">
-              <img
-                className="text-primary-pink w-7"
-                src={MountainIconBlue}
-                alt="Logo de Barilo"
-              />
-              <p className="font-bold text-secondary-celeste">
-                {t("group.activities_p")}
-              </p>
+              {activities.length === 0 ? (
+                <div className="py-4 text-center">
+                  <p className="font-bold text-primary-celeste">
+                    {t("group.no_activities_p")}
+                  </p>
+                </div>
+              ) : filteredActivities.length === 0 ? (
+                <div className="py-4 text-center">
+                  <p className="font-bold text-primary-celeste">
+                    {t("group.no_activities_p")}
+                  </p>
+                  <p>{t("group.try_to_search")}</p>
+                </div>
+              ) : (
+                <div className="flex flex-col gap-1">
+                  {filteredActivities.map((activity, index) => (
+                    <GroupActivity
+                      key={index}
+                      date={activity.date}
+                      name={activity.name}
+                      description={activity.description}
+                    />
+                  ))}
+                </div>
+              )}
             </div>
-            {activities.length === 0 ? (
-              <div className="py-4 text-center">
-                <p className="font-bold text-primary-celeste">
-                  {t("group.no_activities_p")}
-                </p>
-              </div>
-            ) : filteredActivities.length === 0 ? (
-              <div className="py-4 text-center">
-                <p className="font-bold text-primary-celeste">
-                  {t("group.no_activities_p")}
-                </p>
-                <p>{t("group.try_to_search")}</p>
-              </div>
-            ) : (
-              <div className="flex flex-col gap-1">
-                {filteredActivities.map((activity, index) => (
-                  <GroupActivity
-                    key={index}
-                    date={activity.date}
-                    name={activity.name}
-                    description={activity.description}
-                  />
-                ))}
-              </div>
-            )}
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </div>
   );

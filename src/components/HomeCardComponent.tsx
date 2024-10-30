@@ -39,8 +39,8 @@ const HomeCardComponent: React.FC<HijoProps> = ({
   };
 
   return (
-    <div className="relative w-full my-4 lg:w-1/3 md:w-1/2 md:p-4 lg:p-1">
-      <Link to={link} className="relative flex flex-wrap w-full px-4 pb-2">
+    <div className="relative w-full py-4 lg:w-1/3 md:w-1/2 md:p-4 lg:p-1">
+      <Link to={link} className="relative flex flex-wrap w-full px-1 pb-1">
         <img
           className="object-cover w-full h-72 rounded-3xl"
           src={imageSrc}
@@ -49,7 +49,7 @@ const HomeCardComponent: React.FC<HijoProps> = ({
       </Link>
       {showHeart && (
         <button
-          className="absolute flex items-center justify-center w-10 h-10 transition-transform duration-200 bg-white border-2 rounded-full shadow-sm bottom-12 right-6 border-primary-blue shadow-primary-blue hover:scale-110 lg:bottom-14 lg:right-7 md:bottom-[4.2em] md:right-10"
+          className="absolute flex items-center justify-center w-10 h-10 transition-transform duration-200 bg-white border-2 rounded-full shadow-sm bottom-[3.3em] right-3 border-primary-blue shadow-primary-blue hover:scale-110 md:bottom-14 md:right-7 lg:bottom-12 lg:right-5"
           onClick={handleHeartClick}
         >
           {isLiked ? (
@@ -59,7 +59,7 @@ const HomeCardComponent: React.FC<HijoProps> = ({
           )}
         </button>
       )}
-      <p className="px-4 mt-2 text-base font-bold md:text-lg lg:text-xl text-secondary-celeste font-secondaryLato line-clamp-1">
+      <p className="px-4 text-base font-bold md:text-lg lg:text-xl text-secondary-celeste font-secondaryLato line-clamp-1">
         {text}
       </p>
     </div>

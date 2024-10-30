@@ -17,9 +17,9 @@ const Header = () => {
   };
 
   return (
-    <div className="sticky top-0 left-0 z-20 w-full h-24 bg-white shadow-md">
-      <div className="flex justify-between px-8 pt-4 pb-3">
-        <div className="flex items-center gap-1">
+    <div className="sticky top-0 left-0 z-20 w-full h-24 bg-white shadow-lg">
+      <div className="flex items-center justify-between h-full px-8">
+        <div className="flex items-center gap-2">
           <Link to="/home">
             <img
               src={ProfilePicture}
@@ -30,14 +30,17 @@ const Header = () => {
           <div className="leading-tight">
             <p className="text-secondary-celeste">{t("home.header")}</p>
             <p className="font-bold text-primary-celeste">
-              {profile ? profile.name : t("loading")}
+              {profile
+                ? profile.name.charAt(0).toUpperCase() +
+                  profile.name.slice(1).toLowerCase()
+                : t("loading")}
             </p>
           </div>
         </div>
         <div className="flex items-center gap-3">
           <FaRegBell
             onClick={handleBellClick}
-            size={32}
+            size={35}
             className="bg-inactive-button-bg rounded-full p-1.5 text-primary-celeste transition hover:scale-110 cursor-pointer hover:text-lg"
           />
           {isNotificationOpen && <PaymentHistoryComponent />}

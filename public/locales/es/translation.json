@@ -129,7 +129,7 @@
     },
     "homeButton": "Volver al Inicio",
     "backButton": "Volver",
-    "createCrowd": "Crear Campaña",
+    "createCrowd": "Crear campaña",
     "donate": "Aportar",
     "approvedDonation": "compartir",
     "landing": {
@@ -451,7 +451,7 @@
       "link": {
         "name_profile": "Perfil",
         "name_favorites": "Favoritos",
-        "name_crowfounding": "Financiación colectiva",
+        "name_crowfounding": "Financiación Colectiva",
         "name_privacy_policies": "Políticas de Privacidad",
         "name_settings": "Ajustes",
         "name_help": "Ayuda"

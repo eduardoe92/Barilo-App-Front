@@ -55,7 +55,7 @@ function AppRoutes() {
     /^\/activities$/,
     /^\/restaurants$/,
     /^\/activity\/\d+$/,
-    /^\/trip-component+$/,
+    /^\/trip-group+$/,
   ];
 
   const shouldShowHeaderFooter = () => {
@@ -83,7 +83,7 @@ function AppRoutes() {
           <Route path="/profileSettings" element={<ProfileSettings />} />
           <Route path="/help-center" element={<HelpCenter />} />
           <Route path="/language" element={<Language />} />
-          <Route path="/trip-component" element={<TripComponent />} />
+          <Route path="/trip-group" element={<TripComponent />} />
           <Route path="/create-trip" element={<CreateTrip />} />
           <Route path="/plan-trip/group" element={<PlanTripGroup />} />
           <Route path="/plan-trip" element={<PlanTrip />} />
