@@ -273,7 +273,9 @@
     "title": "Centro de Ayuda",
     "subtitle": "¿Cómo Podemos Ayudarte?",
     "placeholder": "Buscar...",
-    "noContent": "No hay preguntas disponible"
+    "noContent": "No hay preguntas disponible",
+    "customerservice": "Servicio al Cliente",
+    "webSite": "Sitio Web"
   },
   "faq": {
     "create_trip": {

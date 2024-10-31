@@ -1,13 +1,13 @@
 import { useEffect, useState, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import FlagSpain from "../assets/Flags/es.svg";
-import FlagUsa from "../assets/Flags/us.svg";
+import FlagSpain from "@/assets/Flags/es.svg";
+import FlagUsa from "@/assets/Flags/us.svg";
 import { MdMenuOpen } from "react-icons/md";
 import { TbSettingsSearch } from "react-icons/tb";
 import { LuPlane } from "react-icons/lu";
 import { GrContact } from "react-icons/gr";
 import { IoEarthSharp } from "react-icons/io5";
-import TextIconComponent from "./TextIconComponent";
+import TextIconComponent from "../icon/TextIconComponent";
 import Footer from "./Footer";
 import SocialNetworks from "./SocialNetworks";
 import { Link } from "react-router-dom";
@@ -95,12 +95,12 @@ export default function SideNavBar() {
         >
           <TextIconComponent />
         </Link>
-        <div className="w-8 h-16">
+        <div className="w-8 h-16 md:hidden">
           <MdMenuOpen
             size={34}
             className={`duration-500 cursor-pointer ${
               !open && "rotate-180"
-            } md:hidden`}
+            }`}
             onClick={() => setOpen(!open)}
           />
         </div>
@@ -109,7 +109,7 @@ export default function SideNavBar() {
       <ul
         className={`${!open && "items-center"} ${
           open && " w-11/12 md:w-auto"
-        } flex flex-col h-2/4 md:flex-row md:items-center md:h-auto`}
+        } flex flex-col h-2/4 md:flex-row md:items-center md:h-auto md:mr-3`}
       >
         {menuItems.map((item, index) => (
           <li

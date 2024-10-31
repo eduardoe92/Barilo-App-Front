@@ -1,4 +1,4 @@
-import Logo from "../assets/images/imago.webp";
+import Logo from "@/assets/images/imago.webp";
 
 const IconTextComponent: React.FC = () => {
   return (

@@ -119,7 +119,7 @@
     "finishButton": "Finish",
     "helpButton": "Help",
     "questionButton": "Questions",
-    "contactButton": "Contact us",
+    "contactButton": "Contact Us",
     "creatingGroup": "Creating...",
     "goToPayButton": "Go to pay",
     "helpButtons": {
@@ -273,7 +273,9 @@
     "title": "Help Center",
     "subtitle": "How can we help you?",
     "placeholder": "Search...",
-    "noContent": "No questions available"
+    "noContent": "No questions available",
+    "customerservice": "Customer Service",
+    "webSite": "Web Site"
   },
   "faq": {
     "create_trip": {
