@@ -56,12 +56,12 @@ const PaymentMethodCard = () => {
 
 
     return (
-        <div className="card md:mx-36 lg:mx-44 xl:mx-80 flex flex-col items-center h-screen">
-            <div className="flex justify-center items-center my-8">
+        <div className="flex flex-col items-center card md:mx-36 lg:mx-44 xl:mx-80">
+            <div className="flex items-center justify-center my-8">
                 <button className="absolute left-6 pb-1 text-[--secondary-celeste] text-2xl" onClick={() => navigate(-1)}><IoIosArrowBack /></button>
                 <h1 className="text-2xl text-[--secondary-celeste] font-['League_Spartan'] font-semibold">{t('views_payment.payment_method_card.title')}</h1>
             </div>
-            <div className="card-body w-full justify-center flex flex-col m-auto">
+            <div className="flex flex-col justify-center w-full m-auto card-body">
 
                 <Cards
                     number={state.number}
@@ -70,8 +70,8 @@ const PaymentMethodCard = () => {
                     cvc={state.cvc}
                     focused={state.focus}
                 />
-                <form className='mt-6 mx-6  2xl:max-w-5xl 2xl:mx-96'>
-                    <div className="form-group flex flex-col">
+                <form className='mx-6 mt-6 2xl:max-w-5xl 2xl:mx-96'>
+                    <div className="flex flex-col form-group">
                         <label htmlFor="name">{t('views_payment.payment_method_card.cardholder_name')}</label>
                         <input
                             type="text"
@@ -83,7 +83,7 @@ const PaymentMethodCard = () => {
                             onFocus={handleFocusChange}
                         />
                     </div>
-                    <div className="form-group flex flex-col">
+                    <div className="flex flex-col form-group">
                         <label htmlFor="number">{t('views_payment.payment_method_card.number_card')}</label>
                         <input
                             type="text"
@@ -95,8 +95,8 @@ const PaymentMethodCard = () => {
                             onFocus={handleFocusChange}
                         />
                     </div>
-                    <div className="form-row flex justify-between">
-                        <div className="form-group col-md-6 flex flex-col">
+                    <div className="flex justify-between form-row">
+                        <div className="flex flex-col form-group col-md-6">
                             <label htmlFor="expiry">{t('views_payment.payment_method_card.expiration_date')}</label>
                             <input
                                 type="text"
@@ -108,7 +108,7 @@ const PaymentMethodCard = () => {
                                 onFocus={handleFocusChange}
                             />
                         </div>
-                        <div className="form-group col-md-6 flex flex-col">
+                        <div className="flex flex-col form-group col-md-6">
                             <label htmlFor="cvc">{t('views_payment.payment_method_card.cvc')}</label>
                             <input
                                 type="text"
@@ -122,7 +122,7 @@ const PaymentMethodCard = () => {
                         </div>
                     </div>
                     
-                    <div className="flex justify-center py-10">
+                    <div className="flex justify-center py-5">
                         <button onClick={() => handlePaymentMethodClick()} className="w-64 h-11 bg-[--secondary-celeste] text-[--active-button-text] rounded-3xl">{t('views_payment.payment_method_card.save_card')}</button>
                     </div>
                 </form>
