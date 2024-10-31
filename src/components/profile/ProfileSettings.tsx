@@ -22,14 +22,14 @@ const link = [
     icon: <IoKeyOutline />,
   },
   {
-    name: "profile_user.settings.link.name_delete_account",
-    to: "#",
-    icon: <IoPersonOutline />,
-  },
-  {
     name: "profile_user.settings.link.name_language",
     to: "/language",
     icon: <MdLanguage />,
+  },
+  {
+    name: "profile_user.settings.link.name_delete_account",
+    to: "#",
+    icon: <IoPersonOutline />,
   },
 ];
 
@@ -40,25 +40,25 @@ export default function ProfileSettings() {
     <>
       <section className="">
         <div className="w-full px-4 pt-10">
-          <header className="flex h-40 flex-col items-center justify-center bg-primary-blue rounded-2xl">
-            <h3 className="text-2xl text-center font-bold text-white font-primary">
+          <header className="flex flex-col items-center justify-center h-40 bg-primary-blue rounded-2xl">
+            <h3 className="text-2xl font-bold text-center text-white font-primary">
               {t("profile_user.settings.title_h3")}
             </h3>
-            <span className="text-2xl text-center font-bold text-white font-primary">
+            <span className="text-2xl font-bold text-center text-white font-primary">
             {t("profile_user.settings.title_span")}
             </span>
           </header>
         </div>
-        <div className="w-full px-4 pt-6 pb-24 flex flex-col md:items-center justify-center">
+        <div className="flex flex-col justify-center w-full px-4 pt-6 pb-24 md:items-center">
           {link.map((item) => (
             <div
               key={item.name}
-              className="relative flex flex-row items-center justify-start p-4 group  gap-x-4  md:w-5/12"
+              className="relative flex flex-row items-center justify-start p-4 group gap-x-4 md:w-5/12"
             >
               <div className="flex text-3xl text-customBlue">
                 {item.icon}
               </div>
-              <div className="w-full flex flex-row items-center justify-between text-customBlue">
+              <div className="flex flex-row items-center justify-between w-full text-customBlue">
                 <Link
                   to={item.to}
                   className="flex text-xl font-semibold cursor-pointer"

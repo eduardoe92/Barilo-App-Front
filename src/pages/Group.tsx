@@ -44,7 +44,7 @@ function Group() {
 
   const members = [
     { name: "Ana Gallinado", info: "Alumna 6to B" },
-    { name: "Juan Pére", info: "Alumno 6to A" },
+    { name: "Juan Pérez", info: "Alumno 6to A" },
     { name: "Lucía Fernández", info: "Alumna 6to B" },
   ];
 
@@ -106,7 +106,7 @@ function Group() {
               className={`flex flex-col items-center w-[20em] max-w-[8em] rounded-full px-3 py-1 justify-center text-base md:text-lg lg:text-xl ${
                 activeTab === "grupo"
                   ? "bg-primary-blue text-white"
-                  : "text-secondary-celeste"
+                  : "text-secondary-celeste bg-inactive-button-bg"
               }`}
               onClick={() => handleTabChange("grupo")}
             >
@@ -123,7 +123,7 @@ function Group() {
               className={`flex flex-col items-center w-[20em] max-w-[8em] rounded-full px-3 py-1 justify-center text-base md:text-lg lg:text-xl ${
                 activeTab === "excursiones"
                   ? "bg-primary-blue text-white"
-                  : "text-secondary-celeste"
+                  : "text-secondary-celeste bg-inactive-button-bg"
               }`}
               onClick={() => handleTabChange("excursiones")}
             >
@@ -197,7 +197,7 @@ function Group() {
               <div className="flex items-center gap-1 py-2">
                 <img
                   src={GroupIconBlue}
-                  className="w-12 py-1"
+                  className="w-auto h-auto py-1"
                   alt="Logo de Barilo"
                 />
                 <p className="font-bold text-secondary-celeste">
@@ -234,7 +234,7 @@ function Group() {
             <div>
               <div className="flex items-center gap-1 py-2 ml-1">
                 <img
-                  className="text-primary-pink w-7"
+                  className="w-auto h-auto text-primary-pink"
                   src={MountainIconBlue}
                   alt="Logo de Barilo"
                 />

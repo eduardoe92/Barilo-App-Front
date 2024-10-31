@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import BotonBlue from "@/components/ui/buttonBlue";
-import IconComponent from "@/components/IconComponent";
+import IconComponent from "@/components/icon/IconComponent";
 import ModalComponent from "@/components/ModalComponent";
 import { useNavigate } from "react-router-dom";
 
