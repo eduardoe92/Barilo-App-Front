@@ -3,9 +3,9 @@ import { useTranslation } from "react-i18next";
 import Slider from "react-slick";
 import { Link } from "react-router-dom";
 import logo from "@/assets/images/imago.svg";
-import { LoginFormComponent } from "@/components/LoginFormComponent";
-import { RegisterFormComponent } from "@/components/RegisterFormComponent";
-import { ForgotPasswordComponent } from "@/components/ForgotPasswordComponent";
+import { LoginFormComponent } from "@/components/login/LoginFormComponent";
+import { RegisterFormComponent } from "@/components/login/RegisterFormComponent";
+import { ForgotPasswordComponent } from "@/components/login/ForgotPasswordComponent";
 import ModalComponent from "@/components/ModalComponent";
 
 export default function AuthPage() {

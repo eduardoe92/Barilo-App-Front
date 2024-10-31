@@ -10,11 +10,11 @@ import { FaGoogle } from "react-icons/fa";
 import { ImAppleinc } from "react-icons/im";
 import { Form, FormMessage } from "@/components/ui/form";
 import { useNavigate } from "react-router-dom";
-import { loginSchema } from "../validation/loginSchema";
-import { useAuth } from "../context/AuthProvider";
+import { loginSchema } from "../../validation/loginSchema";
+import { useAuth } from "../../context/AuthProvider";
 import { useTranslation } from "react-i18next";
-import { loginUser } from "../services/authService";
-import { ModalContent } from "../types/Modal";
+import { loginUser } from "../../services/authService";
+import { ModalContent } from "../../types/Modal";
 
 type LoginUserForm = z.infer<typeof loginSchema>;
 
@@ -27,7 +27,7 @@ export const LoginFormComponent: React.FC<{
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   const { login: authLogin, isAuthenticated } = useAuth();
-
+  
   useEffect(() => {
     if (isAuthenticated) {
       navigate("/home");
@@ -46,15 +46,7 @@ export const LoginFormComponent: React.FC<{
     showModal({
       title: t("login_form_component.show_success_modal.title"),
       message: t("login_form_component.show_success_modal.message"),
-      buttons: [
-        {
-          label: t("modals.login.error.message"),
-          action: () => {
-            navigate("/home");
-          },
-          isPrimary: true,
-        },
-      ],
+      buttons: [],
     });
   };
 
@@ -64,14 +56,14 @@ export const LoginFormComponent: React.FC<{
       message: errorMessage,
       buttons: [
         {
-          label: t("modals.login.error.btn"),
+          label: t("buttons.landing.register"),
           action: () => {
             setTimeout(() => changeStep(1), 100);
           },
           isPrimary: true,
         },
         {
-          label: "Volver",
+          label: t("buttons.backButton"),
           action: () => {},
           isPrimary: false,
         },
@@ -97,8 +89,8 @@ export const LoginFormComponent: React.FC<{
     try {
       const token = await handleLogin(values.mail, values.password);
       if (token) {
-        await authLogin(values.mail, values.password);
         showSuccessModal();
+        await authLogin(values.mail, values.password);
       }
     } catch (error) {
       console.error("Error en el inicio de sesión:", error);
