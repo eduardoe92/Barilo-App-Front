@@ -1,4 +1,4 @@
-import IconComponent from "@/components/IconComponent";
+import IconComponent from "@/components/icon/IconComponent";
 import BotonBlue from "@/components/ui/buttonBlue";
 import { ModalContent, ModalButton } from "@/types/Modal";
 
