@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { registerUser } from "@/services/authService";
-import { registerSchema } from "../validation/registerSchema";
+import { registerSchema } from "../../validation/registerSchema";
 import { z } from "zod";
 import { CustomInput } from "@/components/CustomInput";
 import { CustomButton } from "@/components/CustomButton";
@@ -15,7 +15,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
-import { ModalContent } from "../types/Modal";
+import { ModalContent } from "../../types/Modal";
 import { useTranslation } from "react-i18next";
 
 type RegisterUserForm = z.infer<typeof registerSchema>;
@@ -45,7 +45,7 @@ export const RegisterFormComponent: React.FC<{
       message: t("modals.register.success.message"),
       buttons: [
         {
-          label: t("modals.register.success.btn"),
+          label: t("buttons.landing.login"),
           action: () => {
             setTimeout(() => changeStep(0), 100);
           },

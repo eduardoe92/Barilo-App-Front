@@ -1,4 +1,4 @@
-import img1 from '../assets/images/excursionCard.webp';
+import img1 from '@/assets/images/excursionCard.webp';
 
 interface PaymentProps {
     amount: number;

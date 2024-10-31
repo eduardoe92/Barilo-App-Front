@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import img1 from '../assets/images/excursionCard.webp';
+import img1 from '@/assets/images/excursionCard.webp';
 import PaymentHistoryCard from './PaymentHistoryCard';
 import { getPaymentHistoryUser } from '@/services/paymentService';
 import { useAuth } from '@/context/AuthProvider';

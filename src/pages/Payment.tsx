@@ -1,4 +1,4 @@
-import PaymentCard from "@/components/PaymentCard"
+import PaymentCard from "@/components/payment/PaymentCard"
 import { useTranslation } from 'react-i18next'
 import axios from 'axios';
 import { useUserProfile } from "@/hooks/useUserProfile";

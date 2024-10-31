@@ -5,10 +5,10 @@ import { z } from "zod";
 import { CustomInput } from "@/components/CustomInput";
 import { CustomButton } from "@/components/CustomButton";
 import { Form, FormMessage } from "@/components/ui/form";
-import { forgotPasswordSchema } from "../validation/forgotPasswordSchema";
+import { forgotPasswordSchema } from "@/validation/forgotPasswordSchema";
 import { useTranslation } from "react-i18next";
-import { sendPasswordResetEmail } from "../services/authService";
-import { ModalContent } from "../types/Modal";
+import { sendPasswordResetEmail } from "@/services/authService";
+import { ModalContent } from "@/types/Modal";
 
 type ForgotPasswordForm = z.infer<typeof forgotPasswordSchema>;
 

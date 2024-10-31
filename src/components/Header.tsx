@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useUserProfile } from "@/hooks/useUserProfile";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
-import PaymentHistoryComponent from "./PaymentHistoryComponent";
+import PaymentHistoryComponent from "./payment/PaymentHistoryComponent";
 
 const Header = () => {
   const { t } = useTranslation();
