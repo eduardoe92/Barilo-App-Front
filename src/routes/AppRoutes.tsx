@@ -11,7 +11,6 @@ import PlanTrip from "@/pages/PlanTrip";
 import Error from "@/pages/Error";
 import Access from "@/pages/Access";
 import CreateTrip from "@/pages/CreateTrip";
-import PlanTripGroup from "@/pages/PlanTripGroup";
 import Group from "@/pages/Group";
 import Crowdfunding, { CrowdfundingDonor } from "@/pages/Crowdfunding";
 import CrowdfundingForm from "@/pages/CrowdfundingForm";
@@ -56,6 +55,9 @@ function AppRoutes() {
     /^\/restaurants$/,
     /^\/activity\/\d+$/,
     /^\/trip-group+$/,
+    /^\/payment-method+$/,
+    /^\/payment-method-card+$/,
+    /^\/crowdfunding-donor+$/,
   ];
 
   const shouldShowHeaderFooter = () => {
@@ -85,13 +87,12 @@ function AppRoutes() {
           <Route path="/language" element={<Language />} />
           <Route path="/trip-group" element={<TripComponent />} />
           <Route path="/create-trip" element={<CreateTrip />} />
-          <Route path="/plan-trip/group" element={<PlanTripGroup />} />
           <Route path="/plan-trip" element={<PlanTrip />} />
           <Route path="/group" element={<Group />} />
           <Route path="/access-group" element={<Access />} />
           <Route path="/payment" element={<Payment />} />
           <Route path="/payment-method" element={<PaymentMethod />} />
-          <Route path="/payment-method/card" element={<PaymentMethodCard />} />
+          <Route path="/payment-method-card" element={<PaymentMethodCard />} />
           <Route path="/crowdfundingForm" element={<CrowdfundingForm />} />
           <Route path="/mercadopago" element={<MercadoPago />} />
           <Route path="/destinations" element={<Destinations />} />

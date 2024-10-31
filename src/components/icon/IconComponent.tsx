@@ -1,4 +1,4 @@
-import Logo from "../assets/images/isotipo.svg";
+import Logo from "@/assets/images/isotipo.svg";
 
 const IconComponent: React.FC = () => {
   return (

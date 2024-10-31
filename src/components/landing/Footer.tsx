@@ -1,5 +1,5 @@
-import TextIconComponent from "./TextIconComponent";
 import { useTranslation } from "react-i18next";
+import TextIconComponent from "../icon/TextIconComponent";
 import SocialNetworks from "./SocialNetworks";
 
 const Footer = () => {

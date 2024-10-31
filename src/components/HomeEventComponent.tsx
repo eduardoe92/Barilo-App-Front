@@ -20,11 +20,11 @@ const HomeEventComponent: React.FC<HijoProps> = ({
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate("/trip-component");
+    navigate("/trip-group");
   };
 
   return (
-    <div className="h-40 flex flex-col items-center justify-center bg-primary-blue rounded-2xl">
+    <div className="flex flex-col items-center justify-center h-40 bg-primary-blue rounded-2xl">
       <div className="p-5 text-center">
         {admin ? (
           <h1 className="text-2xl font-bold text-white font-primary">
