@@ -7,6 +7,22 @@ import { Bitcoin } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useLocation } from "react-router-dom";
+import IconPayComponent from "@/components/icon/IconPayComponent";
+
+const PaymentOption = ({ icon: Icon, label, onClick }) => (
+  <div
+    onClick={onClick}
+    className="flex items-center justify-between mx-8 my-2 bg-white cursor-pointer rounded-2xl h-11 text-secondary-celeste"
+  >
+    <div className="flex items-center pl-2">
+      <Icon className="text-2xl" />
+      <h2 className="text-xl text-center pl-2 font-['League_Spartan']">
+        {label}
+      </h2>
+    </div>
+    <FaRegCircle className="mr-2" />
+  </div>
+);
 
 function PaymentMethod() {
   const { t } = useTranslation();
@@ -15,13 +31,12 @@ function PaymentMethod() {
   const { stepOneData, stepTwoData, stepThreeData, stepFourData } =
     location.state || {};
 
-  console.log(stepOneData, stepTwoData, stepThreeData, stepFourData);
-
-  const handlePaymentMethodClick = (method: string) => {
+  const handlePaymentMethodClick = (method) => {
     navigate(`/payment-method-${method}`, {
       state: { stepOneData, stepTwoData, stepThreeData, stepFourData },
     });
   };
+
   return (
     <div className="md:mx-28 lg:mx-52 xl:mx-96">
       <div className="flex items-center justify-center my-8">
@@ -39,58 +54,31 @@ function PaymentMethod() {
         <h2 className="mx-8 text-xl font-['League_Spartan'] my-1">
           {t("views_payment.payment_method.caption_1")}
         </h2>
-        <div
+        <PaymentOption
+          icon={CiCreditCard1}
+          label={t("views_payment.payment_method.option_1")}
           onClick={() => handlePaymentMethodClick("card")}
-          className="flex items-center justify-between mx-8 bg-[#ECF1FF] rounded-2xl h-11 text-[--secondary-celeste] mb-8"
-        >
-          <div className="flex items-center pl-2">
-            <CiCreditCard1 className="text-2xl" />
-            <h2 className="text-xl text-center pl-2 font-['League_Spartan']">
-              {t("views_payment.payment_method.option_1")}
-            </h2>
-          </div>
-          <FaRegCircle className="mr-2" />
-        </div>
+        />
         <h2 className="mx-8 text-xl font-['League_Spartan'] my-1">
           {t("views_payment.payment_method.caption_2")}
         </h2>
-        <div
+        <PaymentOption
+          icon={SiMercadopago}
+          label={t("views_payment.payment_method.option_2")}
           onClick={() => handlePaymentMethodClick("mercado-pago")}
-          className="flex items-center justify-between mx-8 bg-[#ECF1FF] rounded-2xl h-11 text-[--secondary-celeste] my-2"
-        >
-          <div className="flex items-center pl-2">
-            <SiMercadopago className="text-2xl" />
-            <h2 className="text-xl text-center pl-2 font-['League_Spartan']">
-              {t("views_payment.payment_method.option_2")}
-            </h2>
-          </div>
-          <FaRegCircle className="mr-2" />
-        </div>
-        <div
+        />
+        <PaymentOption
+          icon={RiPaypalLine}
+          label={t("views_payment.payment_method.option_3")}
           onClick={() => handlePaymentMethodClick("paypal")}
-          className="flex items-center justify-between mx-8 bg-[#ECF1FF] rounded-2xl h-11 text-[--secondary-celeste] my-2"
-        >
-          <div className="flex items-center pl-2">
-            <RiPaypalLine className="text-2xl" />
-            <h2 className="text-xl text-center pl-2 font-['League_Spartan']">
-              {t("views_payment.payment_method.option_3")}
-            </h2>
-          </div>
-          <FaRegCircle className="mr-2" />
-        </div>
-        <div
+        />
+        <PaymentOption
+          icon={Bitcoin}
+          label={t("views_payment.payment_method.option_4")}
           onClick={() => handlePaymentMethodClick("personal-pay")}
-          className="flex items-center justify-between mx-8 bg-[#ECF1FF] rounded-2xl h-11 text-[--secondary-celeste] my-2"
-        >
-          <div className="flex items-center pl-2">
-            <Bitcoin className="text-2xl" />
-            <h2 className="text-xl text-center pl-2 font-['League_Spartan']">
-              {t("views_payment.payment_method.option_4")}
-            </h2>
-          </div>
-          <FaRegCircle className="mr-2" />
-        </div>
+        />
       </div>
+      <IconPayComponent />
     </div>
   );
 }
