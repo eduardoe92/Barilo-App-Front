@@ -1,4 +1,4 @@
-import Pay from "@/assets/images/Pay.svg";
+import Pay from "@/assets/images/pay.svg";
 
 const IconPayComponent: React.FC = () => {
   return (
