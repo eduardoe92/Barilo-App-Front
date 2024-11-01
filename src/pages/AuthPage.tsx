@@ -52,7 +52,7 @@ export default function AuthPage() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen px-4 bg-white py-14 md:flex md:justify-center md:items-center">
+    <div className="flex flex-col items-center justify-center h-screen bg-white py-14 md:flex md:justify-center md:items-center">
       <Link to="/">
         <img
           src={logo}

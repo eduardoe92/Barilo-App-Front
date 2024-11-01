@@ -33,59 +33,71 @@ const StepFive: React.FC<StepFiveProps> = ({
     navigate("/home");
   };
 
+  const tableRows = [
+    {
+      label: t("stepOne.groupName"),
+      value: stepOneData?.groupName || t("stepFive.not_specified"),
+    },
+    {
+      label: t("stepOne.numberOfPeople"),
+      value: stepOneData?.numberOfPeople || t("stepFive.not_specified"),
+    },
+    {
+      label: t("stepTwo.origin"),
+      value: stepTwoData?.origin || t("stepFive.not_specified"),
+    },
+    {
+      label: t("stepTwo.destination"),
+      value: stepTwoData?.destination || t("stepFive.not_specified"),
+    },
+    {
+      label: t("stepThree.hotel"),
+      value:
+        stepThreeData?.hotels?.[0]?.name || t("stepFive.not_specified"),
+    },
+    {
+      label: t("stepFour.package"),
+      value:
+        stepFourData?.activities?.[0]?.name || t("stepFive.not_specified"),
+    },
+    {
+      label: t("stepFour.meals"),
+      value:
+        stepFourData?.restaurants?.[0]?.name || t("stepFive.not_specified"),
+    },
+  ];
+
+  console.log(t("stepFour.meals"));  // Verifica que muestre "Comidas" o "Meals" en la consola
+
   return (
-    <div className="p-4">
+    <div className="p-1">
       <h3 className="mb-4 text-xl font-semibold text-center text-primary-celeste">
         {t("stepFive.title")}
       </h3>
-      <table className="min-w-full border-gray-300 rounded-lg shadow-md text-primary-celeste border-xl bg-secondary-purple">
-        <tbody>
-          <tr>
-            <td className="px-4 py-2 border-b">
-              <strong>{t("stepOne.groupName")}:</strong>{" "}
-              {stepOneData?.groupName} <br />
-              <strong>{t("stepOne.numberOfPeople")}:</strong>{" "}
-              {stepOneData?.numberOfPeople}
-            </td>
-          </tr>
-          <tr>
-            <td className="px-4 py-2 border-b">
-              <strong>{t("stepTwo.origin")}: </strong> {stepTwoData?.origin}{" "}
-              <br />
-              <strong>{t("stepTwo.destination")}: </strong>
-              {stepTwoData?.destination} <br />
-            </td>
-          </tr>
-          <tr>
-            <td className="px-4 py-2 border-b">
-              <strong>{t("stepThree.hotel")}:</strong>{" "}
-              {stepThreeData?.hotels?.[0]?.name || t("stepFive.not_specified")}
-            </td>
-          </tr>
-          <tr>
-            <td className="px-4 py-2 border-b">
-              <strong>{t("stepFour.package")}:</strong>{" "}
-              {stepFourData?.activities?.[0]?.name ||
-                t("stepFive.not_specified")}
-              <br />
-              <strong>{t("stepFour.restaurant")}:</strong>{" "}
-              {stepFourData?.restaurants?.[0]?.name ||
-                t("stepFive.not_specified")}
-            </td>
-          </tr>
+      <table className="min-w-full mx-auto border-4 border-secondary-celeste rounded-xl shadow-md md:min-w-[30em] lg:min-w-[35em] bg-[--inactive-button-bg]">
+        <tbody className="text-primary-celeste">
+          {tableRows.map((row, index) => (
+            <tr key={index}>
+              <td className="p-2 border-b border-secondary-celeste">
+                <strong>{row.label}:</strong> {row.value}
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
-      <div className="flex justify-between mt-4 gap-x-4">
-        <ButtonBlue
-          text={t("buttons.goToPayButton")}
-          onClick={handleProceedToPayment}
-          isActive={true}
-        />
-        <ButtonBlue
-          text={t("buttons.cancelButton")}
-          onClick={handleCancel}
-          isActive={false}
-        />
+      <div className="flex justify-center mt-6">
+        <div className="flex space-x-4 w-[18em]">
+          <ButtonBlue
+            text={t("buttons.goToPayButton")}
+            onClick={handleProceedToPayment}
+            isActive={true}
+          />
+          <ButtonBlue
+            text={t("buttons.cancelButton")}
+            onClick={handleCancel}
+            isActive={false}
+          />
+        </div>
       </div>
     </div>
   );
