@@ -61,7 +61,7 @@ const CrowdComponent: React.FC<CrowdfundingData> = (data) => {
         )}
       </div>
 
-      <div className="flex justify-center w-full max-w-sm my-20 h-60">
+      <div className="flex justify-center w-full max-w-sm my-10 h-60">
         {data.image && (
           <img
             className="w-full rounded-lg h-60"

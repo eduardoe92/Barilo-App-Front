@@ -80,12 +80,12 @@
   },
   "stepFour": {
     "package": "Excursions",
+    "meals": "Meals",
     "error_loading_act_rest": "Error loading activities and restaurants",
     "set_error": "Unknown error",
     "return_information_message": "Discover the perfect experiences for your group! Dive into a wide variety of exciting activities and delicious restaurants that cater to all tastes. From outdoor adventures to cultural tours, there's something for every member of the group. After a day of fun, choose a cozy restaurant to enjoy exquisite dishes and create memorable moments together. The opportunity to live a unique and flavorful experience is waiting for you to make unforgettable memories!",
     "loading_act_res": "Loading activities and restaurants...",
-    "title_activity": "Activities",
-    "title_restaurant": "Restaurants"
+    "title_activity": "Activities"
   },
   "stepFive": {
     "title": "Travel Package Confirmation",
@@ -503,8 +503,8 @@
     "text1": "You are one step away from living an unforgettable experience. You have two options: you can create your own travel group and lead the adventure, or join an existing group to share incredible moments with other explorers.",
     "text2": "If you decide to create a group, you will have the opportunity to invite your friends and organize every detail. If you already have an invite code, enter it to join a group and start planning together.",
     "text3": "Make the choice that best suits you and get ready to explore new possibilities!",
-    "create":{
-    "process": "Create your trip!!"
+    "create": {
+      "process": "Create your trip!!"
     }
   }
 }

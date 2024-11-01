@@ -80,12 +80,12 @@
   },
   "stepFour": {
     "package": "Excursiones",
+    "meals": "Comidas",
     "error_loading_act_rest": "Error al cargar actividades y restaurantes",
     "set_error": "Error desconocido",
     "return_information_message": "¡Descubre las experiencias perfectas para tu grupo! Sumérgete en una amplia variedad de actividades emocionantes y deliciosos restaurantes que se adaptan a todos los gustos. Desde aventuras al aire libre hasta recorridos culturales, hay algo para cada miembro del grupo. Después de un día lleno de diversión, elijan un restaurante acogedor donde disfrutar de platillos exquisitos y crear momentos memorables juntos. ¡La oportunidad de vivir una experiencia única y sabrosa les está esperando para que hagan recuerdos inolvidables!",
     "loading_act_res": "Cargando actividades y restaurantes...",
-    "title_activity": "Actividades",
-    "title_restaurant": "Restaurantes"
+    "title_activity": "Actividades"
   },
   "stepFive": {
     "title": "Confirmación de Paquete de Viaje",
