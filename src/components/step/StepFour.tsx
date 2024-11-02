@@ -165,7 +165,7 @@ const StepFour: React.FC<StepFourProps> = ({ onNext, destinationId }) => {
             </div>
           </div>
           <h3 className="text-xl font-bold text-center text-primary-blue">
-            {t("stepFour.title_restaurant")}
+            {t("stepFour.meals")}
           </h3>
           <div className="flex flex-col items-center">
           <div className="grid w-full grid-cols-1 gap-4 mb-6 md:grid-cols-2 lg:grid-cols-3 md:w-[45em] lg:w-[70em] px-4">

@@ -4,7 +4,6 @@ import BotonBlue from "@/components/ui/buttonBlue";
 import IconGroupComponent from "@/components/icon/IconGroupComponent";
 import ModalComponent from "@/components/ModalComponent";
 import { useNavigate } from "react-router-dom";
-import ReactMarkdown from "react-markdown";
 
 const AccessSection: React.FC = () => {
   const { t } = useTranslation();

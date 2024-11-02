@@ -99,7 +99,7 @@ const SideProfile = () => {
   return (
     <nav
       ref={sideNavRef}
-      className={`fixed top-[var(--header-height)] bottom-[var(--footer-height)] flex flex-col justify-between left-0 z-10 bg-white shadow-xl transition-all duration-300 
+      className={`fixed top-[var(--header-height)] bottom-[var(--footer-height)] flex flex-col justify-between left-0 z-10 bg-white shadow-xl transition-all duration-300 h-auto
       ${open ? "w-72 px-2.5" : "w-14"}`}
       style={{ overflow: "hidden" }}
     >

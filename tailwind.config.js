@@ -23,7 +23,6 @@ export default {
 				'active-button-text': 'var(--active-button-text)',
 				'inactive-button-text': 'var(--inactive-button-text)',
 				'active-button-hover-bg': 'var(--active-button-hover-bg)',
-
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				card: {
@@ -74,6 +73,9 @@ export default {
 				md: 'calc(var(--radius) - 2px)',
 				sm: 'calc(var(--radius) - 4px)',
 			},
+			borderWidth: {
+				1: '1px',
+			}
 		},
 	},
 	plugins: [tailwindcssAnimate, "@tailwindcss/lineclamp"],
