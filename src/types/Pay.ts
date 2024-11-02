@@ -9,3 +9,29 @@ export interface PaymentHistoryProps {
   type: string;
   date: string;
 }
+
+export interface PaymentResponse {
+  id: number;
+  amount: number;
+  paymentType: string;
+  date: Date;
+  userId: number;
+}
+
+export interface PaymentHistoryResponse {
+  id: number;
+  amount: number;
+  paymentType: string;
+  date: Date;
+}
+
+export type PaymentForm = {
+  amount: number;
+  paymentType: string;
+  date: Date;
+  userId: number;
+};
+
+export type UserProfile = {
+  id: string | number;
+};

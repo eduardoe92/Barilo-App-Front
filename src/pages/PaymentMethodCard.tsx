@@ -36,6 +36,15 @@ const PaymentMethodCard = () => {
 
     const handleInputChange = (e) => {
         const { name, value } = e.target; // Desestructuración para obtener el nombre y el valor
+        
+        let formattedValue = value;
+            if (name === "expiry") {
+                formattedValue = value.replace(/\D/g, '');
+            if (formattedValue.length >= 2) {
+                formattedValue = `${formattedValue.slice(0, 2)}/${formattedValue.slice(2, 4)}`;
+            }
+        }
+
         setState((prevState) => ({
             ...prevState,
             [name]: value
@@ -56,10 +65,10 @@ const PaymentMethodCard = () => {
 
 
     return (
-        <div className="flex flex-col items-center card md:mx-36 lg:mx-44 xl:mx-80">
+        <div className="flex flex-col items-center mb-16 card md:mx-36 lg:mx-44 xl:mx-80">
             <div className="flex items-center justify-center my-8">
-                <button className="absolute left-6 pb-1 text-[--secondary-celeste] text-2xl" onClick={() => navigate(-1)}><IoIosArrowBack /></button>
-                <h1 className="text-2xl text-[--secondary-celeste] font-['League_Spartan'] font-semibold">{t('views_payment.payment_method_card.title')}</h1>
+                <button className="absolute pb-1 text-2xl left-6 text-secondary-celeste" onClick={() => navigate(-1)}><IoIosArrowBack /></button>
+                <h1 className="text-2xl font-semibold text-secondary-celeste font-primary">{t('views_payment.payment_method_card.title')}</h1>
             </div>
             <div className="flex flex-col justify-center w-full m-auto card-body">
 
@@ -78,7 +87,7 @@ const PaymentMethodCard = () => {
                             name="name"
                             id="name"
                             maxLength={30}
-                            className="form-control h-11 mt-2 mb-6 rounded-3xl bg-[#ECF1FF] pl-6 text-xl font-['League_Spartan'] text-[--secondary-celeste]"
+                            className="form-control h-11 mt-2 mb-6 rounded-3xl bg-[#ECF1FF] pl-6 text-xl font-primary text-secondary-celeste border shadow-lg border-primary-blue"
                             onChange={handleInputChange}
                             onFocus={handleFocusChange}
                         />
@@ -90,7 +99,7 @@ const PaymentMethodCard = () => {
                             name="number"
                             id="number"
                             maxLength={16}
-                            className="form-control h-11 mt-2 mb-6 rounded-3xl bg-[#ECF1FF] pl-6 text-xl font-['League_Spartan'] text-[--secondary-celeste]"
+                            className="form-control h-11 mt-2 mb-6 rounded-3xl bg-[#ECF1FF] pl-6 text-xl font-primary text-secondary-celeste border shadow-lg border-primary-blue"
                             onChange={handleInputChange}
                             onFocus={handleFocusChange}
                         />
@@ -102,8 +111,8 @@ const PaymentMethodCard = () => {
                                 type="text"
                                 name="expiry"
                                 id="expiry"
-                                maxLength={4}
-                                className="form-control w-36 h-11 mt-2 mb-6 rounded-3xl bg-[#ECF1FF] pl-6 text-xl font-['League_Spartan'] text-[--secondary-celeste]"
+                                maxLength={5}
+                                className="form-control w-36 h-11 mt-2 mb-6 rounded-3xl bg-[#ECF1FF] pl-6 text-xl font-primary text-secondary-celeste border shadow-lg border-primary-blue"
                                 onChange={handleInputChange}
                                 onFocus={handleFocusChange}
                             />
@@ -115,13 +124,12 @@ const PaymentMethodCard = () => {
                                 name="cvc"
                                 id="cvc"
                                 maxLength={4}
-                                className="form-control w-28 h-11 mt-2 mb-6 rounded-3xl bg-[#ECF1FF] pl-6 text-xl font-['League_Spartan'] text-[--secondary-celeste]"
+                                className="form-control w-28 h-11 mt-2 mb-6 rounded-3xl bg-[#ECF1FF] pl-6 text-xl font-primary text-secondary-celeste border shadow-lg border-primary-blue"
                                 onChange={handleInputChange}
                                 onFocus={handleFocusChange}
                             />
                         </div>
                     </div>
-                    
                     <div className="flex justify-center py-5">
                         <button onClick={() => handlePaymentMethodClick()} className="w-64 h-11 bg-[--secondary-celeste] text-[--active-button-text] rounded-3xl">{t('views_payment.payment_method_card.save_card')}</button>
                     </div>

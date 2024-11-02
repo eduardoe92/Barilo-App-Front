@@ -16,7 +16,7 @@ const PaymentOption = ({ icon: Icon, label, onClick }) => (
   >
     <div className="flex items-center pl-2">
       <Icon className="text-2xl" />
-      <h2 className="text-xl text-center pl-2 font-['League_Spartan']">
+      <h2 className="pl-2 text-xl text-center font-primary">
         {label}
       </h2>
     </div>
@@ -38,20 +38,20 @@ function PaymentMethod() {
   };
 
   return (
-    <div className="md:mx-28 lg:mx-52 xl:mx-96">
+    <div className="mb-20 md:mx-28 lg:mx-52 xl:mx-96">
       <div className="flex items-center justify-center my-8">
         <button
-          className="absolute left-6 pb-1 text-[--secondary-celeste] text-2xl"
+          className="absolute pb-1 text-2xl left-6 text-secondary-celeste"
           onClick={() => navigate(-1)}
         >
           <IoIosArrowBack />
         </button>
-        <h1 className="text-2xl text-[--secondary-celeste] font-['League_Spartan'] font-semibold">
+        <h1 className="text-2xl font-semibold text-secondary-celeste font-primary">
           {t("views_payment.payment_method.title")}
         </h1>
       </div>
       <div>
-        <h2 className="mx-8 text-xl font-['League_Spartan'] my-1">
+        <h2 className="mx-8 my-1 text-xl font-primary">
           {t("views_payment.payment_method.caption_1")}
         </h2>
         <PaymentOption
@@ -59,7 +59,7 @@ function PaymentMethod() {
           label={t("views_payment.payment_method.option_1")}
           onClick={() => handlePaymentMethodClick("card")}
         />
-        <h2 className="mx-8 text-xl font-['League_Spartan'] my-1">
+        <h2 className="mx-8 my-1 text-xl font-primary">
           {t("views_payment.payment_method.caption_2")}
         </h2>
         <PaymentOption
