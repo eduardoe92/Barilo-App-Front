@@ -32,6 +32,7 @@ import Restaurants from "@/pages/Restaurants";
 import ActivityDetailPage from "@/pages/ActivitiesDetailPage";
 import TripComponent from "@/components/TripComponent";
 import SideProfile from "@/components/profile/SideProfile";
+import PaymentEnd from "@/pages/PaymentEnd";
 
 function AppRoutes() {
   const location = useLocation();
@@ -49,6 +50,7 @@ function AppRoutes() {
     /^\/crowdfundingForm$/,
     /^\/mercadopago$/,
     /^\/payment$/,
+    /^\/payment-end$/,
     /^\/create-trip$/,
     /^\/destinations$/,
     /^\/activities$/,
@@ -93,6 +95,7 @@ function AppRoutes() {
           <Route path="/payment" element={<Payment />} />
           <Route path="/payment-method" element={<PaymentMethod />} />
           <Route path="/payment-method-card" element={<PaymentMethodCard />} />
+          <Route path="/payment-end" element={<PaymentEnd />} />
           <Route path="/crowdfundingForm" element={<CrowdfundingForm />} />
           <Route path="/mercadopago" element={<MercadoPago />} />
           <Route path="/destinations" element={<Destinations />} />
