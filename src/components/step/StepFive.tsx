@@ -67,14 +67,12 @@ const StepFive: React.FC<StepFiveProps> = ({
     },
   ];
 
-  console.log(t("stepFour.meals"));  // Verifica que muestre "Comidas" o "Meals" en la consola
-
   return (
     <div className="p-1">
       <h3 className="mb-4 text-xl font-semibold text-center text-primary-celeste">
         {t("stepFive.title")}
       </h3>
-      <table className="min-w-full mx-auto border-4 border-secondary-celeste rounded-xl shadow-md md:min-w-[30em] lg:min-w-[35em] bg-[--inactive-button-bg]">
+      <table className="min-w-full mx-auto border-4 border-secondary-celeste rounded-xl shadow-md md:min-w-[30em] lg:min-w-[35em] bg-inactive-button-bg">
         <tbody className="text-primary-celeste">
           {tableRows.map((row, index) => (
             <tr key={index}>
@@ -85,7 +83,7 @@ const StepFive: React.FC<StepFiveProps> = ({
           ))}
         </tbody>
       </table>
-      <div className="flex justify-center mt-6">
+      <div className="flex justify-center my-8">
         <div className="flex space-x-4 w-[18em]">
           <ButtonBlue
             text={t("buttons.goToPayButton")}

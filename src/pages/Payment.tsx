@@ -1,14 +1,13 @@
 import PaymentCard from "@/components/payment/PaymentCard";
 import { useTranslation } from "react-i18next";
-import axios from "axios";
 import { useUserProfile } from "@/hooks/useUserProfile";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/context/AuthProvider";
 import ButtonBlue from "@/components/ui/buttonBlue";
 import { AiOutlineDollar } from "react-icons/ai";
-
-const API_URL = import.meta.env.VITE_API_URL;
+import NoPendingPaymentsMessage from "@/components/payment/NoPendingPaymentsMessage";
+import { handlePayment } from "@/services/paymentService";
 
 function Payment() {
   const { t } = useTranslation();
@@ -52,6 +51,7 @@ function Payment() {
     amount: price,
     paymentType: "Tarjeta",
     date: new Date(Date.now()).toISOString(),
+    userId: profile?.id ?? 0,
   };
 
   const handleChangeMethod = async () => {
@@ -60,33 +60,27 @@ function Payment() {
     });
   };
 
-  const handlePayment = async () => {
+  const handlePaymentClick = async () => {
     try {
-      const response = await axios.post(`${API_URL}/payments`, paymentData, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
-      console.log("Pago exitoso:", response);
-      navigate("/home");
+      await handlePayment(token, paymentData);
+      navigate("/payment-end");
     } catch (error) {
-      console.error(
-        "Error al realizar el pago:",
-        error.response ? error.response.data : error.message
-      );
-    } finally {
+      console.error("Error al procesar el pago:", error);
     }
   };
 
   return (
-    <div className="absolute inset-0 flex items-center justify-center pr-1 pl-14 sm:pr-0">
+    <div className="flex items-center justify-center pb-16 pr-1 sm:pr-0">
       <div className="border-4 border-solid border-secondary-celeste md:mx-20 xl:mx-80 rounded-xl">
         {stepOneData != null ? (
           <div>
             <div className="flex flex-col items-center justify-between w-full h-30 bg-secondary-celeste rounded-b-2xl">
-              <h2 className="text-2xl py-2 text-[--active-button-text] font-[--font-primary]">
+              <h2 className="text-2xl py-2 text-[--active-button-text] font-primary">
                 {t("views_payment.h2_pay")}
               </h2>
-              <h1 className="grid grid-cols-2 py-2 text-4xl text-[--active-button-text] font-['League_Spartan'] font-bold">
-                <AiOutlineDollar/>{paymentData.amount}
+              <h1 className="flex py-2 text-4xl text-[--active-button-text] font-primary font-bold justify-center">
+                <AiOutlineDollar />
+                {paymentData.amount}
               </h1>
             </div>
             <div>
@@ -178,7 +172,6 @@ function Payment() {
                         Por favor seleccione un metodo
                       </p>
                     )}
-
                     <button
                       onClick={handleChangeMethod}
                       className="text-xs font-[--font-primary] text-[--secondary-celeste]"
@@ -191,19 +184,14 @@ function Payment() {
             </div>
             <div className="flex justify-center">
               <ButtonBlue
-                onClick={handlePayment}
+                onClick={handlePaymentClick}
                 className="w-64 my-4"
                 text={t("views_payment.button")}
-              >
-              </ButtonBlue>
+              ></ButtonBlue>
             </div>
           </div>
         ) : (
-          <div className="bg-[--inactive-button-bg] h-96 justify-center items-center flex rounded-lg">
-            <p className="text-4xl text-[--secondary-celeste] font-['League_Spartan'] font-bold text-center px-8 ">
-              No se encuentran pagos pendientes
-            </p>
-          </div>
+          <NoPendingPaymentsMessage />
         )}
       </div>
     </div>
