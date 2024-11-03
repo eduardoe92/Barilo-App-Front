@@ -50,9 +50,9 @@ function Payment() {
   const paymentData = {
     amount: price,
     paymentType: "Tarjeta",
-    date: new Date(Date.now()).toISOString(),
-    userId: profile?.id ?? 0,
-  };
+    date: new Date(),
+    userId: Number(profile?.id ?? 0),
+  };  
 
   const handleChangeMethod = async () => {
     navigate("/payment-method", {
