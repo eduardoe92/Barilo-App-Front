@@ -1,8 +1,7 @@
 import PaymentCard from "@/components/payment/PaymentCard";
 import { useTranslation } from "react-i18next";
 import { useUserProfile } from "@/hooks/useUserProfile";
-import { useLocation } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "@/context/AuthProvider";
 import ButtonBlue from "@/components/ui/buttonBlue";
 import { AiOutlineDollar } from "react-icons/ai";
@@ -13,7 +12,9 @@ function Payment() {
   const { t } = useTranslation();
   const location = useLocation();
   const { token } = useAuth();
-  console.log(location.state);
+  const navigate = useNavigate();
+  const { profile } = useUserProfile();
+
   const {
     stepOneData = null,
     stepTwoData = null,
@@ -22,25 +23,10 @@ function Payment() {
     method = null,
   } = location.state || {};
 
-  const navigate = useNavigate();
+  const isSimulation = true;
 
-  const activity = {
-    name: t("views_payment.activity.name"),
-    info: t("views_payment.activity.info"),
-    price: t("views_payment.activity.price"),
-    destinationName: t("views_payment.activity.destination_name"),
-    date: t("views_payment.activity.date"),
-    duration: t("views_payment.activity.duration"),
-  };
-  const { profile } = useUserProfile();
-
-  let price: number;
-  if (
-    stepFourData != null &&
-    stepOneData != null &&
-    stepTwoData != null &&
-    stepThreeData != null
-  ) {
+  let price;
+  if (stepFourData && stepOneData && stepTwoData && stepThreeData) {
     price =
       stepFourData.activities[0].price +
       stepFourData.restaurants[0].price +
@@ -52,18 +38,30 @@ function Payment() {
     paymentType: "Tarjeta",
     date: new Date(),
     userId: Number(profile?.id ?? 0),
-  };  
+  };
 
-  const handleChangeMethod = async () => {
+  const handleChangeMethod = () => {
     navigate("/payment-method", {
       state: { stepOneData, stepTwoData, stepThreeData, stepFourData },
     });
   };
 
+  const simulatePayment = async () => {
+    console.log("Simulando el pago...");
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    navigate("/payment-end", {
+      state: { stepOneData, stepTwoData, stepThreeData, stepFourData, method },
+    });
+  };
+
   const handlePaymentClick = async () => {
     try {
-      await handlePayment(token, paymentData);
-      navigate("/payment-end");
+      if (isSimulation) {
+        await simulatePayment();
+      } else {
+        await handlePayment(token, paymentData);
+        navigate("/payment-end");
+      }
     } catch (error) {
       console.error("Error al procesar el pago:", error);
     }
@@ -72,7 +70,7 @@ function Payment() {
   return (
     <div className="flex items-center justify-center pb-16 pr-1 sm:pr-0">
       <div className="border-4 border-solid border-secondary-celeste md:mx-20 xl:mx-80 rounded-xl">
-        {stepOneData != null ? (
+        {stepOneData ? (
           <div>
             <div className="flex flex-col items-center justify-between w-full h-30 bg-secondary-celeste rounded-b-2xl">
               <h2 className="text-2xl py-2 text-[--active-button-text] font-primary">
@@ -115,7 +113,10 @@ function Payment() {
                     {t("views_payment.keyInfo.reservation.key")}
                   </h1>
                   <p className="text-xs font-[--font-primary]">
-                    {stepOneData.groupName}
+                    {stepOneData.groupName
+                      ? stepOneData.groupName.charAt(0).toUpperCase() +
+                        stepOneData.groupName.slice(1).toLowerCase()
+                      : ""}
                   </p>
                 </div>
                 {/*
