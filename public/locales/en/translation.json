@@ -69,7 +69,8 @@
     "fetchTickets_error": "No tickets found for this destination",
     "fetchTickets_setError": "Error loading tickets",
     "return_information_message": "Choose your starting point, dream destination, and your travel dates! Decide when the adventure begins and when you return home. Also, select your favorite mode of transportation to make this trip unforgettable.",
-    "loading": "Loading..."
+    "loading": "Loading...",
+    "transport": "Transport"
   },
   "stepThree": {
     "hotel": "Hotel",

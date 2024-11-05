@@ -9,9 +9,9 @@ function PaymentEndComponent() {
   const location = useLocation();
   const { stepOneData = null, stepFourData = null } = location.state || {};
   const { t } = useTranslation();
-  
+
   return (
-    <div className="justify-center w-full h-[60em] pb-20 -mb-20 bg-secondary-celeste">
+    <div className="justify-center w-full pb-20 -mb-20">
       <div className="py-10">
         <IconPayEndComponent />
       </div>
@@ -29,7 +29,13 @@ function PaymentEndComponent() {
           {stepFourData.activities && stepFourData.activities.length > 0 && (
             <span>
               Actividades:{" "}
-              {stepFourData.activities.map((act) => act.name).join(", ")}
+              {stepFourData.activities.map((act, index) => (
+                <span key={act.name}>
+                  {act.name}
+                  {index < stepFourData.activities.length - 1 ? ", " : ""}
+                  <br />
+                </span>
+              ))}
             </span>
           )}
         </p>
@@ -37,7 +43,13 @@ function PaymentEndComponent() {
           {stepFourData.restaurants && stepFourData.restaurants.length > 0 && (
             <span>
               Restaurantes:{" "}
-              {stepFourData.restaurants.map((rest) => rest.name).join(", ")}
+              {stepFourData.restaurants.map((rest, index) => (
+                <span key={rest.name}>
+                  {rest.name}
+                  {index < stepFourData.restaurants.length - 1 ? ", " : ""}
+                  <br />
+                </span>
+              ))}
             </span>
           )}
         </p>

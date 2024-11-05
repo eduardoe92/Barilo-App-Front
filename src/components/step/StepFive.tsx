@@ -61,22 +61,40 @@ const StepFive: React.FC<StepFiveProps> = ({
         : t("stepFive.not_specified"),
     },
     {
+      label: t("stepTwo.transport"),
+      value: stepTwoData?.selectedOutbound?.companyName
+        ? capitalizeFirstLetter(stepTwoData.selectedOutbound.companyName)
+        : t("stepFive.not_specified"),
+    },
+    {
       label: t("stepThree.hotel"),
-      value:
-        stepThreeData?.hotels?.[0]?.name || t("stepFive.not_specified"),
+      value: stepThreeData?.hotels?.[0]?.name || t("stepFive.not_specified"),
     },
     {
       label: t("stepFour.package"),
-      value:
-        stepFourData?.activities?.[0]?.name || t("stepFive.not_specified"),
+      value: (
+        <ul className="pl-5 list-disc">
+          {stepFourData?.activities && stepFourData.activities.length > 0
+            ? stepFourData.activities.map((act, index) => (
+                <li key={index}>{act.name}</li>
+              ))
+            : t("stepFive.not_specified")}
+        </ul>
+      ),
     },
     {
       label: t("stepFour.meals"),
-      value:
-        stepFourData?.restaurants?.[0]?.name || t("stepFive.not_specified"),
+      value: (
+        <ul className="pl-5 list-disc">
+          {stepFourData?.restaurants && stepFourData.restaurants.length > 0
+            ? stepFourData.restaurants.map((rest, index) => (
+                <li key={index}>{rest.name}</li>
+              ))
+            : t("stepFive.not_specified")}
+        </ul>
+      ),
     },
   ];
-
   return (
     <div className="p-1">
       <h3 className="mb-4 text-xl font-semibold text-center text-primary-celeste">
