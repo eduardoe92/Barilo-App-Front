@@ -26,11 +26,11 @@ const EditProfile = () => {
 
   useEffect(() => {
     if (profile) {
-      const { name, email, phone, birthdate } = profile;
+      const { name, email } = profile;
       setValue("nombreCompleto", name);
       setValue("email", email);
-      setValue("telefono", phone);
-      setValue("fechaNacimiento", birthdate);
+      // setValue("telefono", phone);
+      // setValue("fechaNacimiento", birthdate);
       setLoading(false);
     }
   }, [profile, setValue]);
