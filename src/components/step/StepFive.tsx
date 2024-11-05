@@ -33,10 +33,16 @@ const StepFive: React.FC<StepFiveProps> = ({
     navigate("/home");
   };
 
+  const capitalizeFirstLetter = (text: string) => {
+    return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
+  };
+
   const tableRows = [
     {
       label: t("stepOne.groupName"),
-      value: stepOneData?.groupName || t("stepFive.not_specified"),
+      value: stepOneData?.groupName
+        ? capitalizeFirstLetter(stepOneData.groupName)
+        : t("stepFive.not_specified"),
     },
     {
       label: t("stepOne.numberOfPeople"),
@@ -44,11 +50,15 @@ const StepFive: React.FC<StepFiveProps> = ({
     },
     {
       label: t("stepTwo.origin"),
-      value: stepTwoData?.origin || t("stepFive.not_specified"),
+      value: stepTwoData?.origin
+        ? capitalizeFirstLetter(stepTwoData.origin)
+        : t("stepFive.not_specified"),
     },
     {
       label: t("stepTwo.destination"),
-      value: stepTwoData?.destination || t("stepFive.not_specified"),
+      value: stepTwoData?.destination
+        ? capitalizeFirstLetter(stepTwoData.destination)
+        : t("stepFive.not_specified"),
     },
     {
       label: t("stepThree.hotel"),

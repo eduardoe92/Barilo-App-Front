@@ -17,6 +17,8 @@ interface InputFieldProps {
   type?: string;
   placeholder?: string;
   options?: string[];
+  disabled?: boolean;
+  defaultValue?: string | number;
 }
 
 const InputField = forwardRef<HTMLInputElement, InputFieldProps>(

@@ -147,6 +147,9 @@
     "createTrip": {
       "groupButton": "Create group",
       "joinButton": "Join a group"
+    },
+    "payment": {
+      "buttonCalendar": "Add the Calendar"
     }
   },
   "home": {
@@ -477,7 +480,8 @@
           "placeholder": "Enter your email"
         },
         "input_field_date": {
-          "label": "Date of Birth"
+          "label": "Date of Birth",
+          "placeholder": "Enter your birthdate"
         },
         "button_submit": "Update Profile"
       }
@@ -496,7 +500,8 @@
       "title": "Language",
       "español_spanish": "Spanish / Español ",
       "inglés_english": "English / Inglés"
-    }
+    },
+    "not_specified": "Not Specified"
   },
   "createTrip": {
     "title": "Choose Your Path!",

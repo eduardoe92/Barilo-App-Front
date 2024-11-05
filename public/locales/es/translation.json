@@ -147,6 +147,9 @@
     "createTrip": {
       "groupButton": "Crear grupo",
       "joinButton": "Unirte a un grupo"
+    },
+    "payment": {
+      "buttonCalendar": "Agregar al Calendario"
     }
   },
   "home": {
@@ -473,11 +476,12 @@
           "placeholder": "Ingresa número de telefono"
         },
         "input_field_email": {
-          "label": "Nombre Completo",
+          "label": "Email",
           "placeholder": "Ingresa tu correo electrónico"
         },
         "input_field_date": {
-          "label": "Fecha de Nacimiento"
+          "label": "Fecha de Nacimiento",
+          "placeholder": "Ingresa tu fecha de nacimiento"
         },
         "button_submit": "Actualizar Perfil"
       }
@@ -496,7 +500,8 @@
       "title": "Idioma",
       "español_spanish": "Español / Spanish",
       "inglés_english": "Inglés / English"
-    }
+    },
+    "not_specified": "No Especificado"
   },
   "createTrip": {
     "title": "¡Elige tu Camino!",
