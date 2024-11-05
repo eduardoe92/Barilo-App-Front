@@ -2,6 +2,7 @@ export interface PaymentProps {
   name: string;
   info: string;
   img: string;
+  price: number;
 }
 
 export interface PaymentHistoryProps {

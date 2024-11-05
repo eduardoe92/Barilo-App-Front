@@ -2,7 +2,8 @@ import PaymentEndComponent from "@/components/payment/PaymentEndComponente";
 
 function PaymentEnd() {
   return (
-    <PaymentEndComponent />
+    <div className="bg-secondary-celeste">
+    <PaymentEndComponent /></div>
   );
 }
 

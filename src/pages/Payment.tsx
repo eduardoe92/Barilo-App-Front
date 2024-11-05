@@ -25,13 +25,14 @@ function Payment() {
 
   const isSimulation = true;
 
-  let price;
-  if (stepFourData && stepOneData && stepTwoData && stepThreeData) {
-    price =
-      stepFourData.activities[0].price +
-      stepFourData.restaurants[0].price +
-      stepTwoData.selectedOutbound.price;
-  }
+  let price = 0;
+
+if (stepFourData && stepOneData && stepTwoData && stepThreeData) {
+  const activitiesTotal = stepFourData.activities.reduce((total, activity) => total + activity.price, 0);
+  const restaurantsTotal = stepFourData.restaurants.reduce((total, restaurant) => total + restaurant.price, 0);
+  const outboundPrice = stepTwoData.selectedOutbound.price;
+  price = activitiesTotal + restaurantsTotal + outboundPrice;
+}
 
   const paymentData = {
     amount: price,
@@ -81,20 +82,26 @@ function Payment() {
                 {paymentData.amount}
               </h1>
             </div>
-            <div>
-              <PaymentCard
-                name={stepFourData.restaurants[0].name}
-                info={"Restaurante cinco estrellas"}
-                img={stepFourData.restaurants[0].image}
-              ></PaymentCard>
-            </div>
-            <div>
-              <PaymentCard
-                name={stepFourData.activities[0].name}
-                info={stepFourData.activities[0].description}
-                img={stepFourData.activities[0].image}
-              ></PaymentCard>
-            </div>
+            {stepFourData.restaurants.map((restaurant, index) => (
+              <div key={`restaurant-${index}`}>
+                <PaymentCard
+                  name={restaurant.name}
+                  info={restaurant.description}
+                  img={restaurant.image}
+                  price={restaurant.price}
+                />
+              </div>
+            ))}
+            {stepFourData.activities.map((activity, index) => (
+              <div key={`activity-${index}`}>
+                <PaymentCard
+                  name={activity.name}
+                  info={activity.description}
+                  img={activity.image}
+                  price={activity.price}
+                />
+              </div>
+            ))}
             <div className="">
               <div className="flex flex-col px-4">
                 <hr className="bg-[--secondary-celeste] h-px border-none mb-2" />
@@ -126,22 +133,33 @@ function Payment() {
               </div>
               */}
                 <hr className="bg-[--secondary-celeste] h-px border-none my-2" />
-                <div className="flex items-center justify-between px-4 py-2">
-                  <h1 className="text-sm font-[--font-primary] text-[--secondary-celeste]">
-                    {stepFourData.restaurants[0].name}
-                  </h1>
-                  <p className="text-xs font-[--font-primary]">
-                    ${stepFourData.restaurants[0].price}
-                  </p>
-                </div>
-                <div className="flex items-center justify-between px-4 py-2">
-                  <h1 className="text-sm font-[--font-primary] text-[--secondary-celeste]">
-                    {stepFourData.activities[0].name}
-                  </h1>
-                  <p className="text-xs font-[--font-primary]">
-                    ${stepFourData.activities[0].price}
-                  </p>
-                </div>
+                {/* {stepFourData.restaurants.map((restaurant, index) => (
+                  <div
+                    key={`restaurant-${index}`}
+                    className="flex items-center justify-between px-4 py-2"
+                  >
+                    <h1 className="text-sm font-[--font-primary] text-[--secondary-celeste]">
+                      {restaurant.name}
+                    </h1>
+                    <p className="text-xs font-[--font-primary]">
+                      ${restaurant.price}
+                    </p>
+                  </div>
+                ))}
+                {stepFourData.activities.map((activity, index) => (
+                  <div
+                    key={`activity-${index}`}
+                    className="flex items-center justify-between px-4 py-2"
+                  >
+                    <h1 className="text-sm font-[--font-primary] text-[--secondary-celeste]">
+                      {activity.name}
+                    </h1>
+                    <p className="text-xs font-[--font-primary]">
+                      ${activity.price}
+                    </p>
+                  </div>
+                ))} */}
+
                 <div className="flex items-center justify-between px-4 py-2">
                   <h1 className="text-sm font-[--font-primary] text-[--secondary-celeste]">
                     {stepTwoData.selectedOutbound.companyName}
