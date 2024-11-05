@@ -69,7 +69,8 @@
     "fetchTickets_error": "No se encontraron pasajes para este destino",
     "fetchTickets_setError": "Error al cargar los pasajes",
     "return_information_message": "¡Elige tu punto de partida, destino soñado, y las fechas de tu viaje! Decide cuándo comienza la aventura y cuándo regresas a casa. Además, selecciona tu modo de transporte favorito para hacer este viaje inolvidable.",
-    "loading": "Cargando..."
+    "loading": "Cargando...",
+    "transport": "Transporte"
   },
   "stepThree": {
     "hotel": "Hotel",
