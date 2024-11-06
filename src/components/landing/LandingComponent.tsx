@@ -1,11 +1,11 @@
-import SideNavBar from "./landing/SideNavBar";
-import WelcomeSection from "./landing/WelcomeSection";
-import Characteristic from "./landing/Characteristic";
-import Personalized from "./landing/Personalized";
-import Experience from "./landing/Experience";
-import Contact from "./landing/Contact";
-import ScrollToTopButton from "./landing/ScrollToTopButton";
-import Footer from "./landing/Footer";
+import SideNavBar from "./SideNavBar";
+import WelcomeSection from "./WelcomeSection";
+import Characteristic from "./Characteristic";
+import Personalized from "./Personalized";
+import Experience from "./Experience";
+import Contact from "./Contact";
+import ScrollToTopButton from "./ScrollToTopButton";
+import Footer from "./Footer";
 
 export default function LandingComponent() {
 
