@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import LandingComponent from '@/components/LandingComponent';
+import LandingComponent from '@/components/landing/LandingComponent';
 
 const LandingPage: React.FC = () => {
   const [loading, setLoading] = useState(true);
