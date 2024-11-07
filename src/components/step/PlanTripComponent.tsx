@@ -1,14 +1,14 @@
 import { useState } from "react";
-import ProgressBar from "./step/ProgressBar";
-import StepOne from "./step/StepOne";
-import StepTwo from "./step/StepTwo";
-import StepThree from "./step/StepThree";
-import StepFour from "./step/StepFour";
-import StepFive from "./step/StepFive";
-import { StepOneFormData } from "../types/step/StepOneFormData";
-import { StepTwoFormData } from "../types/step/StepTwoFormData";
-import { StepThreeFormData } from "../types/step/StepThreeFormData";
-import { StepFourFormData } from "../types/step/StepFourFormData";
+import ProgressBar from "./ProgressBar";
+import StepOne from "./StepOne";
+import StepTwo from "./StepTwo";
+import StepThree from "./StepThree";
+import StepFour from "./StepFour";
+import StepFive from "./StepFive";
+import { StepOneFormData } from "../../types/step/StepOneFormData";
+import { StepTwoFormData } from "../../types/step/StepTwoFormData";
+import { StepThreeFormData } from "../../types/step/StepThreeFormData";
+import { StepFourFormData } from "../../types/step/StepFourFormData";
 import { t } from "i18next";
 
 const PlanTripComponent: React.FC = () => {

@@ -1,4 +1,4 @@
-import PlanTripComponent from "../components/PlanTripComponent";
+import PlanTripComponent from "../components/step/PlanTripComponent";
 
 const CreateTrip: React.FC = () => {
     return (

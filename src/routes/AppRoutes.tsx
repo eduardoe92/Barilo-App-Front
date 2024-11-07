@@ -30,7 +30,7 @@ import { useAuth } from "@/context/AuthProvider";
 import Activities from "@/pages/Activities";
 import Restaurants from "@/pages/Restaurants";
 import ActivityDetailPage from "@/pages/ActivitiesDetailPage";
-import TripComponent from "@/components/TripComponent";
+import TripComponent from "@/components/step/TripComponent";
 import SideProfile from "@/components/profile/SideProfile";
 import PaymentEnd from "@/pages/PaymentEnd";
 
