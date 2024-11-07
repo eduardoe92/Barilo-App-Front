@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import BotonBlue from "@/components/ui/buttonBlue";
 import { useNavigate } from "react-router-dom";
-import IconGroupComponent from "./icon/IconGroupComponent";
+import IconGroupComponent from "../icon/IconGroupComponent";
 
 const TripComponent: React.FC = () => {
   const { t } = useTranslation();

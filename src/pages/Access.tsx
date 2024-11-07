@@ -1,4 +1,4 @@
-import AccessSection from "@/components/AccessSection";
+import AccessSection from "@/components/step/AccessSection";
 
 function Access() {
   return (
