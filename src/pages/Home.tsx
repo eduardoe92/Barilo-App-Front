@@ -1,5 +1,5 @@
-import HomeCardComponent from "@/components/HomeCardComponent";
-import HomeEventComponent from "@/components/HomeEventComponent";
+import HomeCardComponent from "@/components/home/HomeCardComponent";
+import HomeEventComponent from "@/components/home/HomeEventComponent";
 import { useTranslation } from "react-i18next";
 import { useUserRole } from "../hooks/useUserRole";
 import { useUserGroup } from "@/hooks/useUserIsMember";
@@ -54,7 +54,7 @@ const Home: React.FC<UserGroupStatusProps> = () => {
               {isInGroup ? (
                 <div>
                   <div className="flex justify-between w-full px-2 pb-3">
-                    <h2 className="text-xl text-secondary-celeste font-bold">
+                    <h2 className="text-xl font-bold text-secondary-celeste">
                       {t("home.cardTrip.title")}
                     </h2>
                     <a
@@ -85,7 +85,7 @@ const Home: React.FC<UserGroupStatusProps> = () => {
                     ></HomeCardComponent>
                   </div>
                   <div className="flex justify-between w-full px-2 pb-3 mt-4">
-                    <h2 className="text-xl text-secondary-celeste font-bold">
+                    <h2 className="text-xl font-bold text-secondary-celeste">
                       {t("home.cardTrip.titleNoGroup")}
                     </h2>
                     <a
@@ -119,7 +119,7 @@ const Home: React.FC<UserGroupStatusProps> = () => {
               ) : (
                 <div>
                   <div className="flex justify-between w-full px-2 pb-3">
-                    <h2 className="text-xl text-secondary-celeste font-bold">
+                    <h2 className="text-xl font-bold text-secondary-celeste">
                       {t("home.cardTrip.title")}
                     </h2>
                     <a
@@ -155,7 +155,7 @@ const Home: React.FC<UserGroupStatusProps> = () => {
           ) : (
             <div>
               <div className="flex justify-between w-full px-2 pb-3">
-                <h2 className="text-xl text-secondary-celeste font-bold">
+                <h2 className="text-xl font-bold text-secondary-celeste">
                   {t("home.cardTrip.title")}
                 </h2>
                 <a
