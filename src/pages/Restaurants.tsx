@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getAllRestaurants } from "../services/tripService";
-import HomeCardComponent from "@/components/HomeCardComponent";
+import HomeCardComponent from "@/components/home/HomeCardComponent";
 import { Restaurant } from "@/types/Restaurant";
 import { t } from "i18next";
 

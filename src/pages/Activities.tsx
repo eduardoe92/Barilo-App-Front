@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getAllActivities } from "../services/tripService";
-import HomeCardComponent from "@/components/HomeCardComponent";
+import HomeCardComponent from "@/components/home/HomeCardComponent";
 import { Activity } from "@/types/Activity";
 import { t } from "i18next";
 

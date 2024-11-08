@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import HomeCardComponent from '../components/HomeCardComponent';
+import HomeCardComponent from '@/components/home/HomeCardComponent';
 
 const Destinations = () => {
   const [destinations, setDestinations] = useState([]);

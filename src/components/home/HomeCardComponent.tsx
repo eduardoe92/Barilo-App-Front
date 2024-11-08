@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { CiHeart } from "react-icons/ci";
-import img1 from "../assets/images/excursionCard.webp";
-import img2 from "../assets/images/restaurantCard.webp";
-import img3 from "../assets/images/destinationCard.webp";
-import img4 from "../assets/images/destinationCard.webp";
+import img1 from "@/assets/images/excursionCard.webp";
+import img2 from "@/assets/images/restaurantCard.webp";
+import img3 from "@/assets/images/destinationCard.webp";
+import img4 from "@/assets/images/destinationCard.webp";
 import { Link } from "react-router-dom";
 import { FaHeart } from "react-icons/fa";
 
