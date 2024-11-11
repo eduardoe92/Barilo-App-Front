@@ -51,7 +51,13 @@
     "copyright": "All rights reserved."
   },
   "progressBar": {
-    "steps": ["Group", "Tickets", "Hotel", "Activity", "Confirm"]
+    "steps": [
+      "Group",
+      "Tickets",
+      "Hotel",
+      "Activity",
+      "Confirm"
+    ]
   },
   "stepOne": {
     "description": "Choose the group name, and later you can share an invitation link with the people you want to add.",
@@ -298,9 +304,24 @@
       "topic": "popular_topic"
     },
     "payment": {
+      "noPendingPayments": "No pending payments found",
       "question": "How can I pay for my graduation trip?",
       "answer": "You can pay for your graduation trip by credit or debit card, or by bank transfer. Our site uses a secure payment system to protect your data.",
-      "topic": "popular_topic"
+      "topic": "popular_topic",
+      "payment_end_componente": {
+        "congratulations": "Congratulations",
+        "successful_payment": "Payment was successful",
+        "successful_reservation": "You have successfully booked",
+        "activities": "Activities:",
+        "restaurants": "Restaurants:",
+        "message_p": "for the group",
+        "date_fa": "Mon 11-24-24",
+        "date_io": "10:00 a.m."
+      },
+      "payment_history": {
+        "loading": "Charging...",
+        "there_are_no_payments":"No payments made."
+      }
     },
     "cancellation": {
       "question": "What happens if I need to cancel or modify my graduation trip?",

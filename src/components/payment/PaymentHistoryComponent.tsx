@@ -3,8 +3,10 @@ import PaymentHistoryCard from "./PaymentHistoryCard";
 import { getPaymentHistoryUser } from "@/services/paymentService";
 import { useAuth } from "@/context/AuthProvider";
 import { PaymentHistoryResponse } from "@/types/Pay";
+import { useTranslation } from "react-i18next";
 
 function PaymentHistoryComponent() {
+  const { t } = useTranslation();
   const [payments, setPayments] = useState<PaymentHistoryResponse[] | null>(
     null
   );
@@ -34,7 +36,7 @@ function PaymentHistoryComponent() {
     <div className="absolute px-2 overflow-x-hidden overflow-y-auto bg-white rounded-lg shadow-2xl min-w-64 right-5 top-20 h-96">
       {loading ? (
         <div className="flex items-center justify-center h-full">
-          Cargando...
+          {t("faq.payment.payment_history.loading")}
         </div>
       ) : payments && payments.length > 0 ? (
         payments.map((payment) => (
@@ -47,7 +49,7 @@ function PaymentHistoryComponent() {
         ))
       ) : (
         <div className="flex items-center justify-center h-full">
-          No hay pagos realizados.
+          {t("faq.payment.payment_history.there_are_no_payments")}
         </div>
       )}
     </div>
