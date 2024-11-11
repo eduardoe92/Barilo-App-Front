@@ -16,19 +16,19 @@ function PaymentEndComponent() {
         <IconPayEndComponent />
       </div>
       <h1 className="text-4xl font-semibold text-center text-white font-primary">
-        Felicitaciones
+        {t("faq.payment.payment_end_componente.congratulations")}
       </h1>
       <h2 className="text-lg text-center text-white font-primary">
-        El pago fue exitoso
+        {t("faq.payment.payment_end_componente.successful_payment")}
       </h2>
       <div className="flex flex-col items-center justify-center p-4 mx-auto my-8 border-white shadow-md border-1 rounded-3xl w-72 sm:w-[30em] lg:w-[60em]">
         <h3 className="text-base font-light text-center text-white md:text-lg">
-          Has reservado con éxito
+          {t("faq.payment.payment_end_componente.successful_reservation")}
         </h3>
         <p className="text-3xl font-extrabold text-center text-white text-secondary-celeste font-primary">
           {stepFourData.activities && stepFourData.activities.length > 0 && (
             <span>
-              Actividades:{" "}
+              {t("faq.payment.payment_end_componente.activities")}{" "}
               {stepFourData.activities.map((act, index) => (
                 <span key={act.name}>
                   {act.name}
@@ -42,7 +42,7 @@ function PaymentEndComponent() {
         <p className="text-3xl font-extrabold text-center text-white text-secondary-celeste font-primary">
           {stepFourData.restaurants && stepFourData.restaurants.length > 0 && (
             <span>
-              Restaurantes:{" "}
+              {t("faq.payment.payment_end_componente.restaurants")}{" "}
               {stepFourData.restaurants.map((rest, index) => (
                 <span key={rest.name}>
                   {rest.name}
@@ -55,7 +55,7 @@ function PaymentEndComponent() {
         </p>
         <p className="text-base font-light text-center text-white">
           {stepOneData &&
-            `para el grupo ${
+            ` ${t("faq.payment.payment_end_componente.message_p")} ${
               stepOneData.groupName.charAt(0).toUpperCase() +
               stepOneData.groupName.slice(1).toLowerCase()
             }`}
@@ -64,14 +64,14 @@ function PaymentEndComponent() {
           <div className="flex text-base text-center text-white lg:text-xl">
             <FaCalendarAlt />
             <p className="pl-1 text-sm font-light md:text-base lg:text-xl">
-              lun 24-11-24
+            {t("faq.payment.payment_end_componente.date_fa")}
             </p>
             {/* Aquí se debe reemplazar con la fecha real si existiese*/}
           </div>
           <div className="flex text-xl text-center text-white lg:text-2xl">
             <IoAlarmOutline />
             <p className="pl-1 text-sm font-light md:text-base lg:text-xl">
-              10:00 a.m.
+            {t("faq.payment.payment_end_componente.date_io")}
             </p>
             {/* Aquí se debe reemplazar con la hora real si existiese*/}
           </div>
