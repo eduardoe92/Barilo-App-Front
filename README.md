@@ -4,8 +4,9 @@
 
 **Bariló** es una innovadora webapp diseñada para transformar la experiencia de los viajes de egresados en Argentina, haciéndolos accesibles y personalizados para todos los estudiantes, sin importar su situación económica. 
 
-[Ir al Repositorio Backend](https://github.com/igrowker/i003-barilo-back)
-[Sitio Web](https://barilo.vercel.app/)
+| Repositorio Backend | Sitio Web |
+|:-----------------------------------------------------------------------------:|:------------------------------------------------:|
+| <a href="https://github.com/eduardoe92/Barilo-App-Back"><img src="https://img.icons8.com/?size=100&id=efFfwotdkiU5&format=png&color=000000" width="40" height="40"/></a> | <a href="https://barilo.vercel.app/"><img src="https://cdn-icons-png.flaticon.com/512/5602/5602732.png" width="40" height="40"/></a> |
 
 ### El Problema 🎓
 
